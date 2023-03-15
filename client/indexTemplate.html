@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;" lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta name="keywords"
+    content="Направете всеки повод запомнящ се ..., Вход в системата, Регистрация, За страницата, Топ потребители, Име на картичката, Добавяне на нова картичка, Редактиране на картичка, Изтриване на картичка, Име на картичката, Име на автора">
+  <meta name="description" content="">
+  <title>Login</title>
+  <link rel="stylesheet" href="nicepage.css" media="screen">
+  <link rel="stylesheet" href="Login.css" media="screen">
+  <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
+  <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
+  <meta name="generator" content="Nicepage 5.5.0, nicepage.com">
+  <meta name="referrer" content="origin">
+  <link id="u-theme-google-font" rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+  <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": "",
+		"logo": "images/2.png"
+}</script>
+  <meta name="theme-color" content="#478ac9">
+  <meta property="og:title" content="Login">
+  <meta property="og:type" content="website">
+  <meta data-intl-tel-input-cdn-path="intlTelInput/">
+</head>
+
+<body data-home-page="Login.html" data-home-page-title="Login" class="u-body u-xl-mode" data-lang="en">
+  <header class="u-clearfix u-header u-palette-1-light-2 u-sticky u-sticky-ee31 u-header" id="sec-b022">
+    <nav class="u-align-center u-menu u-menu-dropdown u-offcanvas u-menu-1">
+      <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px; font-weight: 700;">
+        <a class="u-button-style u-custom-active-border-color u-custom-active-color u-custom-border u-custom-border-color u-custom-borders u-custom-hover-border-color u-custom-hover-color u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-active-color u-custom-text-color u-custom-text-hover-color u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
+          href="#">
+          <svg class="u-svg-link" viewBox="0 0 24 24">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use>
+          </svg>
+          <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px" y="0px"
+            xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+            <g>
+              <rect y="1" width="16" height="2"></rect>
+              <rect y="7" width="16" height="2"></rect>
+              <rect y="13" width="16" height="2"></rect>
+            </g>
+          </svg>
+        </a>
+      </div>
+      <div class="u-custom-menu u-nav-container">
+        <ul class="u-nav u-spacing-20 u-unstyled u-nav-1">
+          <li class="u-nav-item"><a
+              class="u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-palette-2-base"
+              href="Login.html" style="padding: 10px 0px;">НАЧАЛО</a>
+          </li>
+          <li class="u-nav-item"><a
+              class="u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-palette-2-base"
+              href="Register.html" style="padding: 10px 0px;">КАТАЛОГ</a>
+          </li>
+          <li class="u-nav-item"><a
+              class="u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-palette-2-base"
+              href="My-profile.html" style="padding: 10px 0px;">МОЯТ ПРОФИЛ</a>
+          </li>
+          <li class="u-nav-item"><a
+              class="u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-palette-2-base"
+              href="Search.html" style="padding: 10px 0px;">ТЪРСЕНЕ</a>
+          </li>
+          <li class="u-nav-item"><a
+              class="u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-palette-2-base"
+              style="padding: 10px 0px;">ЗА СТРАНИЦАТА</a>
+          </li>
+        </ul>
+      </div>
+      <div class="u-custom-menu u-nav-container-collapse">
+        <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
+          <div class="u-inner-container-layout u-sidenav-overflow">
+            <div class="u-menu-close"></div>
+            <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2">
+              <li class="u-nav-item"><a class="u-button-style u-nav-link" href="Login.html">НАЧАЛО</a>
+              </li>
+              <li class="u-nav-item"><a class="u-button-style u-nav-link" href="Register.html">КАТАЛОГ</a>
+              </li>
+              <li class="u-nav-item"><a class="u-button-style u-nav-link" href="My-profile.html">МОЯТ ПРОФИЛ</a>
+              </li>
+              <li class="u-nav-item"><a class="u-button-style u-nav-link" href="Search.html">ТЪРСЕНЕ</a>
+              </li>
+              <li class="u-nav-item"><a class="u-button-style u-nav-link">ЗА СТРАНИЦАТА</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
+      </div>
+    </nav><a href="https://nicepage.com/wysiwyg-html-editor" class="u-image u-logo u-image-1" data-image-width="544"
+      data-image-height="161">
+      <img src="images/2.png" class="u-logo-image u-logo-image-1">
+    </a>
+    <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-2">
+      <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px; font-weight: 700;">
+        <a class="u-button-style u-custom-active-border-color u-custom-active-color u-custom-border u-custom-border-color u-custom-borders u-custom-hover-border-color u-custom-hover-color u-custom-left-right-menu-spacing u-custom-text-active-color u-custom-text-color u-custom-text-decoration u-custom-text-hover-color u-custom-top-bottom-menu-spacing u-nav-link"
+          href="#">
+          <svg class="u-svg-link" viewBox="0 0 24 24">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-b89e"></use>
+          </svg>
+          <svg class="u-svg-content" version="1.1" id="svg-b89e" viewBox="0 0 16 16" x="0px" y="0px"
+            xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+            <g>
+              <rect y="1" width="16" height="2"></rect>
+              <rect y="7" width="16" height="2"></rect>
+              <rect y="13" width="16" height="2"></rect>
+            </g>
+          </svg>
+        </a>
+      </div>
+      <div class="u-custom-menu u-nav-container">
+        <ul class="u-nav u-spacing-0 u-unstyled u-nav-3">
+          <li class="u-nav-item"><a
+              class="u-border-2 u-border-active-grey-30 u-border-grey-30 u-border-hover-grey-30 u-border-no-bottom u-border-no-left u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-palette-1-base"
+              href="Login.html" style="padding: 0px 20px;">Вход</a>
+          </li>
+          <li class="u-nav-item"><a
+              class="u-border-2 u-border-active-grey-30 u-border-grey-30 u-border-hover-grey-30 u-border-no-bottom u-border-no-left u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-palette-1-base"
+              href="Register.html" style="padding: 0px 20px;">Регистрация</a>
+          </li>
+        </ul>
+      </div>
+      <div class="u-custom-menu u-nav-container-collapse">
+        <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
+          <div class="u-inner-container-layout u-sidenav-overflow">
+            <div class="u-menu-close"></div>
+            <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-4">
+              <li class="u-nav-item"><a class="u-button-style u-nav-link" href="Login.html">Вход</a>
+              </li>
+              <li class="u-nav-item"><a class="u-button-style u-nav-link" href="Register.html">Регистрация</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
+      </div>
+    </nav>
+  </header>
+  
+  <section class="u-clearfix u-grey-5 u-section-1" id="sec-92f0">
+    <div class="u-clearfix u-sheet u-sheet-1">
+      <p class="u-text u-text-default u-text-1">dimitrov.1995@gmail.com</p>
+      <div class="u-clearfix u-expanded-width u-gutter-12 u-layout-wrap u-layout-wrap-1">
+        <div class="u-layout" style="">
+          <div class="u-layout-row" style="">
+            <div class="u-container-style u-layout-cell u-left-cell u-size-30 u-size-xs-60 u-layout-cell-1" src="">
+              <div class="u-container-layout u-container-layout-1">
+                <h2 class="u-align-center u-custom-font u-text u-text-default u-text-font u-text-2">Направете всеки
+                  повод запомнящ се ...</h2>
+                <p class="u-align-center u-text u-text-3">Поздравителни картички за рожден ден, сватба, кръщене, св.
+                  Валентин ... етикети за вино и много други</p>
+                <a href="#" class="u-btn u-btn-round u-button-style u-radius-50 u-btn-1">КАТАЛОГ</a>
+                <a href="#" class="u-btn u-btn-round u-button-style u-radius-50 u-btn-2">РЕГИСТРАЦИЯ</a>
+              </div>
+            </div>
+            <div
+              class="u-align-center u-container-style u-image u-layout-cell u-right-cell u-size-30 u-size-xs-60 u-image-1"
+              src="" data-image-width="1920" data-image-height="1080">
+              <div class="u-container-layout u-container-layout-2" src=""></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="u-text u-text-default u-text-4">250лв.</p><span class="u-file-icon u-icon u-icon-1"><img
+          src="images/845665.png" alt=""></span>
+    </div>
+  </section>
+  <section class="u-align-center u-clearfix u-grey-5 u-section-2" id="sec-71fc">
+    <div class="u-clearfix u-sheet u-sheet-1">
+      <h2 class="u-text u-text-default u-text-1">Вход в системата</h2>
+      <div class="u-form u-form-1">
+        <form action="https://forms.nicepagesrv.com/v2/form/process"
+          class="u-clearfix u-form-spacing-15 u-form-vertical u-inner-form" style="padding: 10px" source="email"
+          name="form">
+          <div class="u-form-group u-form-name u-label-top">
+            <label for="name-3b9a" class="u-label">Email:</label>
+            <input type="text" placeholder="Въведете email" id="name-3b9a" name="email"
+              class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white u-input-1" required="">
+          </div>
+          <div class="u-form-group u-label-top">
+            <label for="email-3b9a" class="u-label">Парола:</label>
+            <input type="text" placeholder="Въведете парола" id="email-3b9a" name="password"
+              class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white u-input-2"
+              required="required">
+          </div>
+          <div class="u-align-left u-form-group u-form-submit u-label-top">
+            <a href="#" class="u-btn u-btn-submit u-button-style">Вход</a>
+            <input type="submit" value="submit" class="u-form-control-hidden">
+          </div>
+          <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
+          <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try
+            again. </div>
+          <input type="hidden" value="" name="recaptchaResponse">
+          <input type="hidden" name="formServices" value="2dbdbb5f5f57a7961aaa0e0a2491c934">
+        </form>
+      </div>
+      <p class="u-text u-text-default u-text-2">Нямате все още акаунт?</p>
+      <a href="https://nicepage.dev"
+        class="u-active-none u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-palette-1-base u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-btn-rectangle u-button-style u-hover-none u-none u-radius-0 u-top-left-radius-0 u-top-right-radius-0 u-btn-2">Регистрирай
+        се</a>
+    </div>
+  </section>
+  
+  <section class="u-align-center u-clearfix u-grey-5 u-section-3" id="sec-fc27">
+    <div class="u-clearfix u-sheet u-sheet-1">
+      <h2 class="u-text u-text-default u-text-1">Регистрация</h2>
+      <div class="u-form u-form-1">
+        <form action="https://forms.nicepagesrv.com/v2/form/process"
+          class="u-clearfix u-form-spacing-15 u-form-vertical u-inner-form" style="padding: 10px" source="email"
+          name="form">
+          <div class="u-form-group u-form-name u-label-top">
+            <label for="name-3b9a" class="u-label">Email:</label>
+            <input type="text" placeholder="Въведете email" id="name-3b9a" name="email"
+              class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white u-input-1" required="">
+          </div>
+          <div class="u-form-group u-label-top">
+            <label for="email-3b9a" class="u-label">Име:</label>
+            <input type="text" placeholder="Въведете име" id="email-3b9a" name="firstName"
+              class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white u-input-2"
+              required="required">
+          </div>
+          <div class="u-form-group u-label-top u-form-group-3">
+            <label for="text-f937" class="u-label">Фамилия:</label>
+            <input type="text" placeholder="Въведете фамилия" id="text-f937" name="lastName"
+              class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white u-input-3">
+          </div>
+          <div class="u-form-group u-label-top u-form-group-4">
+            <label for="text-d5ae" class="u-label">Парола:</label>
+            <input type="text" placeholder="Въведете парола" id="text-d5ae" name="password"
+              class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white u-input-4">
+          </div>
+          <div class="u-form-group u-label-top u-form-group-5">
+            <label for="text-a271" class="u-label">Потвърди паролата</label>
+            <input type="text" placeholder="Въведете паролата отново" id="text-a271" name="repeatPassword"
+              class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white u-input-5">
+          </div>
+          <div class="u-form-group u-label-top u-form-group-6">
+            <label for="text-1f9b" class="u-label">Профилна снимка</label>
+            <input type="text" id="text-1f9b" name="imageUrl"
+              class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white u-input-6"
+              placeholder="Въведете линк за профилна снимка">
+          </div>
+          <div class="u-form-group u-form-number u-form-number-layout-number u-label-top u-form-group-7">
+            <label for="number-03dd" class="u-label">Въведете бюджет в лв.</label>
+            <div class="u-input-row" data-value="0">
+              <input value="0" min="0" max="100" step="1" type="number" placeholder="" id="number-03dd" name="budget"
+                class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white u-input-7">
+            </div>
+          </div>
+          <div class="u-align-left u-form-group u-form-submit u-label-top">
+            <a href="#" class="u-btn u-btn-submit u-button-style">Регистрация</a>
+            <input type="submit" value="submit" class="u-form-control-hidden">
+          </div>
+          <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
+          <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try
+            again. </div>
+          <input type="hidden" value="" name="recaptchaResponse">
+          <input type="hidden" name="formServices" value="2dbdbb5f5f57a7961aaa0e0a2491c934">
+        </form>
+      </div>
+      <p class="u-text u-text-2">Вече имате акаунт?</p>
+      <a href="https://nicepage.dev"
+        class="u-active-none u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-palette-1-base u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-btn-rectangle u-button-style u-hover-none u-none u-radius-0 u-top-left-radius-0 u-top-right-radius-0 u-btn-2">Вход</a>
+    </div>
+  </section>
+  <section class="u-clearfix u-grey-5 u-section-4" id="sec-7e29">
+    <div class="u-clearfix u-sheet u-sheet-1">
+      <div class="u-clearfix u-expanded-width u-gutter-10 u-layout-wrap u-layout-wrap-1">
+        <div class="u-layout" style="">
+          <div class="u-layout-row" style="">
+            <div class="u-container-style u-layout-cell u-left-cell u-size-30 u-size-xs-60 u-layout-cell-1" src="">
+              <div class="u-container-layout u-container-layout-1">
+                <h2 class="u-align-center u-text u-text-default u-text-1">За страницата</h2>
+                <p class="u-align-left u-text u-text-2">
+                  <span style="font-weight: 700;">Petya Panayotova Design Studio</span> е платформа, в която можете да
+                  добавяте изработените от вас картички за всякакви поводи. Дизайнерът Петя ще ги популяризира в
+                  мрежата, за да може творчеството ви да достигне до повече хора.&nbsp;
+                </p>
+              </div>
+            </div>
+            <div
+              class="u-align-center u-container-style u-layout-cell u-right-cell u-size-30 u-size-xs-60 u-layout-cell-2"
+              src="">
+              <div class="u-container-layout u-container-layout-2" src="">
+                <img class="u-image u-image-default u-image-1" src="images/-A6.png" alt="" data-image-width="1365"
+                  data-image-height="1870">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="u-align-center u-clearfix u-grey-5 u-section-5" id="sec-758e">
+    <div class="u-clearfix u-sheet u-sheet-1">
+      <h1 class="u-align-center u-text u-text-default u-text-1">Топ потребители</h1>
+      <div class="u-expanded-width u-list u-list-1">
+        <div class="u-repeater u-repeater-1">
+          <div class="u-align-center u-container-style u-list-item u-repeater-item">
+            <div class="u-container-layout u-similar-container u-container-layout-1">
+              <div alt="" class="u-image u-image-circle u-image-1" data-image-width="1280" data-image-height="774">
+              </div>
+              <h4 class="u-align-center u-text u-text-default u-text-2">Jeffrey Brown</h4>
+              <p class="u-text u-text-default u-text-palette-2-base u-text-3">Професионален дизайнер</p>
+              <p class="u-text u-text-4">Glavi amet ritnisl libero molestie ante ut fringilla purus eros quis glavrid
+                from dolor amet iquam lorem bibendum</p>
+            </div>
+          </div>
+          <div class="u-align-center u-container-style u-list-item u-repeater-item">
+            <div class="u-container-layout u-similar-container u-container-layout-2">
+              <div alt="" class="u-image u-image-circle u-image-2" data-image-width="1280" data-image-height="774">
+              </div>
+              <h4 class="u-align-center u-text u-text-default u-text-5">Ann Richmond</h4>
+              <p class="u-text u-text-default u-text-palette-2-base u-text-6">Дизайнер на картички</p>
+              <p class="u-text u-text-7">Glavi amet ritnisl libero molestie ante ut fringilla purus eros quis glavrid
+                from dolor amet iquam lorem bibendum</p>
+            </div>
+          </div>
+          <div class="u-align-center u-container-style u-list-item u-repeater-item">
+            <div class="u-container-layout u-similar-container u-container-layout-3">
+              <div alt="" class="u-image u-image-circle u-image-3" data-image-width="1280" data-image-height="774">
+              </div>
+              <h4 class="u-align-center u-text u-text-default u-text-8">Alex Greenfield</h4>
+              <p class="u-text u-text-default u-text-palette-2-base u-text-9">Дизайнер на покани</p>
+              <p class="u-text u-text-10">Glavi amet ritnisl libero molestie ante ut fringilla purus eros quis glavrid
+                from dolor amet iquam lorem bibendum</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="u-clearfix u-grey-5 u-section-6" id="sec-f49c">
+    <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+      <!--blog--><!--blog_options_json--><!--{"type":"Recent","source":"","tags":"","count":""}--><!--/blog_options_json-->
+      <div class="u-blog u-expanded-width u-blog-1">
+        <div class="u-repeater u-repeater-1"><!--blog_post--><!--blog_post_image-->
+          <div class="u-blog-control u-blog-post u-container-style u-image u-repeater-item u-shading u-image-1"
+            data-image-width="2000" data-image-height="1333" data-href="blog/post-5.html"><!--/blog_post_image-->
+            <div class="u-container-layout u-similar-container u-valign-bottom u-container-layout-1">
+              <!--blog_post_header-->
+              <h3 class="u-blog-control u-text u-text-1">
+                <a class="u-post-header-link" href="blog/post-5.html"><!--blog_post_header_content-->Post 6
+                  Headline<!--/blog_post_header_content--></a>
+              </h3><!--/blog_post_header--><!--blog_post_readmore-->
+              <a href="blog/post-5.html"
+                class="u-blog-control u-border-none u-btn u-btn-rectangle u-button-style u-palette-1-base u-btn-1"><!--blog_post_readmore_content--><!--options_json--><!--{"content":"Разгледай","defaultValue":"Read More"}--><!--/options_json-->Разгледай<!--/blog_post_readmore_content--></a><!--/blog_post_readmore-->
+            </div>
+          </div><!--/blog_post--><!--blog_post--><!--blog_post_image-->
+          <div
+            class="u-blog-control u-blog-post u-container-style u-image u-repeater-item u-shading u-video-cover u-image-2"
+            data-image-width="2000" data-image-height="1333" data-href="blog/post-4.html"><!--/blog_post_image-->
+            <div class="u-container-layout u-similar-container u-valign-bottom u-container-layout-2">
+              <!--blog_post_header-->
+              <h3 class="u-blog-control u-text u-text-2">
+                <a class="u-post-header-link" href="blog/post-4.html"><!--blog_post_header_content-->Post 5
+                  Headline<!--/blog_post_header_content--></a>
+              </h3><!--/blog_post_header--><!--blog_post_readmore-->
+              <a href="blog/post-4.html"
+                class="u-blog-control u-border-none u-btn u-btn-rectangle u-button-style u-palette-1-base u-btn-2"><!--blog_post_readmore_content--><!--options_json--><!--{"content":"Разгледай","defaultValue":"Read More"}--><!--/options_json-->Разгледай<!--/blog_post_readmore_content--></a><!--/blog_post_readmore-->
+            </div>
+          </div><!--/blog_post--><!--blog_post--><!--blog_post_image-->
+          <div
+            class="u-blog-control u-blog-post u-container-style u-image u-repeater-item u-shading u-video-cover u-image-3"
+            data-image-width="2000" data-image-height="1333" data-href="blog/post-3.html"><!--/blog_post_image-->
+            <div class="u-container-layout u-similar-container u-valign-bottom u-container-layout-3">
+              <!--blog_post_header-->
+              <h3 class="u-blog-control u-text u-text-3">
+                <a class="u-post-header-link" href="blog/post-3.html"><!--blog_post_header_content-->Post 4
+                  Headline<!--/blog_post_header_content--></a>
+              </h3><!--/blog_post_header--><!--blog_post_readmore-->
+              <a href="blog/post-3.html"
+                class="u-blog-control u-border-none u-btn u-btn-rectangle u-button-style u-palette-1-base u-btn-3"><!--blog_post_readmore_content--><!--options_json--><!--{"content":"Разгледай","defaultValue":"Read More"}--><!--/options_json-->Разгледай<!--/blog_post_readmore_content--></a><!--/blog_post_readmore-->
+            </div>
+          </div><!--/blog_post-->
+        </div>
+      </div><!--/blog-->
+    </div>
+  </section>
+  <section class="u-clearfix u-grey-5 u-section-7" id="sec-8833">
+    <div class="u-clearfix u-sheet u-sheet-1">
+      <div class="u-clearfix u-expanded-width u-gutter-0 u-layout-spacing-vertical u-layout-wrap u-layout-wrap-1">
+        <div class="u-layout">
+          <div class="u-layout-row">
+            <div class="u-align-left u-container-style u-layout-cell u-left-cell u-size-40 u-layout-cell-1">
+              <div class="u-container-layout u-container-layout-1"><span class="u-file-icon u-icon u-icon-1"><img
+                    src="images/2919592.png" alt=""></span><span class="u-file-icon u-icon u-icon-2"><img
+                    src="images/6861362.png" alt=""></span>
+                <h2 class="u-text u-text-default u-text-1">Име на картичката</h2>
+                <p class="u-text u-text-2">Описание на картичката</p>
+                <a href="https://nicepage.site"
+                  class="u-active-none u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-palette-1-base u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-btn-rectangle u-button-style u-hover-none u-none u-radius-0 u-top-left-radius-0 u-top-right-radius-0 u-btn-1">Владислав
+                  Димитров</a>
+                <p class="u-text u-text-default u-text-3">Създал:</p>
+                <a href="https://nicepage.com/k/parking-html-templates"
+                  class="u-active-none u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-palette-1-base u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-btn-rectangle u-button-style u-hover-none u-none u-radius-0 u-top-left-radius-0 u-top-right-radius-0 u-btn-2">Рожден
+                  ден</a>
+                <p class="u-text u-text-default u-text-4">Категория:</p>
+                <p class="u-text u-text-default u-text-5">Цена за брой:</p>
+                <p class="u-text u-text-default u-text-6">2.50 лв.</p>
+                <p class="u-text u-text-default u-text-7">10 броя</p>
+                <p class="u-text u-text-default u-text-8">Остават:</p>
+                <div class="u-form u-form-1">
+                  <form action="https://forms.nicepagesrv.com/v2/form/process"
+                    class="u-clearfix u-form-horizontal u-form-spacing-15 u-inner-form" style="padding: 15px"
+                    source="email">
+                    <div class="u-form-group u-label-top">
+                      <label for="name-558c" class="u-label">Купи</label>
+                      <input type="text" placeholder="Брой" id="name-558c" name="numOfCards"
+                        class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10" required="required">
+                    </div>
+                    <div class="u-form-group u-form-submit u-label-top">
+                      <a href="#" class="u-btn u-btn-submit u-button-style">Купи</a>
+                      <input type="submit" value="submit" class="u-form-control-hidden">
+                    </div>
+                    <div class="u-form-send-message u-form-send-success">Thank you! Your message has been sent.</div>
+                    <div class="u-form-send-error u-form-send-message">Unable to send your message. Please fix errors
+                      then try again.</div>
+                    <input type="hidden" value="" name="recaptchaResponse">
+                    <input type="hidden" name="formServices" value="2dbdbb5f5f57a7961aaa0e0a2491c934">
+                  </form>
+                </div>
+                <a href="https://nicepage.studio"
+                  class="u-border-2 u-border-grey-75 u-btn u-btn-round u-button-style u-gradient u-none u-radius-4 u-text-body-alt-color u-btn-4"><span
+                    class="u-icon u-text-white">
+                    <svg class="u-svg-content" viewBox="0 0 512 512" x="0px" y="0px"
+                      style="width: 1em; height: 1em;">
+                      <path
+                        d="M53.333,224C23.936,224,0,247.936,0,277.333V448c0,29.397,23.936,53.333,53.333,53.333h64 c12.011,0,23.061-4.053,32-10.795V224H53.333z">
+                      </path>
+                      <path
+                        d="M512,304c0-12.821-5.077-24.768-13.888-33.579c9.963-10.901,15.04-25.515,13.653-40.725    c-2.496-27.115-26.923-48.363-55.637-48.363H324.352c6.528-19.819,16.981-56.149,16.981-85.333c0-46.272-39.317-85.333-64-85.333 c-22.165,0-37.995,12.48-38.677,12.992c-2.517,2.027-3.989,5.099-3.989,8.341v72.341l-61.44,133.099l-2.56,1.301v228.651    C188.032,475.584,210.005,480,224,480h195.819c23.232,0,43.563-15.659,48.341-37.269c2.453-11.115,1.024-22.315-3.861-32.043 c15.765-7.936,26.368-24.171,26.368-42.688c0-7.552-1.728-14.784-5.013-21.333C501.419,338.731,512,322.496,512,304z">
+                      </path>
+                    </svg>
+                    <img></span>&nbsp;Харесва ми
+                </a>
+                <p class="u-text u-text-default u-text-9">...</p>
+                <p class="u-text u-text-10">харесват картичката</p>
+              </div>
+            </div>
+            <div class="u-container-style u-image u-layout-cell u-right-cell u-size-20 u-image-1" src=""
+              data-image-width="1365" data-image-height="1870">
+              <div class="u-container-layout u-container-layout-2"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="u-clearfix u-grey-5 u-section-8" id="sec-feda">
+    <div class="u-clearfix u-sheet u-sheet-1">
+      <div class="u-clearfix u-gutter-0 u-layout-wrap u-layout-wrap-1">
+        <div class="u-layout">
+          <div class="u-layout-row">
+            <div class="u-align-left u-container-style u-layout-cell u-left-cell u-size-13 u-layout-cell-1">
+              <div class="u-container-layout u-valign-top u-container-layout-1">
+                <div alt=""
+                  class="u-align-left u-expanded-width u-image u-image-circle u-preserve-proportions u-image-1" src=""
+                  data-image-width="256" data-image-height="256">
+                  <div class="u-preserve-proportions-child" style="padding-top: 98.04%;"></div>
+                </div>
+                <h5 class="u-text u-text-1">Име на автора</h5>
+                <h5 class="u-text u-text-2">Дата на добавяне</h5>
+              </div>
+            </div>
+            <div class="u-align-left u-container-style u-layout-cell u-right-cell u-size-47 u-layout-cell-2">
+              <div class="u-container-layout u-container-layout-2"><span class="u-file-icon u-icon u-icon-1"><img
+                    src="images/6861362.png" alt=""></span><span class="u-file-icon u-icon u-icon-2"><img
+                    src="images/2919592.png" alt=""></span>
+                <p class="u-text u-text-3">Картичката е страхотна. Много ми харесва!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="u-align-center u-clearfix u-grey-5 u-section-9" id="sec-5ffd">
+    <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+      <h3 class="u-text u-text-default u-text-1">Коментирай</h3>
+      <div class="u-form u-form-1">
+        <form action="https://forms.nicepagesrv.com/v2/form/process"
+          class="u-clearfix u-form-horizontal u-form-spacing-15 u-inner-form" style="padding: 15px;" source="email">
+          <div class="u-form-group u-form-message u-label-none">
+            <label for="email-ef64" class="u-label">Email</label>
+            <textarea placeholder="Въведете коментар" id="email-ef64" name="comment"
+              class="u-border-1 u-border-grey-30 u-input u-input-rectangle" required="required"></textarea>
+          </div>
+          <div class="u-form-group u-form-submit">
+            <a href="#" class="u-btn u-btn-submit u-button-style">Изпрати</a>
+            <input type="submit" value="submit" class="u-form-control-hidden">
+          </div>
+          <div class="u-form-send-message u-form-send-success">#FormSendSuccess</div>
+          <div class="u-form-send-error u-form-send-message">#FormSendError</div>
+          <input type="hidden" value="" name="recaptchaResponse">
+          <input type="hidden" name="formServices" value="2dbdbb5f5f57a7961aaa0e0a2491c934">
+        </form>
+      </div>
+    </div>
+  </section>
+  <section class="u-align-center u-clearfix u-grey-5 u-section-10" id="sec-7464">
+    <div class="u-clearfix u-sheet u-sheet-1">
+      <h2 class="u-text u-text-default u-text-1">Добавяне на нова картичка</h2>
+      <div class="u-form u-form-1">
+        <form action="https://forms.nicepagesrv.com/v2/form/process"
+          class="u-clearfix u-form-spacing-15 u-form-vertical u-inner-form" style="padding: 10px" source="email"
+          name="form">
+          <div class="u-form-group u-form-name u-label-top">
+            <label for="name-3b9a" class="u-label">Име на картичката:</label>
+            <input type="text" placeholder="Въведете име на картичката" id="name-3b9a" name="name"
+              class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white u-input-1" required="">
+          </div>
+          <div class="u-form-group u-label-top">
+            <label for="email-3b9a" class="u-label">Брой:</label>
+            <input type="text" placeholder="Въведете брой картички" id="email-3b9a" name="count"
+              class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white u-input-2"
+              required="required">
+          </div>
+          <div class="u-form-group u-label-top u-form-group-3">
+            <label for="text-f937" class="u-label">Цена за брой:</label>
+            <input type="text" placeholder="Въведете единична цена" id="text-f937" name="price"
+              class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white u-input-3">
+          </div>
+          <div class="u-form-group u-label-top u-form-group-4">
+            <label for="text-d5ae" class="u-label">Изображение на картичката</label>
+            <input type="text" placeholder="Въведете адрес на изображението" id="text-d5ae" name="image"
+              class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white u-input-4">
+          </div>
+          <div class="u-form-group u-label-top u-form-group-5">
+            <label for="text-a271" class="u-label">Описание на картичката</label>
+            <input type="text" placeholder="Въведете описание" id="text-a271" name="description"
+              class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white u-input-5">
+          </div>
+          <div class="u-form-group u-form-select u-label-top u-form-group-6">
+            <label for="select-67b6" class="u-label">Категория:</label>
+            <div class="u-form-select-wrapper">
+              <select id="select-67b6" name="select"
+                class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white u-input-6">
+                <option value="Item 1">Item 1</option>
+                <option value="Item 2">Item 2</option>
+                <option value="Item 3">Item 3</option>
+              </select>
+              <svg class="u-caret u-caret-svg" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px"
+                viewBox="0 0 16 16" style="fill:currentColor;" xml:space="preserve">
+                <polygon class="st0" points="8,12 2,4 14,4 "></polygon>
+              </svg>
+            </div>
+          </div>
+          <div class="u-align-left u-form-group u-form-submit u-label-top">
+            <a href="#" class="u-btn u-btn-submit u-button-style">Добавяне</a>
+            <input type="submit" value="submit" class="u-form-control-hidden">
+          </div>
+          <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
+          <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try
+            again. </div>
+          <input type="hidden" value="" name="recaptchaResponse">
+          <input type="hidden" name="formServices" value="2dbdbb5f5f57a7961aaa0e0a2491c934">
+        </form>
+      </div>
+    </div>
+  </section>
+  <section class="u-align-center u-clearfix u-grey-5 u-section-11" id="sec-fd74">
+    <div class="u-clearfix u-sheet u-sheet-1">
+      <h2 class="u-text u-text-default u-text-1">Редактиране на картичка</h2>
+      <div class="u-form u-form-1">
+        <form action="https://forms.nicepagesrv.com/v2/form/process"
+          class="u-clearfix u-form-spacing-15 u-form-vertical u-inner-form" style="padding: 10px" source="email"
+          name="form">
+          <div class="u-form-group u-form-name u-label-top">
+            <label for="name-3b9a" class="u-label">Име на картичката:</label>
+            <input type="text" placeholder="Въведете име на картичката" id="name-3b9a" name="name"
+              class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white u-input-1" required="">
+          </div>
+          <div class="u-form-group u-label-top">
+            <label for="email-3b9a" class="u-label">Брой:</label>
+            <input type="text" placeholder="Въведете брой картички" id="email-3b9a" name="count"
+              class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white u-input-2"
+              required="required">
+          </div>
+          <div class="u-form-group u-label-top u-form-group-3">
+            <label for="text-f937" class="u-label">Цена за брой:</label>
+            <input type="text" placeholder="Въведете единична цена" id="text-f937" name="price"
+              class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white u-input-3">
+          </div>
+          <div class="u-form-group u-label-top u-form-group-4">
+            <label for="text-d5ae" class="u-label">Изображение на картичката</label>
+            <input type="text" placeholder="Въведете адрес на изображението" id="text-d5ae" name="image"
+              class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white u-input-4">
+          </div>
+          <div class="u-form-group u-label-top u-form-group-5">
+            <label for="text-a271" class="u-label">Описание на картичката</label>
+            <input type="text" placeholder="Въведете описание" id="text-a271" name="description"
+              class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white u-input-5">
+          </div>
+          <div class="u-form-group u-form-select u-label-top u-form-group-6">
+            <label for="select-67b6" class="u-label">Категория:</label>
+            <div class="u-form-select-wrapper">
+              <select id="select-67b6" name="select"
+                class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white u-input-6">
+                <option value="Item 1" data-calc="">Item 1</option>
+                <option value="Item 2" data-calc="">Item 2</option>
+                <option value="Item 3" data-calc="">Item 3</option>
+              </select>
+              <svg class="u-caret u-caret-svg" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px"
+                viewBox="0 0 16 16" style="fill:currentColor;" xml:space="preserve">
+                <polygon class="st0" points="8,12 2,4 14,4 "></polygon>
+              </svg>
+            </div>
+          </div>
+          <div class="u-align-left u-form-group u-form-submit u-label-top">
+            <a href="#" class="u-btn u-btn-submit u-button-style">Добавяне</a>
+            <input type="submit" value="submit" class="u-form-control-hidden">
+          </div>
+          <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
+          <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try
+            again. </div>
+          <input type="hidden" value="" name="recaptchaResponse">
+          <input type="hidden" name="formServices" value="2dbdbb5f5f57a7961aaa0e0a2491c934">
+        </form>
+      </div>
+    </div>
+  </section>
+  <section class="u-clearfix u-grey-5 u-section-12" id="sec-7411">
+    <div class="u-clearfix u-sheet u-sheet-1">
+      <div class="u-clearfix u-expanded-width u-gutter-0 u-layout-spacing-vertical u-layout-wrap u-layout-wrap-1">
+        <div class="u-layout">
+          <div class="u-layout-row">
+            <div class="u-align-left u-container-style u-layout-cell u-left-cell u-size-40 u-layout-cell-1">
+              <div class="u-container-layout u-valign-top u-container-layout-1">
+                <h2 class="u-text u-text-default u-text-font u-text-1">Изтриване на картичка</h2>
+                <h2 class="u-text u-text-default u-text-2">Име на картичката</h2>
+                <p class="u-text u-text-3">Описание на картичката</p>
+                <a href="https://nicepage.site"
+                  class="u-active-none u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-palette-1-base u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-btn-rectangle u-button-style u-hover-none u-none u-radius-0 u-top-left-radius-0 u-top-right-radius-0 u-btn-1">Владислав
+                  Димитров</a>
+                <p class="u-text u-text-default u-text-4">Създал:</p>
+                <a href="https://nicepage.com/k/parking-html-templates"
+                  class="u-active-none u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-palette-1-base u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-btn-rectangle u-button-style u-hover-none u-none u-radius-0 u-top-left-radius-0 u-top-right-radius-0 u-btn-2">Рожден
+                  ден</a>
+                <p class="u-text u-text-default u-text-5">Категория:</p>
+                <p class="u-text u-text-default u-text-6">2.50 лв.</p>
+                <p class="u-text u-text-default u-text-7">Цена за брой:</p>
+                <p class="u-text u-text-default u-text-8">10 броя</p>
+                <p class="u-text u-text-default u-text-9">Остават:</p>
+                <div class="u-form u-form-1">
+                  <form action="https://forms.nicepagesrv.com/v2/form/process"
+                    class="u-clearfix u-form-horizontal u-form-spacing-15 u-inner-form" style="padding: 15px"
+                    source="email">
+                    <div class="u-form-group u-form-submit u-label-top">
+                      <a href="#"
+                        class="u-border-none u-btn u-btn-submit u-button-style u-palette-2-base u-btn-3">Изтрий</a>
+                      <input type="submit" value="submit" class="u-form-control-hidden">
+                    </div>
+                    <div class="u-form-send-message u-form-send-success">Thank you! Your message has been sent.</div>
+                    <div class="u-form-send-error u-form-send-message">Unable to send your message. Please fix errors
+                      then try again.</div>
+                    <input type="hidden" value="" name="recaptchaResponse">
+                    <input type="hidden" name="formServices" value="2dbdbb5f5f57a7961aaa0e0a2491c934">
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class="u-container-style u-image u-layout-cell u-right-cell u-size-20 u-image-1" src=""
+              data-image-width="1365" data-image-height="1870">
+              <div class="u-container-layout u-container-layout-2"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="u-align-center u-clearfix u-grey-5 u-section-13" id="sec-8e51">
+    <div class="u-clearfix u-sheet u-sheet-1">
+      <h2 class="u-text u-text-default u-text-1">Име на автора</h2>
+      <p class="u-text u-text-2">Брой качени картички:</p>
+      <p class="u-text u-text-3">...</p>
+      <p class="u-text u-text-4">Брой харесани картички:</p>
+      <p class="u-text u-text-5">...</p>
+      <div class="u-rotation-parent u-rotation-parent-1">
+        <div class="u-image u-image-circle u-rotate-90 u-image-1" alt="" data-image-width="3296"
+          data-image-height="2472"></div>
+      </div>
+      <h3 class="u-text u-text-default u-text-6">Качени картички:</h3>
+      <div class="u-expanded-width u-gallery u-layout-grid u-lightbox u-show-text-on-hover u-gallery-1">
+        <div class="u-gallery-inner u-gallery-inner-1">
+          <div class="u-effect-fade u-gallery-item">
+            <div class="u-back-slide">
+              <img class="u-back-image u-expanded"
+                src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJkZWZhdWx0LWltYWdlLXNvbGlkIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNDAwIDI2NSIgc3R5bGU9IndpZHRoOiA0MDBweDsgaGVpZ2h0OiAyNjVweDsiPg0KPHJlY3QgZmlsbD0iI0M2RDhFMSIgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyNjUiLz4NCjxwYXRoIGZpbGw9IiNEOUUzRTgiIGQ9Ik0zOTUuMyw5Ni4yYy01LTAuOC02LjEsMS4xLTguNSwyLjljLTEtMi4zLTIuNi02LjItNy43LTVjMS41LTUuMy0yLjYtOC40LTcuNy04LjRjLTAuNiwwLTEuMiwwLjEtMS44LDAuMg0KCWMtMS44LTQuMS02LTYuOS0xMC43LTYuOWMtNi41LDAtMTEuOCw1LjMtMTEuOCwxMS44YzAsMC40LDAsMC45LDAuMSwxLjNjLTEuMi0wLjgtMi41LTEuMy0zLjktMS4zYy00LjMsMC03LjksNC4yLTcuOSw5LjQNCgljMCwxLjIsMC4yLDIuNCwwLjYsMy41Yy0wLjUtMC4xLTEtMC4xLTEuNi0wLjFjLTYuOSwwLTEyLjUsNS41LTEyLjcsMTIuNGMtMC45LTAuMi0xLjktMC40LTIuOS0wLjRjLTYuNCwwLTExLjcsNS4yLTEyLjUsMTEuOA0KCWMtMS4yLTAuNC0yLjUtMC42LTMuOS0wLjZjLTUuOSwwLTEwLjgsMy44LTEyLjEsOC45Yy0yLjQtMi01LjUtMy4yLTguOS0zLjJjLTYsMC0xMS4xLDMuNy0xMi44LDguOGMtMS41LTEuNC0zLjgtMi4zLTYuMy0yLjMNCgljLTIuMSwwLTQuMSwwLjYtNS41LDEuN2gtMC4xYy0xLjMtNS41LTYuMi05LjUtMTIuMS05LjVjLTIuNCwwLTQuNywwLjctNi42LDEuOWMtMS40LTAuNy0zLTEuMi00LjgtMS4yYy0wLjMsMC0wLjUsMC0wLjgsMA0KCWMtMS41LTQuMS01LjItNy05LjUtN2MtMy4xLDAtNS45LDEuNS03LjgsMy45Yy0yLjItNC44LTYuOC04LjItMTIuMi04LjJjLTUuNiwwLTEwLjUsMy43LTEyLjUsOC44Yy0yLjEtMC45LTQuNC0xLjUtNi45LTEuNQ0KCWMtNi44LDAtMTIuNSwzLjktMTQuNSw5LjNjLTAuMiwwLTAuNSwwLTAuNywwYy01LjIsMC05LjYsMy4yLTExLjQsNy44Yy0yLjctMi44LTctNC41LTExLjgtNC41Yy0zLjMsMC02LjQsMC45LTguOSwyLjMNCgljLTIuMS02LjUtOC0xMi4yLTE4LjEtOS45Yy0yLjctMi4zLTYuMy0zLjctMTAuMS0zLjdjLTIuNSwwLTQuOCwwLjYtNi45LDEuNmMtMi4yLTUuOS03LjktMTAuMS0xNC42LTEwLjFjLTguNiwwLTE1LjYsNy0xNS42LDE1LjYNCgljMCwwLjksMC4xLDEuNywwLjIsMi41Yy0yLjYtNS03LjgtOC40LTEzLjgtOC40Yy04LjMsMC0xNS4xLDYuNS0xNS42LDE0LjZjLTIuOS0zLjItNy01LjMtMTEuNy01LjNjLTcuNCwwLTEzLjUsNS4xLTE1LjIsMTINCgljLTIuOS0zLjUtOS44LTYtMTQuNy02djExOS4yaDQwMFYxMDJDNDAwLDEwMiw0MDAsOTcsMzk1LjMsOTYuMnoiLz4NCjxwYXRoIGZpbGw9IiM4RUE4QkIiIGQ9Ik00MDAsMjA2LjJjMCwwLTI1LjMtMTkuMi0zMy42LTI1LjdjLTEzLjQtMTAuNi0yMy4xLTEyLjktMzEuNy03cy0yMy45LDE5LjctMjMuOSwxOS43cy01OC45LTYzLjktNjEuNS02Ni40DQoJYy0xLjUtMS40LTMuNi0xLjctNS41LTAuOWMtNS4yLDIuNC0xNy42LDkuNy0yNC41LDEyLjdjLTYuOSwyLjktNDEtNTAuNy00OS42LTUzcy04NC4zLDgzLjMtMTAxLjQsNzUuMXMtMjYuOS0yLjMtMzUuNCwzLjUNCgljLTguNiw1LjktMTEsNS45LTE1LjksOC4ycy0xNy4xLTUuOS0xNy4xLTUuOVYyNjVjMCwwLDQwMCwwLjIsNDAwLDB2LTU4LjhINDAweiIvPg0KPHBhdGggZmlsbD0iIzdFOTZBNiIgZD0iTTMzMy40LDE3OWMtMTMuMS05LjMtNDAsNC42LTU1LjEsMTAuN2MtMjMuNiw5LjYtOTQtNTQuNC0xMDcuMi01OS43YzAsMC00LjIsMy43LTkuNiw3LjYNCgljLTMuNS0wLjQtOC40LTUuNy05LjktNC43Yy00LjYsMy4xLTE3LjgsMTUuNC0yOC4zLDI2LjZjLTEwLjUsMTEuMy0xMS43LDAtMTUuOC0wLjZjLTIuNS0wLjQtNTQuMSw0Mi41LTU4LjcsNDMuMQ0KCUMyMi4zLDIwNS4zLDAsMTk3LjUsMCwxOTcuNVYyNjVsNDAwLTAuMXYtNTMuM0M0MDAsMjExLjYsMzQ0LjgsMTg3LjEsMzMzLjQsMTc5eiIvPg0KPHBhdGggZmlsbD0iIzc4OEY5RSIgZD0iTTAsMjY0Ljl2LTU4LjZjMCwwLDguMiwxLjgsMTEuMyw1LjNjMy4xLDMuNiwyNi4xLTQuMiwyNi4xLDQuN3MwLjUsNC4yLDAuNSwxNC44YzAsMTAuNywyMy00LjIsMzguMS0xOC40DQoJczM0LjktNDkuMiwzNi0zNWMxLDE0LjItMTUuMSwzOS4yLTI0LDU2LjRDNzkuMSwyNTEuNCw1MS43LDI2NSw1MS43LDI2NUwwLDI2NC45eiIvPg0KPHBhdGggZmlsbD0iIzc4OEY5RSIgZD0iTTEwMCwyNjVjMCwwLDY2LjctMTI1LjEsNjguMy0xMTYuOHMtNi44LDI5LjcsMi4xLDI2LjFjOC45LTMuNiwxNC42LTE2LDE4LjgtOS41czE2LjIsMzguNiwyMS45LDMzLjgNCgljNS43LTQuNywyMS40LTEzLjEsMjIuNC02LjVjMSw2LjUtMSw1LjMtNS43LDIwLjJDMjIzLjEsMjI3LjEsMjAwLDI2NSwyMDAsMjY1aC0xMGMwLDAsNi0yNC44LDguNi0zNC45YzIuNi0xMC4xLTMuNy0xOS0xMi04LjMNCglzLTIzLDIyLTI0LDE3LjhzLTUuNy0zMC4zLTE4LjgtMTQuMmMtMTMsMTYtMzMuOCwzOS43LTMzLjgsMzkuN2gtMTBWMjY1eiIvPg0KPHBhdGggZmlsbD0iIzc4OEY5RSIgZD0iTTI0NSwyNjVjMCwwLDE5LjgtNTQuNywzMy40LTY0LjJzNTMuNy0yNy45LDQ2LjktMTMuNmMtNi44LDE0LjItMTEsMzQuNC0yMC4zLDQ5LjgNCgljLTkuNCwxNS40LTE4LjgsMjYuMS0xNC4xLDEzLjZjNC43LTEyLjUsNi40LTIzLjMsMy43LTIzLjFDMjcxLjMsMjI5LjEsMjYwLDI2NSwyNjAsMjY1SDI0NXoiLz4NCjwvc3ZnPg0K">
+            </div>
+            <div class="u-over-slide u-shading u-over-slide-1">
+              <h3 class="u-gallery-heading"></h3>
+              <p class="u-gallery-text"></p>
+            </div>
+          </div>
+          <div class="u-effect-fade u-gallery-item">
+            <div class="u-back-slide">
+              <img class="u-back-image u-expanded"
+                src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJkZWZhdWx0LWltYWdlLXNvbGlkIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNDAwIDI2NSIgc3R5bGU9IndpZHRoOiA0MDBweDsgaGVpZ2h0OiAyNjVweDsiPg0KPHJlY3QgZmlsbD0iI0M2RDhFMSIgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyNjUiLz4NCjxwYXRoIGZpbGw9IiNEOUUzRTgiIGQ9Ik0zOTUuMyw5Ni4yYy01LTAuOC02LjEsMS4xLTguNSwyLjljLTEtMi4zLTIuNi02LjItNy43LTVjMS41LTUuMy0yLjYtOC40LTcuNy04LjRjLTAuNiwwLTEuMiwwLjEtMS44LDAuMg0KCWMtMS44LTQuMS02LTYuOS0xMC43LTYuOWMtNi41LDAtMTEuOCw1LjMtMTEuOCwxMS44YzAsMC40LDAsMC45LDAuMSwxLjNjLTEuMi0wLjgtMi41LTEuMy0zLjktMS4zYy00LjMsMC03LjksNC4yLTcuOSw5LjQNCgljMCwxLjIsMC4yLDIuNCwwLjYsMy41Yy0wLjUtMC4xLTEtMC4xLTEuNi0wLjFjLTYuOSwwLTEyLjUsNS41LTEyLjcsMTIuNGMtMC45LTAuMi0xLjktMC40LTIuOS0wLjRjLTYuNCwwLTExLjcsNS4yLTEyLjUsMTEuOA0KCWMtMS4yLTAuNC0yLjUtMC42LTMuOS0wLjZjLTUuOSwwLTEwLjgsMy44LTEyLjEsOC45Yy0yLjQtMi01LjUtMy4yLTguOS0zLjJjLTYsMC0xMS4xLDMuNy0xMi44LDguOGMtMS41LTEuNC0zLjgtMi4zLTYuMy0yLjMNCgljLTIuMSwwLTQuMSwwLjYtNS41LDEuN2gtMC4xYy0xLjMtNS41LTYuMi05LjUtMTIuMS05LjVjLTIuNCwwLTQuNywwLjctNi42LDEuOWMtMS40LTAuNy0zLTEuMi00LjgtMS4yYy0wLjMsMC0wLjUsMC0wLjgsMA0KCWMtMS41LTQuMS01LjItNy05LjUtN2MtMy4xLDAtNS45LDEuNS03LjgsMy45Yy0yLjItNC44LTYuOC04LjItMTIuMi04LjJjLTUuNiwwLTEwLjUsMy43LTEyLjUsOC44Yy0yLjEtMC45LTQuNC0xLjUtNi45LTEuNQ0KCWMtNi44LDAtMTIuNSwzLjktMTQuNSw5LjNjLTAuMiwwLTAuNSwwLTAuNywwYy01LjIsMC05LjYsMy4yLTExLjQsNy44Yy0yLjctMi44LTctNC41LTExLjgtNC41Yy0zLjMsMC02LjQsMC45LTguOSwyLjMNCgljLTIuMS02LjUtOC0xMi4yLTE4LjEtOS45Yy0yLjctMi4zLTYuMy0zLjctMTAuMS0zLjdjLTIuNSwwLTQuOCwwLjYtNi45LDEuNmMtMi4yLTUuOS03LjktMTAuMS0xNC42LTEwLjFjLTguNiwwLTE1LjYsNy0xNS42LDE1LjYNCgljMCwwLjksMC4xLDEuNywwLjIsMi41Yy0yLjYtNS03LjgtOC40LTEzLjgtOC40Yy04LjMsMC0xNS4xLDYuNS0xNS42LDE0LjZjLTIuOS0zLjItNy01LjMtMTEuNy01LjNjLTcuNCwwLTEzLjUsNS4xLTE1LjIsMTINCgljLTIuOS0zLjUtOS44LTYtMTQuNy02djExOS4yaDQwMFYxMDJDNDAwLDEwMiw0MDAsOTcsMzk1LjMsOTYuMnoiLz4NCjxwYXRoIGZpbGw9IiM4RUE4QkIiIGQ9Ik00MDAsMjA2LjJjMCwwLTI1LjMtMTkuMi0zMy42LTI1LjdjLTEzLjQtMTAuNi0yMy4xLTEyLjktMzEuNy03cy0yMy45LDE5LjctMjMuOSwxOS43cy01OC45LTYzLjktNjEuNS02Ni40DQoJYy0xLjUtMS40LTMuNi0xLjctNS41LTAuOWMtNS4yLDIuNC0xNy42LDkuNy0yNC41LDEyLjdjLTYuOSwyLjktNDEtNTAuNy00OS42LTUzcy04NC4zLDgzLjMtMTAxLjQsNzUuMXMtMjYuOS0yLjMtMzUuNCwzLjUNCgljLTguNiw1LjktMTEsNS45LTE1LjksOC4ycy0xNy4xLTUuOS0xNy4xLTUuOVYyNjVjMCwwLDQwMCwwLjIsNDAwLDB2LTU4LjhINDAweiIvPg0KPHBhdGggZmlsbD0iIzdFOTZBNiIgZD0iTTMzMy40LDE3OWMtMTMuMS05LjMtNDAsNC42LTU1LjEsMTAuN2MtMjMuNiw5LjYtOTQtNTQuNC0xMDcuMi01OS43YzAsMC00LjIsMy43LTkuNiw3LjYNCgljLTMuNS0wLjQtOC40LTUuNy05LjktNC43Yy00LjYsMy4xLTE3LjgsMTUuNC0yOC4zLDI2LjZjLTEwLjUsMTEuMy0xMS43LDAtMTUuOC0wLjZjLTIuNS0wLjQtNTQuMSw0Mi41LTU4LjcsNDMuMQ0KCUMyMi4zLDIwNS4zLDAsMTk3LjUsMCwxOTcuNVYyNjVsNDAwLTAuMXYtNTMuM0M0MDAsMjExLjYsMzQ0LjgsMTg3LjEsMzMzLjQsMTc5eiIvPg0KPHBhdGggZmlsbD0iIzc4OEY5RSIgZD0iTTAsMjY0Ljl2LTU4LjZjMCwwLDguMiwxLjgsMTEuMyw1LjNjMy4xLDMuNiwyNi4xLTQuMiwyNi4xLDQuN3MwLjUsNC4yLDAuNSwxNC44YzAsMTAuNywyMy00LjIsMzguMS0xOC40DQoJczM0LjktNDkuMiwzNi0zNWMxLDE0LjItMTUuMSwzOS4yLTI0LDU2LjRDNzkuMSwyNTEuNCw1MS43LDI2NSw1MS43LDI2NUwwLDI2NC45eiIvPg0KPHBhdGggZmlsbD0iIzc4OEY5RSIgZD0iTTEwMCwyNjVjMCwwLDY2LjctMTI1LjEsNjguMy0xMTYuOHMtNi44LDI5LjcsMi4xLDI2LjFjOC45LTMuNiwxNC42LTE2LDE4LjgtOS41czE2LjIsMzguNiwyMS45LDMzLjgNCgljNS43LTQuNywyMS40LTEzLjEsMjIuNC02LjVjMSw2LjUtMSw1LjMtNS43LDIwLjJDMjIzLjEsMjI3LjEsMjAwLDI2NSwyMDAsMjY1aC0xMGMwLDAsNi0yNC44LDguNi0zNC45YzIuNi0xMC4xLTMuNy0xOS0xMi04LjMNCglzLTIzLDIyLTI0LDE3LjhzLTUuNy0zMC4zLTE4LjgtMTQuMmMtMTMsMTYtMzMuOCwzOS43LTMzLjgsMzkuN2gtMTBWMjY1eiIvPg0KPHBhdGggZmlsbD0iIzc4OEY5RSIgZD0iTTI0NSwyNjVjMCwwLDE5LjgtNTQuNywzMy40LTY0LjJzNTMuNy0yNy45LDQ2LjktMTMuNmMtNi44LDE0LjItMTEsMzQuNC0yMC4zLDQ5LjgNCgljLTkuNCwxNS40LTE4LjgsMjYuMS0xNC4xLDEzLjZjNC43LTEyLjUsNi40LTIzLjMsMy43LTIzLjFDMjcxLjMsMjI5LjEsMjYwLDI2NSwyNjAsMjY1SDI0NXoiLz4NCjwvc3ZnPg0K">
+            </div>
+            <div class="u-over-slide u-shading u-over-slide-2">
+              <h3 class="u-gallery-heading"></h3>
+              <p class="u-gallery-text"></p>
+            </div>
+          </div>
+          <div class="u-effect-fade u-gallery-item">
+            <div class="u-back-slide">
+              <img class="u-back-image u-expanded"
+                src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJkZWZhdWx0LWltYWdlLXNvbGlkIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNDAwIDI2NSIgc3R5bGU9IndpZHRoOiA0MDBweDsgaGVpZ2h0OiAyNjVweDsiPg0KPHJlY3QgZmlsbD0iI0M2RDhFMSIgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyNjUiLz4NCjxwYXRoIGZpbGw9IiNEOUUzRTgiIGQ9Ik0zOTUuMyw5Ni4yYy01LTAuOC02LjEsMS4xLTguNSwyLjljLTEtMi4zLTIuNi02LjItNy43LTVjMS41LTUuMy0yLjYtOC40LTcuNy04LjRjLTAuNiwwLTEuMiwwLjEtMS44LDAuMg0KCWMtMS44LTQuMS02LTYuOS0xMC43LTYuOWMtNi41LDAtMTEuOCw1LjMtMTEuOCwxMS44YzAsMC40LDAsMC45LDAuMSwxLjNjLTEuMi0wLjgtMi41LTEuMy0zLjktMS4zYy00LjMsMC03LjksNC4yLTcuOSw5LjQNCgljMCwxLjIsMC4yLDIuNCwwLjYsMy41Yy0wLjUtMC4xLTEtMC4xLTEuNi0wLjFjLTYuOSwwLTEyLjUsNS41LTEyLjcsMTIuNGMtMC45LTAuMi0xLjktMC40LTIuOS0wLjRjLTYuNCwwLTExLjcsNS4yLTEyLjUsMTEuOA0KCWMtMS4yLTAuNC0yLjUtMC42LTMuOS0wLjZjLTUuOSwwLTEwLjgsMy44LTEyLjEsOC45Yy0yLjQtMi01LjUtMy4yLTguOS0zLjJjLTYsMC0xMS4xLDMuNy0xMi44LDguOGMtMS41LTEuNC0zLjgtMi4zLTYuMy0yLjMNCgljLTIuMSwwLTQuMSwwLjYtNS41LDEuN2gtMC4xYy0xLjMtNS41LTYuMi05LjUtMTIuMS05LjVjLTIuNCwwLTQuNywwLjctNi42LDEuOWMtMS40LTAuNy0zLTEuMi00LjgtMS4yYy0wLjMsMC0wLjUsMC0wLjgsMA0KCWMtMS41LTQuMS01LjItNy05LjUtN2MtMy4xLDAtNS45LDEuNS03LjgsMy45Yy0yLjItNC44LTYuOC04LjItMTIuMi04LjJjLTUuNiwwLTEwLjUsMy43LTEyLjUsOC44Yy0yLjEtMC45LTQuNC0xLjUtNi45LTEuNQ0KCWMtNi44LDAtMTIuNSwzLjktMTQuNSw5LjNjLTAuMiwwLTAuNSwwLTAuNywwYy01LjIsMC05LjYsMy4yLTExLjQsNy44Yy0yLjctMi44LTctNC41LTExLjgtNC41Yy0zLjMsMC02LjQsMC45LTguOSwyLjMNCgljLTIuMS02LjUtOC0xMi4yLTE4LjEtOS45Yy0yLjctMi4zLTYuMy0zLjctMTAuMS0zLjdjLTIuNSwwLTQuOCwwLjYtNi45LDEuNmMtMi4yLTUuOS03LjktMTAuMS0xNC42LTEwLjFjLTguNiwwLTE1LjYsNy0xNS42LDE1LjYNCgljMCwwLjksMC4xLDEuNywwLjIsMi41Yy0yLjYtNS03LjgtOC40LTEzLjgtOC40Yy04LjMsMC0xNS4xLDYuNS0xNS42LDE0LjZjLTIuOS0zLjItNy01LjMtMTEuNy01LjNjLTcuNCwwLTEzLjUsNS4xLTE1LjIsMTINCgljLTIuOS0zLjUtOS44LTYtMTQuNy02djExOS4yaDQwMFYxMDJDNDAwLDEwMiw0MDAsOTcsMzk1LjMsOTYuMnoiLz4NCjxwYXRoIGZpbGw9IiM4RUE4QkIiIGQ9Ik00MDAsMjA2LjJjMCwwLTI1LjMtMTkuMi0zMy42LTI1LjdjLTEzLjQtMTAuNi0yMy4xLTEyLjktMzEuNy03cy0yMy45LDE5LjctMjMuOSwxOS43cy01OC45LTYzLjktNjEuNS02Ni40DQoJYy0xLjUtMS40LTMuNi0xLjctNS41LTAuOWMtNS4yLDIuNC0xNy42LDkuNy0yNC41LDEyLjdjLTYuOSwyLjktNDEtNTAuNy00OS42LTUzcy04NC4zLDgzLjMtMTAxLjQsNzUuMXMtMjYuOS0yLjMtMzUuNCwzLjUNCgljLTguNiw1LjktMTEsNS45LTE1LjksOC4ycy0xNy4xLTUuOS0xNy4xLTUuOVYyNjVjMCwwLDQwMCwwLjIsNDAwLDB2LTU4LjhINDAweiIvPg0KPHBhdGggZmlsbD0iIzdFOTZBNiIgZD0iTTMzMy40LDE3OWMtMTMuMS05LjMtNDAsNC42LTU1LjEsMTAuN2MtMjMuNiw5LjYtOTQtNTQuNC0xMDcuMi01OS43YzAsMC00LjIsMy43LTkuNiw3LjYNCgljLTMuNS0wLjQtOC40LTUuNy05LjktNC43Yy00LjYsMy4xLTE3LjgsMTUuNC0yOC4zLDI2LjZjLTEwLjUsMTEuMy0xMS43LDAtMTUuOC0wLjZjLTIuNS0wLjQtNTQuMSw0Mi41LTU4LjcsNDMuMQ0KCUMyMi4zLDIwNS4zLDAsMTk3LjUsMCwxOTcuNVYyNjVsNDAwLTAuMXYtNTMuM0M0MDAsMjExLjYsMzQ0LjgsMTg3LjEsMzMzLjQsMTc5eiIvPg0KPHBhdGggZmlsbD0iIzc4OEY5RSIgZD0iTTAsMjY0Ljl2LTU4LjZjMCwwLDguMiwxLjgsMTEuMyw1LjNjMy4xLDMuNiwyNi4xLTQuMiwyNi4xLDQuN3MwLjUsNC4yLDAuNSwxNC44YzAsMTAuNywyMy00LjIsMzguMS0xOC40DQoJczM0LjktNDkuMiwzNi0zNWMxLDE0LjItMTUuMSwzOS4yLTI0LDU2LjRDNzkuMSwyNTEuNCw1MS43LDI2NSw1MS43LDI2NUwwLDI2NC45eiIvPg0KPHBhdGggZmlsbD0iIzc4OEY5RSIgZD0iTTEwMCwyNjVjMCwwLDY2LjctMTI1LjEsNjguMy0xMTYuOHMtNi44LDI5LjcsMi4xLDI2LjFjOC45LTMuNiwxNC42LTE2LDE4LjgtOS41czE2LjIsMzguNiwyMS45LDMzLjgNCgljNS43LTQuNywyMS40LTEzLjEsMjIuNC02LjVjMSw2LjUtMSw1LjMtNS43LDIwLjJDMjIzLjEsMjI3LjEsMjAwLDI2NSwyMDAsMjY1aC0xMGMwLDAsNi0yNC44LDguNi0zNC45YzIuNi0xMC4xLTMuNy0xOS0xMi04LjMNCglzLTIzLDIyLTI0LDE3LjhzLTUuNy0zMC4zLTE4LjgtMTQuMmMtMTMsMTYtMzMuOCwzOS43LTMzLjgsMzkuN2gtMTBWMjY1eiIvPg0KPHBhdGggZmlsbD0iIzc4OEY5RSIgZD0iTTI0NSwyNjVjMCwwLDE5LjgtNTQuNywzMy40LTY0LjJzNTMuNy0yNy45LDQ2LjktMTMuNmMtNi44LDE0LjItMTEsMzQuNC0yMC4zLDQ5LjgNCgljLTkuNCwxNS40LTE4LjgsMjYuMS0xNC4xLDEzLjZjNC43LTEyLjUsNi40LTIzLjMsMy43LTIzLjFDMjcxLjMsMjI5LjEsMjYwLDI2NSwyNjAsMjY1SDI0NXoiLz4NCjwvc3ZnPg0K">
+            </div>
+            <div class="u-over-slide u-shading u-over-slide-3">
+              <h3 class="u-gallery-heading"></h3>
+              <p class="u-gallery-text"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-bc11">
+    <div class="u-clearfix u-sheet u-sheet-1">
+      <p class="u-small-text u-text u-text-variant u-text-1">Petya Panayotova Design Studio - 2023.</p>
+    </div>
+  </footer>
+  <section class="u-backlink u-clearfix u-grey-80">
+    <a class="u-link" href="https://nicepage.com/website-templates" target="_blank">
+      <span>Website Templates</span>
+    </a>
+    <p class="u-text">
+      <span>created with</span>
+    </p>
+    <a class="u-link" href="" target="_blank">
+      <span>Website Builder Software</span>
+    </a>.
+  </section>
+
+</body>
+
+</html>
