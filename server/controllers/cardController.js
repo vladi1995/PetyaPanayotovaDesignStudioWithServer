@@ -28,10 +28,11 @@ router.delete('/delete/:cardId', async(req, res) => {
     res.json(card);
 });
 
-router.put('/edit/:cardId', async(req, res) => {
+router.put('/edit/:cardId', async (req, res) => {
     const cardData = req.body;
-    const card = await cardManager.update(req.params.cardId, cardData);
-    res.json(card);
+    const card = await cardManager.edit(req.params.cardId, cardData);
+
+    res.json({_id: req.params.cardId, ...cardData});
 });
 
 module.exports = router;
