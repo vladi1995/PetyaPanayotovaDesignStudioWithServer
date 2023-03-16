@@ -1,15 +1,7 @@
 import * as request from "./requester";
 
-const baseUrlUsers = 'http://localhost:3030/data/userInfo';
+const baseUrl = 'http://localhost:3030/users';
 
-export const getAll = () => request.get(baseUrlUsers);
+export const getOne = (userId) => request.get(`${baseUrl}/${userId}`);
 
-export const getCurrentUser = (userId) => {
-    const search = encodeURIComponent(`_ownerId="${userId}"`);
-    return request.get(`${baseUrlUsers}?where=${search}`);
-};
-
-export const create = (userInfo) => request.post(baseUrlUsers, userInfo);
-
-export const edit = (userId, userData) => request.put(`${baseUrlUsers}/${userId}`, userData);
-
+export const edit = (userId, userData) => request.put(`${baseUrl}/${userId}`, userData);

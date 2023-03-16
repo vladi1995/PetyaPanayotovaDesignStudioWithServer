@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const cardManager = require('../managers/cardManager');
+const userManager = require('../managers/userManager');
 
 router.get('/', async(req, res) => {
     const cards = await cardManager.getAll();
@@ -8,7 +9,12 @@ router.get('/', async(req, res) => {
 
 router.get('/details/:cardId', async(req, res) => {
     const card = await cardManager.getOneDetailed(req.params.cardId);
-    res.json(card);
+    const currentUser = await userManager.getCurrentUser(req.user);
+    
+    res.json({
+        card,
+        currentUser,
+    });
 });
 
 router.get('/delete/:cardId', async(req, res) => {

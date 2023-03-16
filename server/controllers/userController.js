@@ -21,4 +21,10 @@ router.get('/logout', (req, res) => {
     res.json({ok: true});
 });
 
+router.put('/:userId', async (req, res) => {
+    const userData = req.body;
+    
+    res.json(await userManager.editCurrentUser(req.user._id, userData));
+});
+
 module.exports = router;

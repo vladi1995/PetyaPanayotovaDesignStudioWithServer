@@ -1,11 +1,11 @@
 import * as request from "./requester";
 
-const baseUrlBuying = 'http://localhost:3030/data/boughtProducts';
+const baseUrl = 'http://localhost:3030/cards';
 const baseUrlLike = 'http://localhost:3030/data/likes';
 
-export const getAll = () => request.get(baseUrlBuying);
+export const getOne = (cardId) => request.get(`${baseUrl}/details/${cardId}`);
 
-export const create = (cardId) => request.post(baseUrlBuying, cardId);
+export const create = (cardId) => request.post(baseUrl, cardId);
 
 export const getAllLikes = () => request.get(baseUrlLike);
 

@@ -58,10 +58,11 @@ const cardSchema = new mongoose.Schema({
 
     boughtProducts: [
         {
-            cardId: {
+            user: {
                 type: mongoose.Types.ObjectId,
                 ref: 'Cards',
-            }
+            },
+            count: Number,
         }
     ],
 });

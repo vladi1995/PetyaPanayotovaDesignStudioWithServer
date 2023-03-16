@@ -9,6 +9,7 @@ exports.authentication = () => async (req, res, next) => {
             const decodedToken = await jwt.verify(token, SECRET);
 
             req.user = decodedToken;
+            res.locals.user = decodedToken;
         } catch (err) {
             return res.status(401).json({ok: false});
         }

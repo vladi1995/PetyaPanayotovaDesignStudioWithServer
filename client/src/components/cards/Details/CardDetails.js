@@ -19,82 +19,75 @@ const CardDetails = () => {
     const [loading, setIsLoading] = useState(true);
 
     const [productsToBuy, setProductsToBuy] = useState(0);
-
+    const [currentUser, setCurrentUser] = useState({});
+    
     const [errorPositiveNumber, setErrorPositiveNumber] = useState(false);
     const [errorBudget, setErrorBudget] = useState(false);
     const [errorCount, setErrorCount] = useState(false);
-
-    // const [allBoughtProducts, setAllBoughtProducts] = useState([]);
-    // const [valueCount, setValueCount] = useState(0);
-    // const [isUserBought, setIsUserBought] = useState(false);
-    // const { userInfo, userEdit } = useContext(AuthContext);
-
-
-    useEffect(() => {
-        // featuresService.getAll()
-        //     .then(result => {
-        //         setAllBoughtProducts(result);
-        //         const sumOfAllBought = Number(result.filter(x => x.cardId == cardId).map(x => Number(x.productsToBuy)).reduce((prev, next) => prev + next, 0));
-        //         const isBought = result.filter(x => x.cardId == cardId).some(x => x._ownerId == user._id);
-        //         setIsUserBought(isBought);
-        //         setValueCount(sumOfAllBought);
-        //     });
-
-    }, []);
 
     useEffect(() => {
         setIsLoading(true);
         cardService.getOne(cardId)
             .then(result => {
-                setCard(result);
+                setCard(result.card);
+                setCurrentUser(result.currentUser);
                 setIsLoading(false);
             });
     }, []);
 
-    // const buyHandler = (e) => {
-    //     e.preventDefault();
+    const buyHandler = async (e) => {
+        e.preventDefault();
 
-    //     setErrorPositiveNumber(false);
-    //     setErrorBudget(false);
-    //     setErrorCount(false);
+        setErrorPositiveNumber(false);
+        setErrorBudget(false);
+        setErrorCount(false);
 
-    //     if (productsToBuy <= 0) {
-    //         setErrorPositiveNumber(true);
-    //         return;
-    //     }
+        if (productsToBuy <= 0) {
+            setErrorPositiveNumber(true);
+            return;
+        }
 
-    //     if (productsToBuy * card[0].price > Number(user.budget)) {
-    //         setErrorBudget(true);
-    //         return;
-    //     }
+        if (productsToBuy * card.price > Number(card.ownerId.budget)) {
+            setErrorBudget(true);
+            return;
+        }
 
-    //     if (productsToBuy > Number(card[0].count - valueCount)) {
-    //         setErrorCount(true);
-    //         return;
-    //     }
+        if (productsToBuy > Number(card.count - productsToBuy)) {
+            setErrorCount(true);
+            return;
+        }
 
-    //     featuresService.create({ cardId, productsToBuy })
-    //         .then(result => {
-    //             setValueCount(state => {
-    //                 return Number(state) + Number(result.productsToBuy);
-    //             });
-    //             setIsUserBought(true);
+        card.boughtProducts.push({ user, count: Number(productsToBuy) });
+        currentUser.budget -= Number(card.price) * Number(productsToBuy);
 
-    //             userService.edit(userInfo[0]._id, { budget: Number(userInfo[0].budget) - Number(card[0].price) * Number(productsToBuy) })
-    //                 .then(result => userEdit(result));
-    //         });
-    //  };
+        cardService.edit(cardId, card)
+            .then(result => {
+                cardService.getOne(cardId)
+                    .then(res => {
+                        setCard(res.card);
+                        setIsLoading(false);
+                    });
+            });
 
-    // const onChangeBuyProducts = (e) => {
-    //     setProductsToBuy(e.target.value);
-    // };
+        userService.edit(user._id, currentUser)
+            .then(result => console.log(result));
+    };
 
-    // const likeHandler = (e) => {
-    //     featuresService.createLike({ email: user.email, cardId })
-    //         .then(res => getAllLikes());
-    // };
+    const onChangeBuyProducts = (e) => {
+        setProductsToBuy(e.target.value);
+    };
 
-
+    const likeHandler = (e) => {
+        card.likes.push({ user });
+        cardService.edit(cardId, card)
+        .then(result => {
+            cardService.getOne(cardId)
+                .then(res => {
+                    setCard(res.card);
+                    setIsLoading(false);
+                });
+        });
+    };
     return (
         <>
             {
@@ -131,7 +124,7 @@ const CardDetails = () => {
                                                 <p className="u-text u-text-default u-text-4">Категория:</p>
                                                 <p className="u-text u-text-default u-text-5">Цена за брой:</p>
                                                 <p className="u-text u-text-default u-text-6">{card.price} лв.</p>
-                                                {/* <p className="u-text u-text-default u-text-7">{valueCount ? card[0].count - valueCount : card[0].count} броя</p> */}
+                                                <p className="u-text u-text-default u-text-7">{card.count - card.boughtProducts.length} броя</p>
 
                                                 <p className="u-text u-text-default u-text-8">Остават:</p>
 
@@ -152,13 +145,13 @@ const CardDetails = () => {
 
                                                     </> :
                                                     <>
-                                                        {/* {!isUserBought ?
+                                                        {!card.boughtProducts.length ?
                                                             <div className="u-form u-form-1">
                                                                 <form
                                                                     className="u-clearfix u-form-horizontal u-form-spacing-15 u-inner-form"
                                                                     style={{ "padding": "15px" }}
                                                                     source="email"
-                                                                    // onSubmit={buyHandler}
+                                                                    onSubmit={buyHandler}
                                                                 >
 
                                                                     <div className="u-form-group u-label-top">
@@ -169,8 +162,8 @@ const CardDetails = () => {
                                                                             name="numOfCards"
                                                                             className="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10"
                                                                             required="required"
-                                                                            // value={productsToBuy}
-                                                                            // onChange={onChangeBuyProducts}
+                                                                            value={productsToBuy}
+                                                                            onChange={onChangeBuyProducts}
                                                                         />
                                                                     </div>
 
@@ -186,18 +179,18 @@ const CardDetails = () => {
                                                         }
                                                         {errorPositiveNumber && <div style={{ marginLeft: '65px' }}>/Закупените продукти трябва да са положително число!/</div>}
                                                         {errorBudget && <div style={{ marginLeft: '65px' }}>/Бюджетът ви не е достатъчен!/</div>}
-                                                        {errorCount && <div style={{ marginLeft: '65px' }}>/Недостатъчна наличност!/</div>} */}
+                                                        {errorCount && <div style={{ marginLeft: '65px' }}>/Недостатъчна наличност!/</div>}
 
-                                                        {/* {!likes.some(x => x._ownerId == user._id) &&
+                                                        {!card.likes.length &&
                                                             <button
                                                                 className="u-border-2 u-border-grey-75 u-btn u-btn-round u-button-style u-gradient u-none u-radius-4 u-text-body-alt-color u-btn-4"
                                                                 onClick={likeHandler}
                                                             >
                                                                 &nbsp;Харесва ми
                                                             </button>
-                                                        } */}
+                                                        } 
                                                         <br /><br />
-                                                        {/* <p className="u-text u-text-default u-text-9">{likes.length} </p> */}
+                                                        <p className="u-text u-text-default u-text-9">{card.likes.length} </p> 
                                                         <p className="u-text u-text-10">харесват картичката</p>
                                                     </>
                                                 }
@@ -205,14 +198,14 @@ const CardDetails = () => {
                                         </div>
 
                                         <div className="u-container-style u-image u-layout-cell u-right-cell u-size-20 u-image-1">
-                                            <img src={card.image} style={{ width: "400px", height: "600px", objectFit: "cover" }} />
+                                            <img src={card.image} style={{ "width": "400px", "height": "600px", "objectFit": "cover" }} />
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </section>
-                    {/* <Comments card={card} /> */}
+                    <Comments card={card} />
                 </>
             }
         </>

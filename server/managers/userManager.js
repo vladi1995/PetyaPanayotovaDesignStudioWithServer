@@ -56,3 +56,6 @@ exports.register = async(email, password, firstName, lastName, profileImageUrl, 
 
     return this.login(email, password);
 }
+
+exports.getCurrentUser = (userId) => User.findById(userId);
+exports.editCurrentUser = (userId, userData) => User.findByIdAndUpdate(userId, userData);

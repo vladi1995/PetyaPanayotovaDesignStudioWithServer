@@ -3,7 +3,6 @@ import { useParams, useNavigate } from "react-router-dom";
 
 import { CardContext } from "../../../contexts/CardContext";
 import * as cardService from '../../../services/cardService';
-import * as featureService from '../../../services/featuresService';
 
 import './Edit.css';
 import styles from '../Card.module.css';
@@ -29,14 +28,14 @@ const CardEdit = () => {
     useEffect(() => {
         cardService.getOne(cardId)
             .then(result => {
-                setCard(result);
+                setCard(result.card);
                 setValues(state => ({
-                    name: result.name,
-                    count: result.count,
-                    price: result.price,
-                    image: result.image,
-                    description: result.description,
-                    category: result.category,
+                    name: result.card.name,
+                    count: result.card.count,
+                    price: result.card.price,
+                    image: result.card.image,
+                    description: result.card.description,
+                    category: result.card.category,
                 }));
             });
     }, [cardId]);

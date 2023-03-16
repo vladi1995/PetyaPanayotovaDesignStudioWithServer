@@ -1,16 +1,17 @@
 import { useContext, useState } from "react";
 
 import { AuthContext } from "../../../contexts/AuthContext";
-import * as commentService from '../../../services/commentService';
+import * as cardService from '../../../services/cardService';
 
 import './Comments.css';
-const CommentForm = ({ cardId, addNewComment }) => {
+const CommentForm = ({ card, addNewComment }) => {
     const [comment, setComment] = useState('');
     const {user} = useContext(AuthContext);
 
     const addCommentHandler = (e) => {
         e.preventDefault();
-        commentService.create(cardId, comment, user)
+        card.commentList.push({comment, user});
+        cardService.edit(card._id, card)
             .then(result => addNewComment(result));
     };
 
