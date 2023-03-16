@@ -1,6 +1,7 @@
 import { useState, useContext } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 
+import useValidatorRegister from '../../../hooks/useValidatorRegister';
 import { AuthContext } from "../../../contexts/AuthContext";
 import * as authService from '../../../services/authService';
 
@@ -9,25 +10,8 @@ import styles from '../Auth.module.css';
 
 const Register = () => {
     const navigate = useNavigate();
-    const [errors, setErrors] = useState({});
     const { userLogin } = useContext(AuthContext);
-
-    const [values, setValues] = useState({
-        email: '',
-        firstName: '',
-        lastName: '',
-        password: '',
-        repeatPassword: '',
-        profileImageUrl: '',
-        budget: 0,
-    });
-
-    const onChange = (e) => {
-        setValues(state => ({
-            ...state,
-            [e.target.name]: e.target.value,
-        }));
-    };
+    const { values, errors, onChange, validateEmail, validatePassword, validateImageUrl, validateField, validateBudget } = useValidatorRegister();
 
     const submitLoginHandler = (e) => {
         e.preventDefault();
@@ -36,46 +20,9 @@ const Register = () => {
             .then(authData => {
                 userLogin(authData);
                 navigate('/');
-            }).catch(() => {
-                navigate('/');
+            }).catch((err) => {
+                console.log(err);
             });
-    };
-
-    const validateEmail = (e, bound) => {
-        const pattern = /[\w+]+[@][\w+]+[.][\w+]+/g;
-        setErrors(state => ({
-            ...state,
-            [e.target.name]:
-                ((values[e.target.name].trim()).length < bound || !pattern.exec(values[e.target.name]))
-        }));
-    };
-
-    const validatePassword = (e) => {
-        setErrors(state => ({
-            ...state,
-            [e.target.name]: values.password !== values[e.target.name],
-        }));
-    };
-
-    const validateImageUrl = (e) => {
-        setErrors(state => ({
-            ...state,
-            [e.target.name]: (!values[e.target.name].startsWith('http') && !values[e.target.name].startsWith('https')),
-        }));
-    };
-
-    const validateField = (e, bound) => {
-        setErrors(state => ({
-            ...state,
-            [e.target.name]: (values[e.target.name]).trim().length < bound
-        }));
-    };
-
-    const validateBudget = (e) => {
-        setErrors(state => ({
-            ...state,
-            [e.target.name]: values[e.target.name] <= 0,
-        }));
     };
 
     return (

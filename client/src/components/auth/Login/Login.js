@@ -6,18 +6,41 @@ import * as authService from "../../../services/authService";
 
 import './Login.css';
 
+import styles from '../Auth.module.css';
+
 const Login = () => {
     const { userLogin } = useContext(AuthContext);
-    const [error, setError] = useState(false);
+
+    const [errors, setErrors] = useState({
+        email: '',
+        password: '',
+        notFound: '',
+    });
 
     const navigate = useNavigate();
-    const [value, setValue] = useState({
+    const [values, setValues] = useState({
         email: '',
         password: '',
     });
+    
+    const validateEmail = (e, bound) => {
+        const pattern = /[\w+]+[@][\w+]+[.][\w+]+/g;
+        setErrors(state => ({
+            ...state,
+            [e.target.name]:
+                ((values[e.target.name].trim()).length < bound || !pattern.exec(values[e.target.name]))
+        }));
+    };
+
+    const validateField = (e, bound) => {
+        setErrors(state => ({
+            ...state,
+            [e.target.name]: (values[e.target.name]).trim().length < bound
+        }));
+    };
 
     const onChange = (e) => {
-        setValue(state => ({
+        setValues(state => ({
             ...state,
             [e.target.name]: e.target.value,
         }));
@@ -26,13 +49,16 @@ const Login = () => {
     const submitLoginHandler = (e) => {
         e.preventDefault();
 
-        authService.login(value.email, value.password)
+        authService.login(values.email, values.password)
             .then(authData => {
                 userLogin(authData);
                 navigate('/');
             })
-            .catch(() => {
-                setError(state => state = true);
+            .catch((err) => {
+                setErrors(state => ({
+                    ...state,
+                    notFound: true,
+                }));
             });
     };
 
@@ -52,12 +78,16 @@ const Login = () => {
                             <label htmlFor="name-3b9a" className="u-label">Email:</label>
                             <input
                                 onChange={onChange}
-                                value={value.email}
+                                value={values.email}
+                                onBlur={(e) => validateEmail(e, 5)}
                                 type="text"
                                 placeholder="Въведете email"
                                 id="name-3b9a"
                                 name="email"
-                                className="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white u-input-1"
+                                className={
+                                    errors.email || errors.notFound ? `${styles['error']} u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white u-input-1`
+                                    : "u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white u-input-1"
+                                }
                                 required="required"
                             />
                         </div>
@@ -65,14 +95,18 @@ const Login = () => {
                             <label htmlFor="email-3b9a" className="u-label">Парола:</label>
                             <input
                                 onChange={onChange}
-                                value={value.password}
+                                value={values.password}
+                                onBlur={(e) => validateField(e, 5)}
                                 type="password"
                                 placeholder="Въведете парола"
                                 id="email-3b9a"
                                 name="password"
-                                className="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white u-input-2"
+                                className={
+                                    errors.password || errors.notFound ? `${styles['error']} u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white u-input-2`
+                                    : "u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white u-input-2"
+                                }
                                 required="required" />
-                            {error && <span> /Потребителското име или паролата не са верни!/</span>}
+                            {errors.notFound && <p style={{color: 'red'}}> /Потребителското име или паролата не са верни!/</p>}
                         </div>
 
 
