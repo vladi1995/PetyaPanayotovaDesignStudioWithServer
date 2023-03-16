@@ -15,7 +15,7 @@ const CardEdit = () => {
     const [card, setCard] = useState({});
     const { cardId } = useParams();
     const { editCard } = useContext(CardContext);
-    const [reducedCount, setReducedCount] = useState(0);
+    // const [reducedCount, setReducedCount] = useState(0);
 
     const [values, setValues] = useState({
         name: '',
@@ -37,23 +37,22 @@ const CardEdit = () => {
                     image: result.image,
                     description: result.description,
                     category: result.category,
-                    updated: result._updatedOn,
                 }));
             });
     }, [cardId]);
 
 
-    useEffect(() => {
-        featureService.getAll()
-            .then(result => {
-                setReducedCount(result.filter(x => x.cardId == cardId).map(x => Number(x.productsToBuy)).reduce((prev, next)=>prev+next,0));
-            });
-    }, []);
+    // useEffect(() => {
+    //     featureService.getAll()
+    //         .then(result => {
+    //             setReducedCount(result.filter(x => x.cardId == cardId).map(x => Number(x.productsToBuy)).reduce((prev, next)=>prev+next,0));
+    //         });
+    // }, []);
 
     const [errors, setErrors] = useState({});
 
     const onChange = (e) => {
-        setReducedCount(0);
+        // setReducedCount(0);
         setValues(state => ({
             ...state,
             [e.target.name]: e.target.value,
@@ -142,7 +141,7 @@ const CardEdit = () => {
                                         "u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white u-input-2"
                                 }
                                 required="required"
-                                value={Number(values.count)-Number(reducedCount)}
+                                value={Number(values.count)}
                                 onChange={onChange}
                                 onBlur={validateCount}
                             />
