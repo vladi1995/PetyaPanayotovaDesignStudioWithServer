@@ -20,6 +20,7 @@ const UserProfile = () => {
     useEffect(() => {
         cardService.getAllDetailed(user._id)
             .then(result => {
+                console.log(result);
                 setCardsCurrentUser(result);
             });
 
@@ -34,10 +35,12 @@ const UserProfile = () => {
         //     });
     }, []);
 
+    console.log(cardsCurrentUser);
+
     return (
         <section className="u-align-center u-clearfix u-grey-5 u-section-13" id="sec-8e51">
             <div className="u-clearfix u-sheet u-sheet-1">
-                <h2 className="u-text u-text-default u-text-1">{currentUser[0]?.firstName + ' ' + currentUser[0]?.lastName}</h2>
+                <h2 className="u-text u-text-default u-text-1">{currentUser?.firstName + ' ' + currentUser[0]?.lastName}</h2>
                 <h3
                     className="u-border-2 u-border-no-bottom u-border-no-left u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-palette-1-base"
                     to={`/user/profile/${user._id}`} style={{ padding: '20px 20px' }}>Бюджет: <b>{currentUser[0]?.budget}</b> лв. <FaCoins /></h3>

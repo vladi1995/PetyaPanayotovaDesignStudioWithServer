@@ -12,6 +12,7 @@ const CardDelete = () => {
     const { cardId } = useParams();
     const [card, setCard] = useState({});
     const { user } = useContext(AuthContext);
+    const [serverError, setServerError] = useState('');
 
     const { removeCard } = useContext(CardContext);
     const navigate = useNavigate();
@@ -24,6 +25,8 @@ const CardDelete = () => {
             .then(result => {
                 setCard(result);
                 setIsLoading(false);
+            }).catch((err) => {
+                setServerError(err.message);
             });
     }, [cardId]);
 
@@ -89,6 +92,7 @@ const CardDelete = () => {
                             </div>
                         </div>
                     </div>
+                    {serverError && <span style={{ "margin": " 20px", "color": "red" }}>{serverError}</span>}
                 </section>
             }
         </>

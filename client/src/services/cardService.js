@@ -20,8 +20,8 @@ export const getOneDetailed = (cardId) => {
 };
 
 export const getAllDetailed = (userId) => {
-    const relations = encodeURIComponent(`user=_ownerId:users`);  
-    const search = encodeURIComponent(`_ownerId="${userId}"`); 
+    const relations = encodeURIComponent(`user=ownerId:users`);  
+    const search = encodeURIComponent(`ownerId="${userId}"`); 
 
-    return request.get(`${baseUrl}?where=${search}&load=${relations}`);
+    return request.get(`${baseUrl}?where=${search}`);
 };

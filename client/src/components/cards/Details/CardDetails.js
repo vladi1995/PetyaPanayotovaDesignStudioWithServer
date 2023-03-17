@@ -15,12 +15,14 @@ const CardDetails = () => {
     const { cardId } = useParams();
     const [card, setCard] = useState({});
 
+    const [serverError, setServerError] = useState('');
+
     const { user } = useContext(AuthContext);
     const [loading, setIsLoading] = useState(true);
 
     const [productsToBuy, setProductsToBuy] = useState(0);
     const [currentUser, setCurrentUser] = useState({});
-    
+
     const [errorPositiveNumber, setErrorPositiveNumber] = useState(false);
     const [errorBudget, setErrorBudget] = useState(false);
     const [errorCount, setErrorCount] = useState(false);
@@ -66,11 +68,16 @@ const CardDetails = () => {
                     .then(res => {
                         setCard(res.card);
                         setIsLoading(false);
+                    }).catch((err) => {
+                        setServerError(err.message);
                     });
             });
 
         userService.edit(user._id, currentUser)
-            .then(result => console.log(result));
+            .then(result => console.log(result))
+            .catch((err) => {
+                setServerError(err.message);
+            });
     };
 
     const onChangeBuyProducts = (e) => {
@@ -80,13 +87,15 @@ const CardDetails = () => {
     const likeHandler = (e) => {
         card.likes.push({ user });
         cardService.edit(cardId, card)
-        .then(result => {
-            cardService.getOne(cardId)
-                .then(res => {
-                    setCard(res.card);
-                    setIsLoading(false);
-                });
-        });
+            .then(result => {
+                cardService.getOne(cardId)
+                    .then(res => {
+                        setCard(res.card);
+                        setIsLoading(false);
+                    }).catch((err) => {
+                        setServerError(err.message);
+                    });;
+            });
     };
     return (
         <>
@@ -135,7 +144,6 @@ const CardDetails = () => {
                                                                 <img src="/images/2919592.png" alt="" />
                                                             </NavLink>
                                                         </span>
-
 
                                                         <span className="u-file-icon u-icon u-icon-2">
                                                             <NavLink to={`/cards/delete/${card._id}`}>
@@ -188,9 +196,9 @@ const CardDetails = () => {
                                                             >
                                                                 &nbsp;Харесва ми
                                                             </button>
-                                                        } 
+                                                        }
                                                         <br /><br />
-                                                        <p className="u-text u-text-default u-text-9">{card.likes.length} </p> 
+                                                        <p className="u-text u-text-default u-text-9">{card.likes.length} </p>
                                                         <p className="u-text u-text-10">харесват картичката</p>
                                                     </>
                                                 }
@@ -205,6 +213,7 @@ const CardDetails = () => {
                             </div>
                         </div>
                     </section>
+                    {serverError && <span style={{ "margin": " 20px", "color": "red" }}>{serverError}</span>}
                     <Comments card={card} />
                 </>
             }

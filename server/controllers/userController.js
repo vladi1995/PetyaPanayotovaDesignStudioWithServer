@@ -37,4 +37,5 @@ router.put('/:userId', async (req, res) => {
     res.json(await userManager.editCurrentUser(req.user._id, userData));
 });
 
+
 module.exports = router;

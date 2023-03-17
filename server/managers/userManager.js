@@ -8,13 +8,13 @@ exports.login = async(email, password) => {
     const user = await User.findOne({email});
 
     if(!user) {
-        throw new Error('Invalid email or password!');
+        throw new Error('Невалидни email или парола!');
     }
 
     const isValid = await bcrypt.compare(password, user.password);
 
     if(!isValid) {
-        throw new Error('Invalid email or password!');
+        throw new Error('Невалидни email или парола!');
     }
 
     const payload = {
@@ -43,11 +43,7 @@ exports.register = async(email, password, firstName, lastName, profileImageUrl, 
     const existingUser = await User.findOne({email});
 
     if (existingUser) {
-        throw new Error('User exists!');
-    }
-
-    if (password.length < 4) {
-        throw new Error('Password too short');
+        throw new Error('Потребителят вече съществува!');
     }
 
     const hashedPassword = await bcrypt.hash(password, 10);

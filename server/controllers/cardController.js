@@ -2,34 +2,37 @@ const router = require('express').Router();
 const cardManager = require('../managers/cardManager');
 const userManager = require('../managers/userManager');
 
-router.get('/', async(req, res) => {
+router.get('/', async (req, res) => {
     const cards = await cardManager.getAll();
     res.json(cards);
 });
 
-router.get('/details/:cardId', async(req, res) => {
+router.get('/details/:cardId', async (req, res) => {
     const card = await cardManager.getOneDetailed(req.params.cardId);
     const currentUser = await userManager.getCurrentUser(req.user);
-    
+
     res.json({
         card,
         currentUser,
     });
 });
 
-router.get('/delete/:cardId', async(req, res) => {
+router.get('/delete/:cardId', async (req, res) => {
     const card = await cardManager.getOneDetailed(req.params.cardId);
     res.json(card);
 });
 
 router.post('/', async (req, res) => {
     const cardData = req.body;
-    const card = await cardManager.create(cardData);
-
-    res.json(card);
+    try {
+        const card = await cardManager.create(cardData);
+        res.json(card);
+    } catch (err) {
+        res.status(400).json({ message: err.message });
+    }
 });
 
-router.delete('/delete/:cardId', async(req, res) => {
+router.delete('/delete/:cardId', async (req, res) => {
     const card = await cardManager.delete(req.params.cardId);
     res.json(card);
 });

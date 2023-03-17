@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+import useValidatorCreate from "../../../hooks/useCreateValidator";
 import { CardContext } from "../../../contexts/CardContext";
 import { AuthContext } from '../../../contexts/AuthContext';
 import * as cardService from '../../../services/cardService';
@@ -12,52 +13,9 @@ const CreateCard = () => {
     const navigate = useNavigate();
     const {addCard} = useContext(CardContext);
     const {user} = useContext(AuthContext);
-    const [errors, setErrors] = useState({});
-    
-    const [values, setValues] = useState({
-        name: '',
-        count: '',
-        price: '',
-        image: '',
-        description: '',
-        category: 'birthdayCard',
-        ownerId: user._id,
-    });
 
-    const onChange = (e) => {
-        setValues(state => ({
-            ...state,
-            [e.target.name]: e.target.value,
-        }));
-    };
-
-    const validateImageUrl = (e) => {
-        setErrors(state => ({
-            ...state,
-            [e.target.name]: (!values[e.target.name].startsWith('http') && !values[e.target.name].startsWith('https')),
-        }));
-    };
-
-    const validateField = (e, bound) => {
-        setErrors(state => ({
-            ...state,
-            [e.target.name]: (values[e.target.name]).trim().length < bound
-        }));
-    };
-
-    const validateNumbers = (e) => {
-        setErrors(state => ({
-            ...state,
-            [e.target.name]: values[e.target.name] <= 0,
-        }));
-    };
-
-    const validateCount = (e) => {
-        setErrors(state => ({
-            ...state,
-            [e.target.name]: !Number.isInteger(Number(values[e.target.name])) || values[e.target.name] <= 0,
-        }));
-    };
+    const {values, errors, onChange, validateImageUrl, validateField, validateNumbers, validateCount} = useValidatorCreate();
+    const [serverError, setServerError] = useState('');
 
     const createCardHandler = (e) => {
         e.preventDefault();
@@ -65,6 +23,8 @@ const CreateCard = () => {
         .then(result => {
             addCard(result);
             navigate('/cards/catalog');
+        }).catch((err) => {
+            setServerError(err.message);
         });
     };
 
@@ -195,8 +155,9 @@ const CreateCard = () => {
                                     <option value="weddingCard">Покани за сватба</option>
                                     <option value="wineLabels">Етикети за вино</option>
                                 </select>
-                            </div>
+                            </div> 
                         </div>
+                        {serverError && <span style={{ "margin": " 20px", "color": "red" }}>{serverError}</span>}
                         <div className="u-align-left u-form-group u-form-submit u-label-top">
                             <input disabled={Object.values(errors).some(x => x == true) || Object.values(values).some(x => x === '' || x === 0)} type="submit" value="Добавяне" className="u-btn u-btn-submit u-button-style" />
                         </div>

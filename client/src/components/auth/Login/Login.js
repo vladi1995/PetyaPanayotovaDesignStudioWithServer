@@ -1,6 +1,7 @@
 import { useState, useContext } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 
+import useValidatorLogin from '../../../hooks/userValidatorLogin';
 import { AuthContext } from "../../../contexts/AuthContext";
 import * as authService from "../../../services/authService";
 
@@ -10,41 +11,9 @@ import styles from '../Auth.module.css';
 
 const Login = () => {
     const { userLogin } = useContext(AuthContext);
-
-    const [errors, setErrors] = useState({
-        email: '',
-        password: '',
-        notFound: '',
-    });
-
+    const { values, errors, onChange, validateEmail, validateField } = useValidatorLogin();
+    const [serverError, setServerError] = useState('');
     const navigate = useNavigate();
-    const [values, setValues] = useState({
-        email: '',
-        password: '',
-    });
-    
-    const validateEmail = (e, bound) => {
-        const pattern = /[\w+]+[@][\w+]+[.][\w+]+/g;
-        setErrors(state => ({
-            ...state,
-            [e.target.name]:
-                ((values[e.target.name].trim()).length < bound || !pattern.exec(values[e.target.name]))
-        }));
-    };
-
-    const validateField = (e, bound) => {
-        setErrors(state => ({
-            ...state,
-            [e.target.name]: (values[e.target.name]).trim().length < bound
-        }));
-    };
-
-    const onChange = (e) => {
-        setValues(state => ({
-            ...state,
-            [e.target.name]: e.target.value,
-        }));
-    };
 
     const submitLoginHandler = (e) => {
         e.preventDefault();
@@ -55,10 +24,7 @@ const Login = () => {
                 navigate('/');
             })
             .catch((err) => {
-                setErrors(state => ({
-                    ...state,
-                    notFound: true,
-                }));
+                setServerError(err.message);
             });
     };
 
@@ -85,8 +51,8 @@ const Login = () => {
                                 id="name-3b9a"
                                 name="email"
                                 className={
-                                    errors.email || errors.notFound ? `${styles['error']} u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white u-input-1`
-                                    : "u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white u-input-1"
+                                    errors.email || serverError ? `${styles['error']} u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white u-input-1`
+                                        : "u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white u-input-1"
                                 }
                                 required="required"
                             />
@@ -102,13 +68,12 @@ const Login = () => {
                                 id="email-3b9a"
                                 name="password"
                                 className={
-                                    errors.password || errors.notFound ? `${styles['error']} u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white u-input-2`
-                                    : "u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white u-input-2"
+                                    errors.password || serverError ? `${styles['error']} u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white u-input-2`
+                                        : "u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white u-input-2"
                                 }
                                 required="required" />
-                            {errors.notFound && <p style={{color: 'red'}}> /Потребителското име или паролата не са верни!/</p>}
+                            {(serverError || errors.email || errors.password) && <p style={{ color: 'red' }}>/Невалидни email или парола!/</p>}
                         </div>
-
 
                         <div className="u-align-left u-form-group u-form-submit u-label-top">
                             <input type="submit" value="Вход" className="u-btn u-btn-submit u-button-style" />

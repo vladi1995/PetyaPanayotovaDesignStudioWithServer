@@ -12,6 +12,7 @@ const Register = () => {
     const navigate = useNavigate();
     const { userLogin } = useContext(AuthContext);
     const { values, errors, onChange, validateEmail, validatePassword, validateImageUrl, validateField, validateBudget } = useValidatorRegister();
+    const [serverError, setServerError] = useState('');
 
     const submitLoginHandler = (e) => {
         e.preventDefault();
@@ -21,7 +22,7 @@ const Register = () => {
                 userLogin(authData);
                 navigate('/');
             }).catch((err) => {
-                console.log(err);
+                setServerError(err.message);
             });
     };
 
@@ -176,6 +177,7 @@ const Register = () => {
                                 {errors.budget && <span> /Бюджетът трябва да е по-голям от 0лв!/</span>}
                             </div>
                         </div>
+                        {serverError && <span style={{ "margin": " 20px", "color": "red" }}>{serverError}</span>}
                         <div className="u-align-left u-form-group u-form-submit u-label-top">
                             <input disabled={Object.values(errors).some(x => x == true) || Object.values(values).some(x => x === '' || x === 0)} type="submit" value="Регистрация" className="u-btn u-btn-submit u-button-style" />
                         </div>
