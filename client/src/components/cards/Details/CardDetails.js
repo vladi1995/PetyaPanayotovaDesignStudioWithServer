@@ -136,70 +136,73 @@ const CardDetails = () => {
                                                 <p className="u-text u-text-default u-text-7">{card.count - card.boughtProducts.length} броя</p>
 
                                                 <p className="u-text u-text-default u-text-8">Остават:</p>
-
-                                                {user._id === card.ownerId._id ?
+                                                {user.email &&
                                                     <>
-                                                        <span className="u-file-icon u-icon u-icon-1">
-                                                            <NavLink to={`/cards/edit/${card._id}`}>
-                                                                <img src="/images/2919592.png" alt="" />
-                                                            </NavLink>
-                                                        </span>
+                                                        {user._id === card.ownerId._id ?
+                                                            <>
+                                                                <span className="u-file-icon u-icon u-icon-1">
+                                                                    <NavLink to={`/cards/edit/${card._id}`}>
+                                                                        <img src="/images/2919592.png" alt="" />
+                                                                    </NavLink>
+                                                                </span>
 
-                                                        <span className="u-file-icon u-icon u-icon-2">
-                                                            <NavLink to={`/cards/delete/${card._id}`}>
-                                                                <img src="/images/6861362.png" alt="" />
-                                                            </NavLink>
-                                                        </span>
+                                                                <span className="u-file-icon u-icon u-icon-2">
+                                                                    <NavLink to={`/cards/delete/${card._id}`}>
+                                                                        <img src="/images/6861362.png" alt="" />
+                                                                    </NavLink>
+                                                                </span>
 
-                                                    </> :
-                                                    <>
-                                                        {!card.boughtProducts.length ?
-                                                            <div className="u-form u-form-1">
-                                                                <form
-                                                                    className="u-clearfix u-form-horizontal u-form-spacing-15 u-inner-form"
-                                                                    style={{ "padding": "15px" }}
-                                                                    source="email"
-                                                                    onSubmit={buyHandler}
-                                                                >
+                                                            </> :
+                                                            <>
+                                                                {!card.boughtProducts.length ?
+                                                                    <div className="u-form u-form-1">
+                                                                        <form
+                                                                            className="u-clearfix u-form-horizontal u-form-spacing-15 u-inner-form"
+                                                                            style={{ "padding": "15px" }}
+                                                                            source="email"
+                                                                            onSubmit={buyHandler}
+                                                                        >
 
-                                                                    <div className="u-form-group u-label-top">
-                                                                        <label htmlFor="name-558c" className="u-label">Купи</label>
-                                                                        <input type="text"
-                                                                            placeholder="Брой"
-                                                                            id="name-558c"
-                                                                            name="numOfCards"
-                                                                            className="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10"
-                                                                            required="required"
-                                                                            value={productsToBuy}
-                                                                            onChange={onChangeBuyProducts}
-                                                                        />
+                                                                            <div className="u-form-group u-label-top">
+                                                                                <label htmlFor="name-558c" className="u-label">Купи</label>
+                                                                                <input type="text"
+                                                                                    placeholder="Брой"
+                                                                                    id="name-558c"
+                                                                                    name="numOfCards"
+                                                                                    className="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10"
+                                                                                    required="required"
+                                                                                    value={productsToBuy}
+                                                                                    onChange={onChangeBuyProducts}
+                                                                                />
+                                                                            </div>
+
+                                                                            <div className="u-form-group u-form-submit u-label-top">
+                                                                                <input type="submit" value="Купи" className="u-btn u-btn-submit u-button-style" />
+                                                                            </div>
+
+
+                                                                        </form>
                                                                     </div>
+                                                                    :
+                                                                    <div style={{ marginLeft: '60px' }}>/Вече сте закупили от картичката!/</div>
+                                                                }
+                                                                {errorPositiveNumber && <div style={{ marginLeft: '65px' }}>/Закупените продукти трябва да са положително число!/</div>}
+                                                                {errorBudget && <div style={{ marginLeft: '65px' }}>/Бюджетът ви не е достатъчен!/</div>}
+                                                                {errorCount && <div style={{ marginLeft: '65px' }}>/Недостатъчна наличност!/</div>}
 
-                                                                    <div className="u-form-group u-form-submit u-label-top">
-                                                                        <input type="submit" value="Купи" className="u-btn u-btn-submit u-button-style" />
-                                                                    </div>
-
-
-                                                                </form>
-                                                            </div>
-                                                            :
-                                                            <div style={{ marginLeft: '60px' }}>/Вече сте закупили от картичката!/</div>
+                                                                {!card.likes.length &&
+                                                                    <button
+                                                                        className="u-border-2 u-border-grey-75 u-btn u-btn-round u-button-style u-gradient u-none u-radius-4 u-text-body-alt-color u-btn-4"
+                                                                        onClick={likeHandler}
+                                                                    >
+                                                                        &nbsp;Харесва ми
+                                                                    </button>
+                                                                }
+                                                                <br /><br />
+                                                                <p className="u-text u-text-default u-text-9">{card.likes.length} </p>
+                                                                <p className="u-text u-text-10">харесват картичката</p>
+                                                            </>
                                                         }
-                                                        {errorPositiveNumber && <div style={{ marginLeft: '65px' }}>/Закупените продукти трябва да са положително число!/</div>}
-                                                        {errorBudget && <div style={{ marginLeft: '65px' }}>/Бюджетът ви не е достатъчен!/</div>}
-                                                        {errorCount && <div style={{ marginLeft: '65px' }}>/Недостатъчна наличност!/</div>}
-
-                                                        {!card.likes.length &&
-                                                            <button
-                                                                className="u-border-2 u-border-grey-75 u-btn u-btn-round u-button-style u-gradient u-none u-radius-4 u-text-body-alt-color u-btn-4"
-                                                                onClick={likeHandler}
-                                                            >
-                                                                &nbsp;Харесва ми
-                                                            </button>
-                                                        }
-                                                        <br /><br />
-                                                        <p className="u-text u-text-default u-text-9">{card.likes.length} </p>
-                                                        <p className="u-text u-text-10">харесват картичката</p>
                                                     </>
                                                 }
                                             </div>
