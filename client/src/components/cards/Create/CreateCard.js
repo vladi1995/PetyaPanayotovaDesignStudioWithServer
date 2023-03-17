@@ -1,31 +1,44 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 import useValidatorCreate from "../../../hooks/useCreateValidator";
 import { CardContext } from "../../../contexts/CardContext";
 import { AuthContext } from '../../../contexts/AuthContext';
 import * as cardService from '../../../services/cardService';
+import * as userService from '../../../services/userService';
 
 import './Create.css';
 import styles from '../Card.module.css';
 
 const CreateCard = () => {
     const navigate = useNavigate();
-    const {addCard} = useContext(CardContext);
-    const {user} = useContext(AuthContext);
+    const { addCard } = useContext(CardContext);
+    const { user } = useContext(AuthContext);
 
-    const {values, errors, onChange, validateImageUrl, validateField, validateNumbers, validateCount} = useValidatorCreate();
+    const { values, errors, onChange, validateImageUrl, validateField, validateNumbers, validateCount } = useValidatorCreate();
     const [serverError, setServerError] = useState('');
+    const [currentUser, setCurrentUser] = useState({});
+
+    useEffect(() => {
+        userService.getOne(user._id)
+            .then(result => setCurrentUser(result));
+    }, []);
 
     const createCardHandler = (e) => {
         e.preventDefault();
         cardService.create(values)
-        .then(result => {
-            addCard(result);
-            navigate('/cards/catalog');
-        }).catch((err) => {
-            setServerError(err.message);
-        });
+            .then(result => {
+                addCard(result);
+                navigate('/cards/catalog');
+            }).catch((err) => {
+                setServerError(err.message);
+            });
+
+        console.log(currentUser);
+        currentUser.uploadedPhotos += 1;
+        
+        userService.edit(user._id, currentUser)
+            .then(result => console.log(result));
     };
 
     return (
@@ -155,7 +168,7 @@ const CreateCard = () => {
                                     <option value="weddingCard">Покани за сватба</option>
                                     <option value="wineLabels">Етикети за вино</option>
                                 </select>
-                            </div> 
+                            </div>
                         </div>
                         {serverError && <span style={{ "margin": " 20px", "color": "red" }}>{serverError}</span>}
                         <div className="u-align-left u-form-group u-form-submit u-label-top">

@@ -5,7 +5,8 @@ router.post('/register', async (req, res) => {
     const { email, password, firstName, lastName, profileImageUrl, budget } = req.body;
 
     try {
-        const result = await userManager.register(email, password, firstName, lastName, profileImageUrl, budget);
+        const uploadedPhotos = 0;
+        const result = await userManager.register(email, password, firstName, lastName, profileImageUrl, budget, uploadedPhotos);
         res.json(result);
     } catch (err) {
         console.log(err);
@@ -29,6 +30,10 @@ router.post('/login', async (req, res) => {
 
 router.get('/logout', (req, res) => {
     res.json({ ok: true });
+});
+
+router.get('/:userId', async (req, res) => {
+    res.json(await userManager.getCurrentUser(req.params.userId));
 });
 
 router.put('/:userId', async (req, res) => {

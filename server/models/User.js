@@ -30,6 +30,10 @@ const userSchema = new mongoose.Schema({
         type: Number,
         required: [true, 'Budget is required'],
     },
+
+    uploadedPhotos: {
+        type: Number,
+    }
 });
 
 

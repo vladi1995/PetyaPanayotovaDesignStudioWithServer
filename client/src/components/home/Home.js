@@ -1,15 +1,24 @@
-import { useContext } from "react";
+import { useContext, useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 
 import { AuthContext } from "../../contexts/AuthContext";
 import { CardContext } from "../../contexts/CardContext";
+import * as cardService from '../../services/cardService';
 
 import './Home.css';
 import HomeCard from "./HomeCard";
 
 const Home = () => {
     const { user } = useContext(AuthContext);
-    const { cards } = useContext(CardContext);
+
+    const [cards, setCards] = useState([]);
+
+    useEffect(() => {
+        cardService.getAll()
+            .then(result => {
+                setCards(result);
+            });
+    }, []);
 
     return (
         <section className="u-clearfix u-grey-5 u-section-1" id="sec-92f0">

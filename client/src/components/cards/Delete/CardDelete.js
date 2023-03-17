@@ -23,7 +23,7 @@ const CardDelete = () => {
         setIsLoading(true);
         cardService.getOne(cardId)
             .then(result => {
-                setCard(result);
+                setCard(result.card);
                 setIsLoading(false);
             }).catch((err) => {
                 setServerError(err.message);

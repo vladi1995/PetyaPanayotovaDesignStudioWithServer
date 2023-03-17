@@ -17,7 +17,7 @@ const Register = () => {
     const submitLoginHandler = (e) => {
         e.preventDefault();
 
-        authService.register(values.email, values.password, values.firstName, values.lastName, values.profileImageUrl, values.budget)
+        authService.register(values.email, values.password, values.firstName, values.lastName, values.profileImageUrl, values.budget, values.uploadedPhotos)
             .then(authData => {
                 userLogin(authData);
                 navigate('/');
@@ -25,6 +25,8 @@ const Register = () => {
                 setServerError(err.message);
             });
     };
+
+    console.log(errors);
 
     return (
         <section className="u-align-center u-clearfix u-grey-5 u-section-3" id="sec-fc27">
@@ -179,7 +181,7 @@ const Register = () => {
                         </div>
                         {serverError && <span style={{ "margin": " 20px", "color": "red" }}>{serverError}</span>}
                         <div className="u-align-left u-form-group u-form-submit u-label-top">
-                            <input disabled={Object.values(errors).some(x => x == true) || Object.values(values).some(x => x === '' || x === 0)} type="submit" value="Регистрация" className="u-btn u-btn-submit u-button-style" />
+                            <input disabled={Object.values(errors).some(x => x == true) || Object.values(values).some(x => x === '')} type="submit" value="Регистрация" className="u-btn u-btn-submit u-button-style" />
                         </div>
                     </form>
                 </div>
