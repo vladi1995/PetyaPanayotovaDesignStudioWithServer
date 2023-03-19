@@ -38,7 +38,7 @@ const cardSchema = new mongoose.Schema({
 
     commentList: [
         {
-            userId: {
+            user: {
                 type: mongoose.Types.ObjectId,
                 ref: 'User',
             },
@@ -49,10 +49,10 @@ const cardSchema = new mongoose.Schema({
     
     likes: [
         {
-            cardId: {
+            user: {
                 type: mongoose.Types.ObjectId,
-                ref: 'Cards',
-            }
+                ref: 'User',
+            },
         }
     ],
 
@@ -60,7 +60,7 @@ const cardSchema = new mongoose.Schema({
         {
             user: {
                 type: mongoose.Types.ObjectId,
-                ref: 'Cards',
+                ref: 'User',
             },
             count: Number,
         }

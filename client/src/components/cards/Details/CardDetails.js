@@ -60,6 +60,7 @@ const CardDetails = () => {
         }
 
         card.boughtProducts.push({ user, count: Number(productsToBuy) });
+        card.count -= Number(productsToBuy);
         currentUser.budget -= Number(card.price) * Number(productsToBuy);
 
         cardService.edit(cardId, card)
@@ -85,7 +86,9 @@ const CardDetails = () => {
     };
 
     const likeHandler = (e) => {
-        card.likes.push({ user });
+        console.log(user);
+        card.likes.push({ user: user._id });
+
         cardService.edit(cardId, card)
             .then(result => {
                 cardService.getOne(cardId)
@@ -97,6 +100,7 @@ const CardDetails = () => {
                     });;
             });
     };
+
     return (
         <>
             {
@@ -133,7 +137,7 @@ const CardDetails = () => {
                                                 <p className="u-text u-text-default u-text-4">Категория:</p>
                                                 <p className="u-text u-text-default u-text-5">Цена за брой:</p>
                                                 <p className="u-text u-text-default u-text-6">{card.price} лв.</p>
-                                                <p className="u-text u-text-default u-text-7">{card.count - card.boughtProducts.length} броя</p>
+                                                <p className="u-text u-text-default u-text-7">{card.count} броя</p>
 
                                                 <p className="u-text u-text-default u-text-8">Остават:</p>
                                                 {user.email &&
@@ -154,7 +158,7 @@ const CardDetails = () => {
 
                                                             </> :
                                                             <>
-                                                                {!card.boughtProducts.length ?
+                                                                {!card.boughtProducts.some(x => x.user == user._id) ?
                                                                     <div className="u-form u-form-1">
                                                                         <form
                                                                             className="u-clearfix u-form-horizontal u-form-spacing-15 u-inner-form"
@@ -190,7 +194,7 @@ const CardDetails = () => {
                                                                 {errorBudget && <div style={{ marginLeft: '65px' }}>/Бюджетът ви не е достатъчен!/</div>}
                                                                 {errorCount && <div style={{ marginLeft: '65px' }}>/Недостатъчна наличност!/</div>}
 
-                                                                {!card.likes.length &&
+                                                                {!card.likes.some(x => x.user == user._id) &&
                                                                     <button
                                                                         className="u-border-2 u-border-grey-75 u-btn u-btn-round u-button-style u-gradient u-none u-radius-4 u-text-body-alt-color u-btn-4"
                                                                         onClick={likeHandler}

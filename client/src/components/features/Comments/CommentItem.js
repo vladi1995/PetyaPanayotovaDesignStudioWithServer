@@ -6,8 +6,8 @@ const CommentItem = ({comment}) => {
                     <div className="u-layout-row">
                         <div className="u-align-left u-container-style u-layout-cell u-left-cell u-size-13 u-layout-cell-1">
                             <div className="u-container-layout u-valign-top u-container-layout-1">
-                                <img className="profileImage" src={comment.user.profileImageUrl} />
-                                <p className="u-text u-text-1">{comment.user.firstName} {comment.user.lastName}</p>
+                                <img className="profileImage" src={comment.user.profileImageUrl} style={{"borderRadius": "5px"}} />
+                                <p className="u-text u-text-1"><b>{comment.user.firstName} {comment.user.lastName}</b></p>
                                 <p className="u-text u-text-2">{comment.commentInfo_createdOn}</p>
                             </div>
                         </div>
