@@ -14,7 +14,7 @@ import './Details.css';
 const CardDetails = () => {
     const { cardId } = useParams();
     const [card, setCard] = useState({});
-
+    
     const [serverError, setServerError] = useState('');
 
     const { user } = useContext(AuthContext);
@@ -49,7 +49,7 @@ const CardDetails = () => {
             return;
         }
 
-        if (productsToBuy * card.price > Number(card.ownerId.budget)) {
+        if (productsToBuy * card.price > Number(currentUser.budget)) {
             setErrorBudget(true);
             return;
         }
