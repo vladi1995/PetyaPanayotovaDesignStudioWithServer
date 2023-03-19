@@ -24,7 +24,7 @@ const CatalogCards = () => {
     const sortHandler = (typeOfCard) => {
         switchCards(typeOfCard);
         setCurrentPage(1);
-    }
+    };
 
     return (
         <>

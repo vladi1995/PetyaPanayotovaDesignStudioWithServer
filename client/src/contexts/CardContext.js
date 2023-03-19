@@ -24,6 +24,7 @@ export const CardProvider = ({
             ...state,
             cardData,
         ]);
+        initialState.push(cardData);
     };
 
     const switchCards = (cardType) => {

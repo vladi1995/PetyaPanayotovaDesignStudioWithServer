@@ -164,7 +164,7 @@ const CreateCard = () => {
                                 >
                                     <option value="birthdayCard">Картички за рожден ден</option>
                                     <option value="baptismCard">Картички за кръщене</option>
-                                    <option value="baptismCard">Картички за погачи</option>
+                                    <option value="pogachaCard">Картички за погачи</option>
                                     <option value="weddingCard">Покани за сватба</option>
                                     <option value="wineLabels">Етикети за вино</option>
                                 </select>
