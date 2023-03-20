@@ -11,7 +11,6 @@ const useValidatorRegister = () => {
         repeatPassword: '',
         profileImageUrl: '',
         budget: 0,
-        uploadedPhotos: 0,
     });
 
     const onChange = (e) => {

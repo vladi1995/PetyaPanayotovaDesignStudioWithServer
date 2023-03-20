@@ -1,6 +1,11 @@
 const router = require('express').Router();
 const cardManager = require('../managers/cardManager');
-const userManager = require('../managers/userManager');
+const userManager = require('../managers/authManager');
+
+router.get('/:userId', async(req, res) => {
+    const cards = await cardManager.getAllCards(req.params.userId);
+    res.json(cards);
+});
 
 router.get('/', async (req, res) => {
     const cards = await cardManager.getAll();

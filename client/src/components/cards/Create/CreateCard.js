@@ -33,12 +33,6 @@ const CreateCard = () => {
             }).catch((err) => {
                 setServerError(err.message);
             });
-
-        console.log(currentUser);
-        currentUser.uploadedPhotos += 1;
-        
-        userService.edit(user._id, currentUser)
-            .then(result => console.log(result));
     };
 
     return (
