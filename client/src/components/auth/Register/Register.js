@@ -7,6 +7,8 @@ import * as authService from '../../../services/authService';
 
 import './Register.css';
 import styles from '../Auth.module.css';
+import DropboxChooser from 'react-dropbox-chooser';
+const APP_KEY = "thwqp35vo5cl07d";
 
 const Register = () => {
     const navigate = useNavigate();
@@ -27,6 +29,11 @@ const Register = () => {
     };
 
     console.log(errors);
+
+    function handleSuccess(files) {
+        console.log(files);
+        values.profileImageUrl = files[0].thumbnailLink;
+    }
 
     return (
         <section className="u-align-center u-clearfix u-grey-5 u-section-3" id="sec-fc27">
@@ -138,6 +145,12 @@ const Register = () => {
                             {errors.repeatPassword && <span>/Двете пароли трябва да съвпадат!/</span>}
                         </div>
                         <div className="u-form-group u-label-top u-form-group-6">
+                            <DropboxChooser appKey={APP_KEY}
+                                success={handleSuccess}
+                                cancel={() => console.log('Closed')}
+                                multiselect={false}
+                            >
+                            </DropboxChooser>
                             <label htmlFor="text-1f9b" className="u-label">Профилна снимка</label>
                             <input
                                 onBlur={validateImageUrl}
