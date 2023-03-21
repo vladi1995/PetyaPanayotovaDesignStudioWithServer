@@ -28,11 +28,8 @@ const Register = () => {
             });
     };
 
-    console.log(errors);
-
     function handleSuccess(files) {
-        console.log(files);
-        values.profileImageUrl = files[0].thumbnailLink;
+        values.profileImageUrl = files[0].link;
     }
 
     return (
@@ -43,7 +40,7 @@ const Register = () => {
                     <form
                         className="u-clearfix u-form-spacing-15 u-form-vertical u-inner-form"
                         style={{ "padding": "10px" }}
-                        name="form" onSubmit={submitLoginHandler}>
+                        name="form" onSubmit={submitLoginHandler} >
                         <div className="u-form-group u-form-name u-label-top">
                             <label htmlFor="name-3b9a" className="u-label">Email:</label>
 
@@ -145,15 +142,17 @@ const Register = () => {
                             {errors.repeatPassword && <span>/Двете пароли трябва да съвпадат!/</span>}
                         </div>
                         <div className="u-form-group u-label-top u-form-group-6">
+                            <label htmlFor="text-1f9b" className="u-label">Профилна снимка</label>
+
                             <DropboxChooser appKey={APP_KEY}
                                 success={handleSuccess}
                                 cancel={() => console.log('Closed')}
                                 multiselect={false}
                             >
+                                <p>[Натиснете, за да изберете снимка]</p>
                             </DropboxChooser>
-                            <label htmlFor="text-1f9b" className="u-label">Профилна снимка</label>
+
                             <input
-                                onBlur={validateImageUrl}
                                 onChange={onChange}
                                 value={values.profileImageUrl}
                                 type="text"
@@ -166,6 +165,7 @@ const Register = () => {
                                         : "u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white u-input-6"
                                 }
                                 required="required"
+                                disabled
                             />
                             {errors.profileImageUrl && <span>/Линкът към снимката трябва да започва с http/https!/</span>}
                         </div>

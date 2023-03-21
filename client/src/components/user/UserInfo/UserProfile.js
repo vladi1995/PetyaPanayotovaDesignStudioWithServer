@@ -6,6 +6,7 @@ import { CardContext } from "../../../contexts/CardContext";
 import * as cardService from '../../../services/cardService';
 import * as userService from '../../../services/userService';
 
+import { imageFormatter } from "../../../utils/formatFunctions";
 import UserCard from "./UserCard";
 import { FaCoins } from 'react-icons/fa';
 
@@ -13,7 +14,7 @@ import './UserInfo.css';
 
 const UserProfile = () => {
     const { user } = useContext(AuthContext);
-    const {cards} = useContext(CardContext);
+    const { cards } = useContext(CardContext);
 
     const [cardsCurrentUser, setCardsCurrentUser] = useState([]);
     const [currentUser, setCurrentUser] = useState({});
@@ -35,7 +36,9 @@ const UserProfile = () => {
                 <h3
                     className="u-border-2 u-border-no-bottom u-border-no-left u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-palette-1-base"
                     to={`/user/profile/${user._id}`} style={{ padding: '20px 20px' }}>Бюджет: <b>{currentUser?.budget}</b> лв. <FaCoins /></h3>
-                <img src={currentUser?.profileImageUrl} style={{ 'maxWidth': '150px', 'borderRadius': '10px' }} />
+                <img src={imageFormatter(currentUser?.profileImageUrl)} style={{ 'maxWidth': '150px', 'borderRadius': '10px' }} />
+  
+
                 <p className="u-text u-text-2">Брой качени картички:</p>
                 <p className="u-text u-text-3"><b>{filteredCards.length}</b> броя</p>
                 <p className="u-text u-text-4">Брой харесани картички:</p>
