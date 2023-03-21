@@ -11,8 +11,9 @@ const CommentForm = ({ card, addNewComment }) => {
     const addCommentHandler = (e) => {
         e.preventDefault();
         card.commentList.push({user, comment});
+        
         cardService.edit(card._id, card)
-            .then(result => addNewComment(result));
+            .then(result => addNewComment({user, comment}));
         
         setComment('');
     };
