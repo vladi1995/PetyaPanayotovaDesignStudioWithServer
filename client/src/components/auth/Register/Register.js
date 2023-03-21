@@ -7,6 +7,7 @@ import * as authService from '../../../services/authService';
 
 import './Register.css';
 import styles from '../Auth.module.css';
+
 import DropboxChooser from 'react-dropbox-chooser';
 const APP_KEY = "thwqp35vo5cl07d";
 

@@ -7,6 +7,7 @@ import * as featuresService from '../../../services/featuresService';
 import * as userService from '../../../services/userService';
 
 import Comments from "../../features/Comments/Comments";
+import { imageFormatter } from "../../../utils/formatFunctions";
 
 import { objOfCategories } from '../../../utils/constants';
 import './Details.css';
@@ -124,7 +125,7 @@ const CardDetails = () => {
 
                                                 {card.ownerId.profileImageUrl
                                                     ?
-                                                    <img src={card.ownerId.profileImageUrl} style={{ maxWidth: '100px', marginLeft: '60px', marginTop: '10px', borderRadius: '10px' }} alt="userPhoto" />
+                                                    <img src={imageFormatter(card.ownerId.profileImageUrl)} style={{ maxWidth: '100px', marginLeft: '60px', marginTop: '10px', borderRadius: '10px' }} alt="userPhoto" />
                                                     :
                                                     <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" style={{ maxWidth: '100px', marginLeft: '60px', marginTop: '10px' }} alt="userPhoto" />
                                                 }
@@ -213,7 +214,7 @@ const CardDetails = () => {
                                         </div>
 
                                         <div className="u-container-style u-image u-layout-cell u-right-cell u-size-20 u-image-1">
-                                            <img src={card.image} style={{ "width": "400px", "height": "600px", "objectFit": "cover" }} />
+                                            <img src={imageFormatter(card.image)} style={{ "width": "400px", "height": "600px", "objectFit": "cover" }} />
                                         </div>
                                     </div>
                                 </div>

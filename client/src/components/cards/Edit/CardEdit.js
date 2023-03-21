@@ -8,6 +8,9 @@ import './Edit.css';
 import styles from '../Card.module.css';
 import { AuthContext } from "../../../contexts/AuthContext";
 
+import DropboxChooser from 'react-dropbox-chooser';
+const APP_KEY = "thwqp35vo5cl07d";
+
 const CardEdit = () => {
     const navigate = useNavigate();
     const {user} = useContext(AuthContext);
@@ -95,6 +98,10 @@ const CardEdit = () => {
         });
     };
 
+    
+    function handleSuccess(files) {
+        values.image = files[0].link;
+    }
     return (
         <section className="u-align-center u-clearfix u-grey-5 u-section-11" id="sec-fd74">
             <div className="u-clearfix u-sheet u-sheet-1">
@@ -168,6 +175,13 @@ const CardEdit = () => {
                         </div>
                         <div className="u-form-group u-label-top u-form-group-4">
                             <label htmlFor="text-d5ae" className="u-label">Изображение на картичката</label>
+                            <DropboxChooser appKey={APP_KEY}
+                                success={handleSuccess}
+                                cancel={() => console.log('Closed')}
+                                multiselect={false}
+                            >
+                                <p>[Натиснете, за да изберете снимка]</p>
+                            </DropboxChooser>
                             <input
                                 type="text"
                                 placeholder="Въведете адрес на изображението"
@@ -183,6 +197,7 @@ const CardEdit = () => {
                                 value={values.image}
                                 onChange={onChange}
                                 onBlur={validateImageUrl}
+                                disabled
                             />
                             {errors.image && <span>/Линкът към снимката трябва да започва с http/https!/</span>}
                         </div>
