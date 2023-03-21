@@ -24,7 +24,7 @@ exports.login = async(email, password) => {
         lastName: user.lastName,
         profileImageUrl: user.profileImageUrl,
         budget: user.budget,
-        uploadedPhotos: user.uploadedPhotos,
+        likes: user.likes,
     }
 
     const token = await jwt.sign(payload, SECRET);
@@ -36,12 +36,12 @@ exports.login = async(email, password) => {
         lastName: user.lastName,
         profileImageUrl: user.profileImageUrl,
         budget: user.budget,
-        uploadedPhotos: user.uploadedPhotos,
+        likes: user.likes,
         accessToken: token,
     };
 }
 
-exports.register = async(email, password, firstName, lastName, profileImageUrl, budget, uploadedPhotos) => {
+exports.register = async(email, password, firstName, lastName, profileImageUrl, budget, likes) => {
     const existingUser = await User.findOne({email});
 
     if (existingUser) {
@@ -50,7 +50,7 @@ exports.register = async(email, password, firstName, lastName, profileImageUrl, 
 
     const hashedPassword = await bcrypt.hash(password, 10);
 
-    await User.create({email, password: hashedPassword, firstName, lastName, profileImageUrl, budget, uploadedPhotos});
+    await User.create({email, password: hashedPassword, firstName, lastName, profileImageUrl, budget, likes});
 
     return this.login(email, password);
 }

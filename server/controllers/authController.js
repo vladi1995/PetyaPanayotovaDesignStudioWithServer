@@ -2,10 +2,10 @@ const router = require('express').Router();
 const userManager = require('../managers/authManager');
 
 router.post('/register', async (req, res) => {
-    const { email, password, firstName, lastName, profileImageUrl, budget } = req.body;
+    const { email, password, firstName, lastName, profileImageUrl, budget, likes } = req.body;
 
     try {
-        const result = await userManager.register(email, password, firstName, lastName, profileImageUrl, budget);
+        const result = await userManager.register(email, password, firstName, lastName, profileImageUrl, budget, likes);
         res.json(result);
     } catch (err) {
         console.log(err);

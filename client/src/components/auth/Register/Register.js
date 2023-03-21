@@ -20,7 +20,9 @@ const Register = () => {
     const submitLoginHandler = (e) => {
         e.preventDefault();
 
-        authService.register(values.email, values.password, values.firstName, values.lastName, values.profileImageUrl, values.budget)
+        const likes = [];
+        const boughtProducts = [];
+        authService.register(values.email, values.password, values.firstName, values.lastName, values.profileImageUrl, values.budget, likes, boughtProducts)
             .then(authData => {
                 userLogin(authData);
                 navigate('/');

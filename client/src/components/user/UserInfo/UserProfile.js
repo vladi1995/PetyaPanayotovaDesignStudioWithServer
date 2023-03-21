@@ -15,19 +15,27 @@ import './UserInfo.css';
 const UserProfile = () => {
     const { user } = useContext(AuthContext);
     const { cards } = useContext(CardContext);
+    const { userId } = useParams();
 
     const [cardsCurrentUser, setCardsCurrentUser] = useState([]);
     const [currentUser, setCurrentUser] = useState({});
     const [likes, setLikes] = useState(0);
 
     useEffect(() => {
-        userService.getOne(user._id)
-            .then(result => {
-                setCurrentUser(result);
-            });
+        if (userId == user._id) {
+            userService.getOne(user._id)
+                .then(result => {
+                    setCurrentUser(result);
+                });
+        } else {
+            userService.getOne(userId)
+                .then(result => {
+                    setCurrentUser(result);
+                });
+        }
     }, []);
 
-    const filteredCards = cards.filter(x => x.ownerId._id == user._id)
+    const filteredCards = cards.filter(x => x.ownerId._id == currentUser._id)
 
     return (
         <section className="u-align-center u-clearfix u-grey-5 u-section-13" id="sec-8e51">
@@ -37,7 +45,7 @@ const UserProfile = () => {
                     className="u-border-2 u-border-no-bottom u-border-no-left u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-palette-1-base"
                     to={`/user/profile/${user._id}`} style={{ padding: '20px 20px' }}>Бюджет: <b>{currentUser?.budget}</b> лв. <FaCoins /></h3>
                 <img src={imageFormatter(currentUser?.profileImageUrl)} style={{ 'maxWidth': '150px', 'borderRadius': '10px' }} />
-  
+
 
                 <p className="u-text u-text-2">Брой качени картички:</p>
                 <p className="u-text u-text-3"><b>{filteredCards.length}</b> броя</p>

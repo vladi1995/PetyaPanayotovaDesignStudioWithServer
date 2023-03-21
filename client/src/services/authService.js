@@ -6,8 +6,8 @@ export const login = (email, password) => {
     return request.post(`${baseUrl}/login`, { email, password });
 };
 
-export const register = (email, password, firstName, lastName, profileImageUrl, budget) => {
-    return request.post(`${baseUrl}/register`, { email, password, firstName, lastName, profileImageUrl, budget });
+export const register = (email, password, firstName, lastName, profileImageUrl, budget, likes, boughtProducts) => {
+    return request.post(`${baseUrl}/register`, { email, password, firstName, lastName, profileImageUrl, budget, likes, boughtProducts });
 };
 
 export const logout = async (accessToken) => {

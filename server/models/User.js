@@ -29,7 +29,25 @@ const userSchema = new mongoose.Schema({
     budget: {
         type: Number,
         required: [true, 'Budget is required'],
-    }
+    },
+
+    likes: [
+        {
+            card: {
+                type: mongoose.Types.ObjectId,
+                ref: 'Card',
+            }
+        }
+    ],
+
+    boughtProducts: [
+        {
+            card: {
+                type: mongoose.Types.ObjectId,
+                ref: 'Card',
+            }
+        }
+    ],
 });
 
 

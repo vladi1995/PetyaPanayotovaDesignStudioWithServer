@@ -15,7 +15,7 @@ import './Details.css';
 const CardDetails = () => {
     const { cardId } = useParams();
     const [card, setCard] = useState({});
-    
+
     const [serverError, setServerError] = useState('');
 
     const { user } = useContext(AuthContext);
@@ -63,7 +63,8 @@ const CardDetails = () => {
         card.boughtProducts.push({ user, count: Number(productsToBuy) });
         card.count -= Number(productsToBuy);
         currentUser.budget -= Number(card.price) * Number(productsToBuy);
-
+        currentUser.boughtProducts.push({card: cardId});
+        
         cardService.edit(cardId, card)
             .then(result => {
                 cardService.getOne(cardId)
@@ -87,7 +88,6 @@ const CardDetails = () => {
     };
 
     const likeHandler = (e) => {
-        console.log(user);
         card.likes.push({ user: user._id });
 
         cardService.edit(cardId, card)
@@ -98,7 +98,15 @@ const CardDetails = () => {
                         setIsLoading(false);
                     }).catch((err) => {
                         setServerError(err.message);
-                    });;
+                    });
+            });
+
+        currentUser.likes.push({ card: cardId });
+
+        userService.edit(user._id, currentUser)
+            .then(result => console.log(result))
+            .catch((err) => {
+                setServerError(err.message);
             });
     };
 

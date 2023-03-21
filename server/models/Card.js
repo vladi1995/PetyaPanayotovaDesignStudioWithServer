@@ -45,7 +45,6 @@ const cardSchema = new mongoose.Schema({
             comment: String,
         }
     ],
-
     
     likes: [
         {
