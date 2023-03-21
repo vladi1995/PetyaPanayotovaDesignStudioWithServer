@@ -1,83 +1,22 @@
-import { useState, useEffect, useContext } from "react";
+import { useContext } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
+import useValidatorEdit from "../../../hooks/useEditValidator";
 import { CardContext } from "../../../contexts/CardContext";
 import * as cardService from '../../../services/cardService';
 
 import './Edit.css';
 import styles from '../Card.module.css';
-import { AuthContext } from "../../../contexts/AuthContext";
 
 import DropboxChooser from 'react-dropbox-chooser';
 const APP_KEY = "thwqp35vo5cl07d";
 
 const CardEdit = () => {
     const navigate = useNavigate();
-    const {user} = useContext(AuthContext);
-    const [card, setCard] = useState({});
     const { cardId } = useParams();
     const { editCard } = useContext(CardContext);
 
-    const [values, setValues] = useState({
-        name: '',
-        count: '',
-        price: '',
-        image: '',
-        description: '',
-        category: '',
-    });
-
-    useEffect(() => {
-        cardService.getOne(cardId)
-            .then(result => {
-                setCard(result.card);
-                setValues(state => ({
-                    name: result.card.name,
-                    count: result.card.count,
-                    price: result.card.price,
-                    image: result.card.image,
-                    description: result.card.description,
-                    category: result.card.category,
-                }));
-            });
-    }, [cardId]);
-
-    const [errors, setErrors] = useState({});
-
-    const onChange = (e) => {
-        setValues(state => ({
-            ...state,
-            [e.target.name]: e.target.value,
-        }));
-    };
-
-    const validateImageUrl = (e) => {
-        setErrors(state => ({
-            ...state,
-            [e.target.name]: (!values[e.target.name].startsWith('http') && !values[e.target.name].startsWith('https')),
-        }));
-    };
-
-    const validateField = (e, bound) => {
-        setErrors(state => ({
-            ...state,
-            [e.target.name]: (values[e.target.name]).trim().length < bound
-        }));
-    };
-
-    const validateNumbers = (e) => {
-        setErrors(state => ({
-            ...state,
-            [e.target.name]: values[e.target.name] <= 0,
-        }));
-    };
-
-    const validateCount = (e) => {
-        setErrors(state => ({
-            ...state,
-            [e.target.name]: !Number.isInteger(Number(values[e.target.name])) || values[e.target.name] <= 0,
-        }));
-    };
+    const { values, errors, onChange, validateImageUrl, validateField, validateNumbers, validateCount } = useValidatorEdit(cardId);
 
     const editCardHandler = (e) => {
         e.preventDefault();

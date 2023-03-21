@@ -1,9 +1,9 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { AuthContext } from "../contexts/AuthContext";
+import * as cardService from '../services/cardService';
 
-const useValidatorEdit = () => {
+const useValidatorEdit = (cardId) => {
     const [errors, setErrors] = useState({});
-    const {user} = useContext(AuthContext);
 
     const [values, setValues] = useState({
         name: '',
@@ -13,6 +13,20 @@ const useValidatorEdit = () => {
         description: '',
         category: '',
     });
+
+    useEffect(() => {
+        cardService.getOne(cardId)
+            .then(result => {
+                setValues(state => ({
+                    name: result.card.name,
+                    count: result.card.count,
+                    price: result.card.price,
+                    image: result.card.image,
+                    description: result.card.description,
+                    category: result.card.category,
+                }));
+            });
+    }, [cardId]);
 
     const onChange = (e) => {
         setValues(state => ({
