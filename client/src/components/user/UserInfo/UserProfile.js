@@ -19,7 +19,6 @@ const UserProfile = () => {
 
     const [cardsCurrentUser, setCardsCurrentUser] = useState([]);
     const [currentUser, setCurrentUser] = useState({});
-    const [likes, setLikes] = useState(0);
 
     useEffect(() => {
         if (userId == user._id) {
@@ -36,7 +35,6 @@ const UserProfile = () => {
     }, []);
 
     const filteredCards = cards.filter(x => x.ownerId._id == currentUser._id)
-
     return (
         <section className="u-align-center u-clearfix u-grey-5 u-section-13" id="sec-8e51">
             <div className="u-clearfix u-sheet u-sheet-1">
@@ -48,9 +46,11 @@ const UserProfile = () => {
 
 
                 <p className="u-text u-text-2">Брой качени картички:</p>
-                <p className="u-text u-text-3"><b>{filteredCards.length}</b> броя</p>
+                <p className="u-text u-text-3"><b>{filteredCards?.length}</b> броя</p>
                 <p className="u-text u-text-4">Брой харесани картички:</p>
-                <p className="u-text u-text-5"><b>{likes}</b> броя</p>
+                <p className="u-text u-text-5"><b>{currentUser?.likes?.length}</b> броя</p>
+                <p className="u-text u-text-4">Брой закупени картички:</p>
+                <p className="u-text u-text-5"><b>{currentUser?.boughtProducts?.length}</b> броя</p>
                 <div className="u-rotation-parent u-rotation-parent-1">
                     <div className="u-image u-image-circle u-rotate-90 u-image-1" alt="" data-image-width="3296"
                         data-image-height="2472"></div>
