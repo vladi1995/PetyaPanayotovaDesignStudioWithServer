@@ -17,7 +17,6 @@ const CardEdit = () => {
     const [card, setCard] = useState({});
     const { cardId } = useParams();
     const { editCard } = useContext(CardContext);
-    // const [reducedCount, setReducedCount] = useState(0);
 
     const [values, setValues] = useState({
         name: '',
@@ -43,18 +42,9 @@ const CardEdit = () => {
             });
     }, [cardId]);
 
-
-    // useEffect(() => {
-    //     featureService.getAll()
-    //         .then(result => {
-    //             setReducedCount(result.filter(x => x.cardId == cardId).map(x => Number(x.productsToBuy)).reduce((prev, next)=>prev+next,0));
-    //         });
-    // }, []);
-
     const [errors, setErrors] = useState({});
 
     const onChange = (e) => {
-        // setReducedCount(0);
         setValues(state => ({
             ...state,
             [e.target.name]: e.target.value,
