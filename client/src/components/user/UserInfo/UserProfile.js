@@ -17,11 +17,10 @@ const UserProfile = () => {
     const { cards } = useContext(CardContext);
     const { userId } = useParams();
 
-    const [cardsCurrentUser, setCardsCurrentUser] = useState([]);
     const [currentUser, setCurrentUser] = useState({});
 
     useEffect(() => {
-        if (userId == user._id) {
+        if (userId === user._id) {
             userService.getOne(user._id)
                 .then(result => {
                     setCurrentUser(result);
@@ -34,7 +33,8 @@ const UserProfile = () => {
         }
     }, []);
 
-    const filteredCards = cards.filter(x => x.ownerId._id == currentUser._id)
+    const filteredCards = cards.filter(x => x.ownerId._id ? x.ownerId._id === currentUser._id : x.ownerId === currentUser._id);
+
     return (
         <section className="u-align-center u-clearfix u-grey-5 u-section-13" id="sec-8e51">
             <div className="u-clearfix u-sheet u-sheet-1">
@@ -64,6 +64,6 @@ const UserProfile = () => {
             </div>
         </section>
     );
-}
+};
 
 export default UserProfile;

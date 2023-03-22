@@ -3,7 +3,6 @@ import { useParams, NavLink } from "react-router-dom";
 
 import { AuthContext } from "../../../contexts/AuthContext";
 import * as cardService from '../../../services/cardService';
-import * as featuresService from '../../../services/featuresService';
 import * as userService from '../../../services/userService';
 
 import Comments from "../../features/Comments/Comments";
@@ -63,8 +62,8 @@ const CardDetails = () => {
         card.boughtProducts.push({ user, count: Number(productsToBuy) });
         card.count -= Number(productsToBuy);
         currentUser.budget -= Number(card.price) * Number(productsToBuy);
-        currentUser.boughtProducts.push({card: cardId});
-        
+        currentUser.boughtProducts.push({ card: cardId });
+
         cardService.edit(cardId, card)
             .then(result => {
                 cardService.getOne(cardId)
@@ -138,11 +137,7 @@ const CardDetails = () => {
                                                     <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" style={{ maxWidth: '100px', marginLeft: '60px', marginTop: '10px' }} alt="userPhoto" />
                                                 }
 
-
-                                                <a href="https://nicepage.com/k/parking-html-templates"
-                                                    className="u-active-none u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-palette-1-base u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-btn-rectangle u-button-style u-hover-none u-none u-radius-0 u-top-left-radius-0 u-top-right-radius-0 u-btn-2">
-                                                    {objOfCategories[card.category]}</a>
-
+                                                <p className="u-text u-text-default u-text-7">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{objOfCategories[card.category]}</p>
                                                 <p className="u-text u-text-default u-text-4">Категория:</p>
                                                 <p className="u-text u-text-default u-text-5">Цена за брой:</p>
                                                 <p className="u-text u-text-default u-text-6">{card.price} лв.</p>

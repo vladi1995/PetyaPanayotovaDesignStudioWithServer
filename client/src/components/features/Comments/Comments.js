@@ -40,9 +40,9 @@ const Comments = ({ card }) => {
         <>
             <section className="u-clearfix u-grey-5 u-section-8" id="sec-feda">
                 {card.commentList.map((x, i) => <CommentItem key={i} comment={x} index={i} deleteCommentHandler={deleteCommentHandler} editCommentHandler={editCommentHandler} editted={editted} card={card} user={user} />)}
+                <br />
             </section>
             {(user._id !== card.ownerId._id && user.email) && <CommentForm key={card._id} card={card} addNewComment={addNewComment} />}
-
         </>
     );
 };
