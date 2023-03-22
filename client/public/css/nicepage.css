@@ -7,7 +7,7 @@
 }
 /*! normalize.css v4.1.1 | MIT License | github.com/necolas/normalize.css */
 html {
-  font-family: sans-serif;
+  font-family: 'Poppins', sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
@@ -24823,7 +24823,7 @@ a.u-button-style.u-border-20 {
 }
 /*begin-variables font-family*/
 .u-body {
-  font-family: 'Open Sans',sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 h1,
 h2,
@@ -24831,7 +24831,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: Roboto,sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 /*end-variables font-family*/
 /*begin-variables color*/
@@ -24852,10 +24852,10 @@ h6 {
 /*end-variables color*/
 /*begin-variables font*/
 .u-custom-font.u-text-font {
-  font-family: 'Open Sans',sans-serif !important;
+  font-family: 'Poppins', sans-serif !important;
 }
 .u-custom-font.u-heading-font {
-  font-family: Roboto,sans-serif !important;
+  font-family: 'Poppins', sans-serif !important;
 }
 /*end-variables font*/
 /*begin-variables colors*/
