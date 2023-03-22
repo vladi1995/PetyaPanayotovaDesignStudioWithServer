@@ -119,7 +119,6 @@ const Search = () => {
             }
         </section>
     );
-
-}
+};
 
 export default Search;

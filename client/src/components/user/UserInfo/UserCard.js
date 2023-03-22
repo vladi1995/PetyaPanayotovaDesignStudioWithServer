@@ -15,6 +15,6 @@ const UserCard = ({ userCard }) => {
             </NavLink>
         </div>
     );
-}
+};
 
 export default UserCard;

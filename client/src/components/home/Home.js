@@ -30,8 +30,7 @@ const Home = () => {
                                 <div className="u-container-layout u-container-layout-1">
                                     <h2 className="u-align-center u-custom-font u-text u-text-default u-text-font u-text-2">Направете всеки
                                         повод запомнящ се ...</h2>
-                                    <p className="u-align-center u-text u-text-3">Поздравителни картички за рожден ден, сватба, кръщене, св.
-                                        Валентин ... етикети за вино и много други</p>
+                                    <p className="u-align-center u-text u-text-3">Поздравителни картички за рожден ден, сватба, кръщене, погачи, етикети за вино и много други ... Регистрирайте се сега!</p>
                                     <NavLink to="/cards/catalog" className="u-btn u-btn-round u-button-style u-radius-50 u-btn-1">КАТАЛОГ</NavLink>
                                     {user.email
                                         ?
