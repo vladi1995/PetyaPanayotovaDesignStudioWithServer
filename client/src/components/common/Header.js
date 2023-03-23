@@ -1,10 +1,9 @@
 import { NavLink } from 'react-router-dom';
 import { useContext } from "react";
 
-import { AuthContext } from "../../contexts/AuthContext";
+import { AuthContext } from '../../contexts/AuthContext';
 
 import { CiLogout } from 'react-icons/ci';
-
 
 const Header = () => {
     const { user } = useContext(AuthContext);
@@ -12,7 +11,7 @@ const Header = () => {
     return (
         <header className="u-clearfix u-header u-palette-1-light-2 u-sticky u-sticky-ee31 u-header" id="sec-b022">
             <nav className="u-align-center u-menu u-menu-dropdown u-offcanvas u-menu-1">
-                <div className="menu-collapse" style={{ "fontSize": "1rem", "letterSpacing": "0px", "fontWeight": "700" }}>
+                <div className="menu-collapse" >
                     <NavLink className="u-button-style u-custom-active-border-color u-custom-active-color u-custom-border u-custom-border-color u-custom-borders u-custom-hover-border-color u-custom-hover-color u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-active-color u-custom-text-color u-custom-text-hover-color u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
                         to="/">
                     </NavLink>

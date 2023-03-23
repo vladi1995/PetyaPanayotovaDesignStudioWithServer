@@ -1,13 +1,14 @@
-import { useContext, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useContext, useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 
-import { AuthContext } from "../../../contexts/AuthContext";
-import { CardContext } from "../../../contexts/CardContext";
-import * as cardService from '../../../services/cardService';
+import { AuthContext } from '../../../contexts/AuthContext';
+import { CardContext } from '../../../contexts/CardContext';
 import * as userService from '../../../services/userService';
 
-import { imageFormatter } from "../../../utils/formatFunctions";
-import UserCard from "./UserCard";
+import UserCard from './UserCard';
+
+import { imageFormatter } from '../../../utils/formatFunctions';
+
 import { FaCoins } from 'react-icons/fa';
 
 import './UserInfo.css';
@@ -43,7 +44,6 @@ const UserProfile = () => {
                     className="u-border-2 u-border-no-bottom u-border-no-left u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-palette-1-base"
                     to={`/user/profile/${user._id}`} style={{ padding: '20px 20px' }}>Budget: <b>{currentUser?.budget}</b> lv. <FaCoins /></h3>
                 <img src={imageFormatter(currentUser?.profileImageUrl)} style={{ 'maxWidth': '150px', 'borderRadius': '10px' }} />
-
 
                 <p className="u-text u-text-2">Uploaded cards:</p>
                 <p className="u-text u-text-3"><b>{filteredCards?.length}</b> count</p>

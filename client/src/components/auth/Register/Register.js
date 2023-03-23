@@ -1,15 +1,16 @@
-import { useState, useContext } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { useState, useContext } from 'react';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 import useValidatorRegister from '../../../hooks/useValidatorRegister';
-import { AuthContext } from "../../../contexts/AuthContext";
+
+import { AuthContext } from '../../../contexts/AuthContext';
 import * as authService from '../../../services/authService';
 
 import './Register.css';
 import styles from '../Auth.module.css';
 
 import DropboxChooser from 'react-dropbox-chooser';
-const APP_KEY = "thwqp35vo5cl07d";
+const APP_KEY = 'thwqp35vo5cl07d';
 
 const Register = () => {
     const navigate = useNavigate();
@@ -43,10 +44,11 @@ const Register = () => {
                     <form
                         className="u-clearfix u-form-spacing-15 u-form-vertical u-inner-form"
                         style={{ "padding": "10px" }}
-                        name="form" onSubmit={submitLoginHandler} >
+                        name="form"
+                        onSubmit={submitLoginHandler}
+                    >
                         <div className="u-form-group u-form-name u-label-top">
                             <label htmlFor="name-3b9a" className="u-label">Email:</label>
-
                             <input
                                 onBlur={(e) => validateEmail(e, 5)}
                                 onChange={onChange} value={values.email}
@@ -56,8 +58,11 @@ const Register = () => {
                                 name="email"
                                 className=
                                 {
-                                    errors.email ? `${styles['error']} u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white u-input-1`
-                                        : "u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white u-input-1"
+                                    errors.email
+                                        ?
+                                        `${styles['error']} u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white u-input-1`
+                                        :
+                                        "u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white u-input-1"
                                 }
                                 required="required"
                             />
@@ -66,7 +71,6 @@ const Register = () => {
 
                         <div className="u-form-group u-label-top">
                             <label htmlFor="email-3b9a" className="u-label">First name:</label>
-
                             <input
                                 onBlur={(e) => validateField(e, 5)}
                                 onChange={onChange}
@@ -77,8 +81,11 @@ const Register = () => {
                                 name="firstName"
                                 className=
                                 {
-                                    errors.firstName ? `${styles['error']} u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white u-input-2`
-                                        : "u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white u-input-2"
+                                    errors.firstName
+                                        ?
+                                        `${styles['error']} u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white u-input-2`
+                                        :
+                                        "u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white u-input-2"
                                 }
                                 required="required"
                             />
@@ -97,8 +104,11 @@ const Register = () => {
                                 name="lastName"
                                 className=
                                 {
-                                    errors.lastName ? `${styles['error']} u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white u-input-3`
-                                        : "u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white u-input-3"
+                                    errors.lastName
+                                        ?
+                                        `${styles['error']} u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white u-input-3`
+                                        :
+                                        "u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white u-input-3"
                                 }
                                 required="required"
                             />
@@ -106,7 +116,6 @@ const Register = () => {
                         </div>
                         <div className="u-form-group u-label-top u-form-group-4">
                             <label htmlFor="text-d5ae" className="u-label">Password:</label>
-
                             <input
                                 onBlur={(e) => validateField(e, 5)}
                                 onChange={onChange}
@@ -117,8 +126,11 @@ const Register = () => {
                                 name="password"
                                 className=
                                 {
-                                    errors.password ? `${styles['error']} u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white u-input-4`
-                                        : "u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white u-input-4"
+                                    errors.password
+                                        ?
+                                        `${styles['error']} u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white u-input-4`
+                                        :
+                                        "u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white u-input-4"
                                 }
                                 required="required"
                             />
@@ -126,7 +138,6 @@ const Register = () => {
                         </div>
                         <div className="u-form-group u-label-top u-form-group-5">
                             <label htmlFor="text-a271" className="u-label">Repeat password:</label>
-
                             <input
                                 onBlur={validatePassword}
                                 onChange={onChange}
@@ -137,8 +148,11 @@ const Register = () => {
                                 name="repeatPassword"
                                 className=
                                 {
-                                    errors.repeatPassword ? `${styles['error']} u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white u-input-5`
-                                        : "u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white u-input-5"
+                                    errors.repeatPassword
+                                        ?
+                                        `${styles['error']} u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white u-input-5`
+                                        :
+                                        "u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white u-input-5"
                                 }
                                 required="required"
                             />
@@ -157,6 +171,7 @@ const Register = () => {
 
                             <input
                                 onChange={onChange}
+                                onBlur={validateImageUrl}
                                 value={values.profileImageUrl}
                                 type="text"
                                 id="text-1f9b"
@@ -187,8 +202,11 @@ const Register = () => {
                                     name="budget"
                                     className=
                                     {
-                                        errors.budget ? `${styles['error']} u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white u-input-7`
-                                            : "u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white u-input-7"
+                                        errors.budget
+                                            ?
+                                            `${styles['error']} u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white u-input-7`
+                                            :
+                                            "u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white u-input-7"
                                     }
                                     required="required"
                                 />
@@ -197,13 +215,20 @@ const Register = () => {
                         </div>
                         {serverError && <span style={{ "margin": " 20px", "color": "red" }}>{serverError}</span>}
                         <div className="u-align-left u-form-group u-form-submit u-label-top">
-                            <input disabled={Object.values(errors).some(x => x == true) || Object.values(values).some(x => x === '')} type="submit" value="Register" className="u-btn u-btn-submit u-button-style" />
+                            <input
+                                disabled={Object.values(errors).some(x => x == true) || Object.values(values).some(x => x === '')}
+                                type="submit"
+                                value="Register"
+                                className="u-btn u-btn-submit u-button-style"
+                            />
                         </div>
                     </form>
                 </div>
                 <p className="u-text u-text-2">Have an account?</p>
                 <NavLink to="/auth/login"
-                    className="u-active-none u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-palette-1-base u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-btn-rectangle u-button-style u-hover-none u-none u-radius-0 u-top-left-radius-0 u-top-right-radius-0 u-btn-2">Login</NavLink>
+                    className="u-active-none u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-palette-1-base u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-btn-rectangle u-button-style u-hover-none u-none u-radius-0 u-top-left-radius-0 u-top-right-radius-0 u-btn-2">
+                    Login
+                </NavLink>
             </div>
         </section>
     );

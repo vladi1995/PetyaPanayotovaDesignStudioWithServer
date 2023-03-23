@@ -1,18 +1,19 @@
-import { useState, useEffect, useContext } from "react";
-import { NavLink, useParams, useNavigate } from "react-router-dom";
+import { useState, useEffect, useContext } from 'react';
+import { NavLink, useParams, useNavigate } from 'react-router-dom';
 
-import { AuthContext } from "../../../contexts/AuthContext";
-import { CardContext } from "../../../contexts/CardContext";
+import { AuthContext } from '../../../contexts/AuthContext';
+import { CardContext } from '../../../contexts/CardContext';
 import * as cardService from '../../../services/cardService';
+
+import { imageFormatter } from '../../../utils/formatFunctions';
+
 import { objOfCategories } from '../../../utils/constants';
-import { imageFormatter } from "../../../utils/formatFunctions";
 
 import './Delete.css';
 
 const CardDelete = () => {
     const { cardId } = useParams();
     const [card, setCard] = useState({});
-    const { user } = useContext(AuthContext);
     const [serverError, setServerError] = useState('');
 
     const { removeCard } = useContext(CardContext);
@@ -43,7 +44,6 @@ const CardDelete = () => {
         }
     };
 
-
     return (
         <>
             {!loading &&
@@ -68,7 +68,6 @@ const CardDelete = () => {
                                                 <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" style={{ maxWidth: '100px', marginLeft: '60px', marginTop: '10px' }} alt="userPhoto" />
                                             }
                                             
-                                               
                                             <br /> <br />
                                             <p className="u-text u-text-default u-text-5">Category:  {objOfCategories[card.category]}</p>
                                             <p className="u-text u-text-default u-text-6">&nbsp;{card.price} lv.</p>

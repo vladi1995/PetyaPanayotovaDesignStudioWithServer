@@ -1,16 +1,15 @@
-import { useContext, useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import { useContext, useState, useEffect } from 'react';
+import { NavLink } from 'react-router-dom';
 
-import { AuthContext } from "../../contexts/AuthContext";
-import { CardContext } from "../../contexts/CardContext";
+import { AuthContext } from '../../contexts/AuthContext';
 import * as cardService from '../../services/cardService';
 
+import HomeCard from './HomeCard';
+
 import './Home.css';
-import HomeCard from "./HomeCard";
 
 const Home = () => {
     const { user } = useContext(AuthContext);
-
     const [cards, setCards] = useState([]);
 
     useEffect(() => {
@@ -40,10 +39,8 @@ const Home = () => {
 
                                 </div>
                             </div>
-                            <div
-                                className="u-align-center u-container-style u-image u-layout-cell u-right-cell u-size-30 u-size-xs-60 u-image-1"
-                                src="" data-image-width="1920" data-image-height="1080">
-                                <div className="u-container-layout u-container-layout-2" src=""></div>
+                            <div className="u-align-center u-container-style u-image u-layout-cell u-right-cell u-size-30 u-size-xs-60 u-image-1">
+                                <div className="u-container-layout u-container-layout-2"></div>
                             </div>
                         </div>
                         <h4 className="u-align-center u-text u-text-3">Last added cards</h4><hr />
@@ -61,10 +58,10 @@ const Home = () => {
                             </>
                             :
                             <div className="u-repeater u-repeater-1">
-                            <h2>Няма данни</h2>
-                            <p>Няма добавени картички! Моля опитайте по-късно или добавете картичка сами.</p>
-                            <img src="https://shopcaymanislands.com/public/front/images/empty-cart.png" alt="notFoundPicture" />
-                        </div>
+                                <h2>No data!</h2>
+                                <p>There are no added cards! Please try again later or add a new card yourself...</p>
+                                <img src="https://shopcaymanislands.com/public/front/images/empty-cart.png" alt="notFoundPicture" />
+                            </div>
                         }
                     </div>
                 </div>

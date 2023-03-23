@@ -11,18 +11,19 @@ const About = () => {
                                 <div className="u-container-layout u-container-layout-1">
                                     <h2 className="u-align-center u-text u-text-default u-text-1">About</h2>
                                     <p className="u-align-left u-text u-text-2">
-                                        <span style={{ "fontWeight": 700 }}>Petya Panayotova Design Studio</span> 
+                                        <b>Petya Panayotova Design Studio </b>
                                         is a platform, where you can add your cards for all occasions. The designer Petya will populate them
-                                        in the network so your art can be seen by as many people as possible.&nbsp;
+                                        in the network so your art can be seen by as many people as possible.
                                     </p>
                                 </div>
                             </div>
-                            <div
-                                className="u-align-center u-container-style u-layout-cell u-right-cell u-size-30 u-size-xs-60 u-layout-cell-2"
-                                src="">
+                            <div className="u-align-center u-container-style u-layout-cell u-right-cell u-size-30 u-size-xs-60 u-layout-cell-2">
                                 <div className="u-container-layout u-container-layout-2" src="">
-                                    <img className="u-image u-image-default u-image-1" src="/images/-A6.png" alt="" data-image-width="1365"
-                                        data-image-height="1870" />
+                                    <img
+                                        className="u-image u-image-default u-image-1"
+                                        src="/images/-A6.png"
+                                        alt="aboutPicture"
+                                    />
                                 </div>
                             </div>
                         </div>

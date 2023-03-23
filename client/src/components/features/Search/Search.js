@@ -1,17 +1,13 @@
-import { useContext, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { useContext, useState } from 'react';
 
 import { CardContext } from "../../../contexts/CardContext";
-import { AuthContext } from "../../../contexts/AuthContext";
 
-import UserCard from "../../user/UserInfo/UserCard";
+import UserCard from '../../user/UserInfo/UserCard';
 
 import './Search.css';
-import './Create.css';
 
 const Search = () => {
     const { cards } = useContext(CardContext);
-    const { user } = useContext(AuthContext);
 
     const [search, setSearch] = useState({
         text: '',
@@ -39,8 +35,6 @@ const Search = () => {
         setResult(cards.filter(x => (x.category === search.criteria || search.criteria === 'all') && x.name.toLowerCase().includes(search.text.toLowerCase())));
     };
 
-    console.log(result);
-
     return (
         <section className="u-clearfix u-grey-5 u-section-6" id="sec-f49c">
             <section className="u-align-center u-clearfix u-grey-5 u-section-10" id="sec-7464">
@@ -50,7 +44,6 @@ const Search = () => {
                         <form
                             className="u-clearfix u-form-spacing-15 u-form-vertical u-inner-form"
                             style={{ padding: "10px" }}
-                            source="email"
                             name="form"
                             onSubmit={onSearchHandler}
                         >
@@ -111,7 +104,6 @@ const Search = () => {
                                     <h2>No data</h2>
                                     <p>There are no added cards! Please try again ...</p>
                                         <img src="https://shopcaymanislands.com/public/front/images/empty-cart.png" alt="notFoundPicture" />
-                                    
                                 </div>
                             </div>
                         </div>

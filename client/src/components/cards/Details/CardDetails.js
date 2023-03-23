@@ -1,14 +1,16 @@
-import { useEffect, useState, useContext } from "react";
-import { useParams, NavLink } from "react-router-dom";
+import { useEffect, useState, useContext } from 'react';
+import { useParams, NavLink } from 'react-router-dom';
 
-import { AuthContext } from "../../../contexts/AuthContext";
+import { AuthContext } from '../../../contexts/AuthContext';
 import * as cardService from '../../../services/cardService';
 import * as userService from '../../../services/userService';
 
-import Comments from "../../features/Comments/Comments";
-import { imageFormatter } from "../../../utils/formatFunctions";
+import Comments from '../../features/Comments/Comments';
+
+import { imageFormatter } from '../../../utils/formatFunctions';
 
 import { objOfCategories } from '../../../utils/constants';
+
 import './Details.css';
 
 const CardDetails = () => {
@@ -158,10 +160,9 @@ const CardDetails = () => {
                                                                         <img src="/images/6861362.png" alt="" />
                                                                     </NavLink>
                                                                 </span>
-
                                                             </> :
                                                             <>
-                                                                {!card.boughtProducts.some(x => x.user == user._id) ?
+                                                                {!card.boughtProducts.some(x => x.user === user._id) ?
                                                                     <div className="u-form u-form-1">
                                                                         <form
                                                                             className="u-clearfix u-form-horizontal u-form-spacing-15 u-inner-form"
@@ -186,8 +187,6 @@ const CardDetails = () => {
                                                                             <div className="u-form-group u-form-submit u-label-top">
                                                                                 <input type="submit" value="Buy" className="u-btn u-btn-submit u-button-style" />
                                                                             </div>
-
-
                                                                         </form>
                                                                     </div>
                                                                     :
@@ -197,7 +196,7 @@ const CardDetails = () => {
                                                                 {errorBudget && <div style={{ marginLeft: '65px' }}>/Your budget is insufficient!/</div>}
                                                                 {errorCount && <div style={{ marginLeft: '65px' }}>/Not enough cards!/</div>}
 
-                                                                {!card.likes.some(x => x.user == user._id) &&
+                                                                {!card.likes.some(x => x.user === user._id) &&
                                                                     <button
                                                                         className="u-border-2 u-border-grey-75 u-btn u-btn-round u-button-style u-gradient u-none u-radius-4 u-text-body-alt-color u-btn-4"
                                                                         onClick={likeHandler}
@@ -206,8 +205,8 @@ const CardDetails = () => {
                                                                     </button>
                                                                 }
                                                                 <br /><br />
-                                                                <p className="u-text u-text-default u-text-9">{card.likes.length} </p>
-                                                                <p className="u-text u-text-10">like the card</p>
+                                                                <p className="u-text u-text-default u-text-9"><b>{card.likes.length}</b> </p>
+                                                                <p className="u-text u-text-10">people like the card</p>
                                                             </>
                                                         }
                                                     </>

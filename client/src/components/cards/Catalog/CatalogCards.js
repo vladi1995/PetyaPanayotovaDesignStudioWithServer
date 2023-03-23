@@ -1,11 +1,11 @@
-import { useContext, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { useContext, useState } from 'react';
+import { NavLink } from 'react-router-dom';
 
-import { CardContext } from "../../../contexts/CardContext";
-import { AuthContext } from "../../../contexts/AuthContext";
+import { CardContext } from '../../../contexts/CardContext';
+import { AuthContext } from '../../../contexts/AuthContext';
 
-import Pagination from "../../features/Pagination/Pagination";
-import HomeCard from "../../home/HomeCard";
+import Pagination from '../../features/Pagination/Pagination';
+import HomeCard from '../../home/HomeCard';
 
 import './Catalog.css';
 

@@ -1,5 +1,6 @@
-import { NavLink } from "react-router-dom";
-import { imageFormatter } from "../../../utils/formatFunctions";
+import { NavLink } from 'react-router-dom';
+
+import { imageFormatter } from '../../../utils/formatFunctions';
 
 const UserCard = ({ userCard }) => {
     return (

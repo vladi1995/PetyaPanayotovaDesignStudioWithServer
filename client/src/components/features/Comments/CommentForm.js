@@ -1,9 +1,10 @@
-import { useContext, useState } from "react";
+import { useContext, useState } from 'react';
 
-import { AuthContext } from "../../../contexts/AuthContext";
+import { AuthContext } from '../../../contexts/AuthContext';
 import * as cardService from '../../../services/cardService';
 
 import './Comments.css';
+
 const CommentForm = ({ card, addNewComment }) => {
     const [comment, setComment] = useState('');
     const {user} = useContext(AuthContext);

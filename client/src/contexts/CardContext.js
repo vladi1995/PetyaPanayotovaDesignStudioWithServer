@@ -32,7 +32,7 @@ export const CardProvider = ({
             setCards(initialState);
             setNoCardsAvailable(false);
         } else {
-            const children = initialState.filter(x => x.category == cardType);
+            const children = initialState.filter(x => x.category === cardType);
             if (children.length != 0) {
                 setCards(children);
                 setNoCardsAvailable(false);

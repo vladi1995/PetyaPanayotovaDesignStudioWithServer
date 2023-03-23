@@ -1,15 +1,16 @@
-import { useContext } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useContext } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
 
-import useValidatorEdit from "../../../hooks/useEditValidator";
-import { CardContext } from "../../../contexts/CardContext";
+import useValidatorEdit from '../../../hooks/useEditValidator';
+
+import { CardContext } from '../../../contexts/CardContext';
 import * as cardService from '../../../services/cardService';
 
 import './Edit.css';
 import styles from '../Card.module.css';
 
 import DropboxChooser from 'react-dropbox-chooser';
-const APP_KEY = "thwqp35vo5cl07d";
+const APP_KEY = 'thwqp35vo5cl07d';
 
 const CardEdit = () => {
     const navigate = useNavigate();
@@ -21,13 +22,13 @@ const CardEdit = () => {
     const editCardHandler = (e) => {
         e.preventDefault();
         cardService.edit(cardId, values)
-        .then(result => {
-            editCard(cardId, result);
-            navigate(`/cards/details/${cardId}`);
-        });
+            .then(result => {
+                editCard(cardId, result);
+                navigate(`/cards/details/${cardId}`);
+            });
     };
 
-    
+
     function handleSuccess(files) {
         values.image = files[0].link;
     }
@@ -49,8 +50,10 @@ const CardEdit = () => {
                                 type="text"
                                 id="name-3b9a"
                                 name="name"
-                                className={
-                                    errors.name ?
+                                className=
+                                {
+                                    errors.name
+                                        ?
                                         `${styles['error']} u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white u-input-1`
                                         :
                                         "u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white u-input-1"
@@ -68,8 +71,10 @@ const CardEdit = () => {
                                 type="number"
                                 id="email-3b9a"
                                 name="count"
-                                className={
-                                    errors.count ?
+                                className=
+                                {
+                                    errors.count
+                                        ?
                                         `${styles['error']} u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white u-input-2`
                                         :
                                         "u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white u-input-2"
@@ -87,8 +92,10 @@ const CardEdit = () => {
                                 type="number"
                                 id="text-f937"
                                 name="price"
-                                className={
-                                    errors.price ?
+                                className=
+                                {
+                                    errors.price
+                                        ?
                                         `${styles['error']} u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white u-input-3`
                                         :
                                         "u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white u-input-3"
@@ -102,6 +109,7 @@ const CardEdit = () => {
                         </div>
                         <div className="u-form-group u-label-top u-form-group-4">
                             <label htmlFor="text-d5ae" className="u-label">Card image</label>
+
                             <DropboxChooser appKey={APP_KEY}
                                 success={handleSuccess}
                                 cancel={() => console.log('Closed')}
@@ -109,13 +117,16 @@ const CardEdit = () => {
                             >
                                 <p>[Click to choose an image]</p>
                             </DropboxChooser>
+
                             <input
                                 type="text"
                                 placeholder="Въведете адрес на изображението"
                                 id="text-d5ae"
                                 name="image"
-                                className={
-                                    errors.image ?
+                                className=
+                                {
+                                    errors.image
+                                        ?
                                         `${styles['error']} u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white u-input-4`
                                         :
                                         "u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white u-input-4"
@@ -134,8 +145,10 @@ const CardEdit = () => {
                                 type="text"
                                 id="text-a271"
                                 name="description"
-                                className={
-                                    errors.description ?
+                                className=
+                                {
+                                    errors.description
+                                        ?
                                         `${styles['error']} u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white u-input-5`
                                         :
                                         "u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white u-input-5"
@@ -166,7 +179,11 @@ const CardEdit = () => {
                             </div>
                         </div>
                         <div className="u-align-left u-form-group u-form-submit u-label-top">
-                            <input disabled={Object.values(errors).some(x => x == true) || Object.values(values).some(x => x === '' || x === 0)} type="submit" value="Edit" className="u-btn u-btn-submit u-button-style" />
+                            <input disabled={Object.values(errors).some(x => x == true) || Object.values(values).some(x => x === '' || x === 0)}
+                                type="submit"
+                                value="Edit"
+                                className="u-btn u-btn-submit u-button-style"
+                            />
                         </div>
                     </form>
                 </div>

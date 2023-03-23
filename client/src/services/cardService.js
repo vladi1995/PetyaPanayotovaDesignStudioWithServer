@@ -1,4 +1,4 @@
-import * as request from "./requester";
+import * as request from './requester';
 
 const baseUrl = 'http://localhost:3030/cards';
 
@@ -12,17 +12,10 @@ export const edit = (cardId, cardData) => request.put(`${baseUrl}/edit/${cardId}
 
 export const remove = (gameId) => request.del(`${baseUrl}/delete/${gameId}`);
 
-export const getOneDetailed = (cardId) => {
-    const relations = encodeURIComponent(`user=_ownerId:users`);  
-    const search = encodeURIComponent(`_id="${cardId}"`); 
-
-    return request.get(`${baseUrl}?where=${search}&load=${relations}`);
-};
-
 export const getAllDetailed = (userId) => {
     return request.get(baseUrl);
 };
 
 export const getAllCardsPerUser = (userId) => {
     return request.get(baseUrl);
-}
+};

@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useState } from 'react';
 
 import { AuthContext } from '../../../contexts/AuthContext';
 import * as cardService from '../../../services/cardService';
@@ -39,10 +39,25 @@ const Comments = ({ card }) => {
     return (
         <>
             <section className="u-clearfix u-grey-5 u-section-8" id="sec-feda">
-                {card.commentList.map((x, i) => <CommentItem key={i} comment={x} index={i} deleteCommentHandler={deleteCommentHandler} editCommentHandler={editCommentHandler} editted={editted} card={card} user={user} />)}
+                {card.commentList.map((x, i) =>
+                    <CommentItem
+                        key={i}
+                        comment={x}
+                        index={i}
+                        deleteCommentHandler={deleteCommentHandler}
+                        editCommentHandler={editCommentHandler}
+                        editted={editted}
+                        card={card}
+                        user={user}
+                    />
+                )}
                 <br />
             </section>
-            {(user._id !== card.ownerId._id && user.email) && <CommentForm key={card._id} card={card} addNewComment={addNewComment} />}
+            {(user._id !== card.ownerId._id && user.email)
+                &&
+                <CommentForm key={card._id} card={card} addNewComment={addNewComment}
+                />
+            }
         </>
     );
 };

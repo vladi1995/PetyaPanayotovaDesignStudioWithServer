@@ -2,11 +2,11 @@ import { useState, useContext } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 
 import useValidatorLogin from '../../../hooks/userValidatorLogin';
-import { AuthContext } from "../../../contexts/AuthContext";
-import * as authService from "../../../services/authService";
+
+import { AuthContext } from '../../../contexts/AuthContext';
+import * as authService from '../../../services/authService';
 
 import './Login.css';
-
 import styles from '../Auth.module.css';
 
 const Login = () => {
@@ -37,7 +37,6 @@ const Login = () => {
                         onSubmit={submitLoginHandler}
                         className="u-clearfix u-form-spacing-15 u-form-vertical u-inner-form"
                         style={{ "padding": " 10px" }}
-                        source="email"
                         name="form"
                     >
                         <div className="u-form-group u-form-name u-label-top">
@@ -50,9 +49,13 @@ const Login = () => {
                                 placeholder="Enter your email"
                                 id="name-3b9a"
                                 name="email"
-                                className={
-                                    errors.email || serverError ? `${styles['error']} u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white u-input-1`
-                                        : "u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white u-input-1"
+                                className=
+                                {
+                                    errors.email || serverError
+                                        ?
+                                        `${styles['error']} u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white u-input-1`
+                                        :
+                                        "u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white u-input-1"
                                 }
                                 required="required"
                             />
@@ -67,9 +70,13 @@ const Login = () => {
                                 placeholder="Enter your password"
                                 id="email-3b9a"
                                 name="password"
-                                className={
-                                    errors.password || serverError ? `${styles['error']} u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white u-input-2`
-                                        : "u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white u-input-2"
+                                className=
+                                {
+                                    errors.password || serverError
+                                        ?
+                                        `${styles['error']} u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white u-input-2`
+                                        :
+                                        "u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white u-input-2"
                                 }
                                 required="required" />
                             {(serverError || errors.email || errors.password) && <p style={{ color: 'red' }}>/Invalid email or password!/</p>}
@@ -81,9 +88,11 @@ const Login = () => {
                     </form>
                 </div>
                 <p className="u-text u-text-default u-text-2">No account yet?</p>
-                <NavLink to="/auth/register"
-                    className="u-active-none u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-palette-1-base u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-btn-rectangle u-button-style u-hover-none u-none u-radius-0 u-top-left-radius-0 u-top-right-radius-0 u-btn-2">Register
-                    </NavLink>
+                <NavLink
+                    to="/auth/register"
+                    className="u-active-none u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-palette-1-base u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-btn-rectangle u-button-style u-hover-none u-none u-radius-0 u-top-left-radius-0 u-top-right-radius-0 u-btn-2">
+                    Register
+                </NavLink>
             </div>
         </section>
     );
