@@ -38,7 +38,7 @@ const CommentItem = ({ comment, index, deleteCommentHandler, editCommentHandler,
                                         <form onSubmit={(e) => onEditComment(e, index)}>
                                             <input type="text" onChange={onChangeComment}
                                                 value={newComment} name="newComment" />
-                                            <input type="submit" value="Редактирай" />
+                                            <input type="submit" value="Edit" />
                                         </form>
                                         :
                                         <p className="u-text u-text-3">{comment.comment}</p>

@@ -38,7 +38,7 @@ const Register = () => {
     return (
         <section className="u-align-center u-clearfix u-grey-5 u-section-3" id="sec-fc27">
             <div className="u-clearfix u-sheet u-sheet-1">
-                <h2 className="u-text u-text-default u-text-1">Регистрация</h2>
+                <h2 className="u-text u-text-default u-text-1">Register</h2>
                 <div className="u-form u-form-1">
                     <form
                         className="u-clearfix u-form-spacing-15 u-form-vertical u-inner-form"
@@ -51,7 +51,7 @@ const Register = () => {
                                 onBlur={(e) => validateEmail(e, 5)}
                                 onChange={onChange} value={values.email}
                                 type="text"
-                                placeholder="Въведете email"
+                                placeholder="Enter your email"
                                 id="name-3b9a"
                                 name="email"
                                 className=
@@ -61,18 +61,18 @@ const Register = () => {
                                 }
                                 required="required"
                             />
-                            {errors.email && <span>/Email трябва да е поне 5 символа и да е във формат name@domain.extension/</span>}
+                            {errors.email && <span>/Email must be at least 5 characters long and to be in format: name@domain.extension/</span>}
                         </div>
 
                         <div className="u-form-group u-label-top">
-                            <label htmlFor="email-3b9a" className="u-label">Име:</label>
+                            <label htmlFor="email-3b9a" className="u-label">First name:</label>
 
                             <input
                                 onBlur={(e) => validateField(e, 5)}
                                 onChange={onChange}
                                 value={values.firstName}
                                 type="text"
-                                placeholder="Въведете име"
+                                placeholder="Enter your first name"
                                 id="email-3b9a"
                                 name="firstName"
                                 className=
@@ -82,17 +82,17 @@ const Register = () => {
                                 }
                                 required="required"
                             />
-                            {errors.firstName && <span>/Името трябва да е поне 5 символа!/</span>}
+                            {errors.firstName && <span>/First name must be at least 5 characters long!/</span>}
                         </div>
                         <div className="u-form-group u-label-top u-form-group-3">
-                            <label htmlFor="text-f937" className="u-label">Фамилия:</label>
+                            <label htmlFor="text-f937" className="u-label">Last name:</label>
 
                             <input
                                 onBlur={(e) => validateField(e, 5)}
                                 onChange={onChange}
                                 value={values.lastName}
                                 type="text"
-                                placeholder="Въведете фамилия"
+                                placeholder="Enter your last name"
                                 id="text-f937"
                                 name="lastName"
                                 className=
@@ -102,17 +102,17 @@ const Register = () => {
                                 }
                                 required="required"
                             />
-                            {errors.lastName && <span>/Фамилията трябва да е поне 5 символа!/</span>}
+                            {errors.lastName && <span>/Last name must be at least 5 characters long!/</span>}
                         </div>
                         <div className="u-form-group u-label-top u-form-group-4">
-                            <label htmlFor="text-d5ae" className="u-label">Парола:</label>
+                            <label htmlFor="text-d5ae" className="u-label">Password:</label>
 
                             <input
                                 onBlur={(e) => validateField(e, 5)}
                                 onChange={onChange}
                                 value={values.password}
                                 type="password"
-                                placeholder="Въведете парола"
+                                placeholder="Enter your password"
                                 id="text-d5ae"
                                 name="password"
                                 className=
@@ -122,17 +122,17 @@ const Register = () => {
                                 }
                                 required="required"
                             />
-                            {errors.password && <span>/Паролата трябва да е поне 5 символа!/</span>}
+                            {errors.password && <span>/Password must be at least 5 characters long!/</span>}
                         </div>
                         <div className="u-form-group u-label-top u-form-group-5">
-                            <label htmlFor="text-a271" className="u-label">Потвърди паролата</label>
+                            <label htmlFor="text-a271" className="u-label">Repeat password:</label>
 
                             <input
                                 onBlur={validatePassword}
                                 onChange={onChange}
                                 value={values.repeatPassword}
                                 type="password"
-                                placeholder="Въведете паролата отново"
+                                placeholder="Enter your password again"
                                 id="text-a271"
                                 name="repeatPassword"
                                 className=
@@ -142,17 +142,17 @@ const Register = () => {
                                 }
                                 required="required"
                             />
-                            {errors.repeatPassword && <span>/Двете пароли трябва да съвпадат!/</span>}
+                            {errors.repeatPassword && <span>/Passwords do not match!/</span>}
                         </div>
                         <div className="u-form-group u-label-top u-form-group-6">
-                            <label htmlFor="text-1f9b" className="u-label">Профилна снимка</label>
+                            <label htmlFor="text-1f9b" className="u-label">Profile image:</label>
 
                             <DropboxChooser appKey={APP_KEY}
                                 success={handleSuccess}
                                 cancel={() => console.log('Closed')}
                                 multiselect={false}
                             >
-                                <p>[Натиснете, за да изберете снимка]</p>
+                                <p>[Click to choose an image]</p>
                             </DropboxChooser>
 
                             <input
@@ -161,7 +161,7 @@ const Register = () => {
                                 type="text"
                                 id="text-1f9b"
                                 name="profileImageUrl"
-                                placeholder="Въведете линк за профилна снимка"
+                                placeholder="Link url is shown here"
                                 className=
                                 {
                                     errors.profileImageUrl ? `${styles['error']} u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white u-input-6`
@@ -170,10 +170,10 @@ const Register = () => {
                                 required="required"
                                 disabled
                             />
-                            {errors.profileImageUrl && <span>/Линкът към снимката трябва да започва с http/https!/</span>}
+                            {errors.profileImageUrl && <span>/The link must start with http/https!/</span>}
                         </div>
                         <div className="u-form-group u-form-number u-form-number-layout-number u-label-top u-form-group-7">
-                            <label htmlFor="number-03dd" className="u-label">Въведете бюджет в лв.</label>
+                            <label htmlFor="number-03dd" className="u-label">Enter your budget in leva:</label>
                             <div className="u-input-row" data-value="0">
                                 <input
                                     onBlur={validateBudget}
@@ -192,18 +192,18 @@ const Register = () => {
                                     }
                                     required="required"
                                 />
-                                {errors.budget && <span> /Бюджетът трябва да е по-голям от 0лв!/</span>}
+                                {errors.budget && <span> /Budget must be greater than 0 leva!/</span>}
                             </div>
                         </div>
                         {serverError && <span style={{ "margin": " 20px", "color": "red" }}>{serverError}</span>}
                         <div className="u-align-left u-form-group u-form-submit u-label-top">
-                            <input disabled={Object.values(errors).some(x => x == true) || Object.values(values).some(x => x === '')} type="submit" value="Регистрация" className="u-btn u-btn-submit u-button-style" />
+                            <input disabled={Object.values(errors).some(x => x == true) || Object.values(values).some(x => x === '')} type="submit" value="Register" className="u-btn u-btn-submit u-button-style" />
                         </div>
                     </form>
                 </div>
-                <p className="u-text u-text-2">Вече имате акаунт?</p>
+                <p className="u-text u-text-2">Have an account?</p>
                 <NavLink to="/auth/login"
-                    className="u-active-none u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-palette-1-base u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-btn-rectangle u-button-style u-hover-none u-none u-radius-0 u-top-left-radius-0 u-top-right-radius-0 u-btn-2">Вход</NavLink>
+                    className="u-active-none u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-palette-1-base u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-btn-rectangle u-button-style u-hover-none u-none u-radius-0 u-top-left-radius-0 u-top-right-radius-0 u-btn-2">Login</NavLink>
             </div>
         </section>
     );

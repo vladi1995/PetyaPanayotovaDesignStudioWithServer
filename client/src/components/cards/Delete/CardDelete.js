@@ -5,6 +5,7 @@ import { AuthContext } from "../../../contexts/AuthContext";
 import { CardContext } from "../../../contexts/CardContext";
 import * as cardService from '../../../services/cardService';
 import { objOfCategories } from '../../../utils/constants';
+import { imageFormatter } from "../../../utils/formatFunctions";
 
 import './Delete.css';
 
@@ -31,7 +32,7 @@ const CardDelete = () => {
     }, [cardId]);
 
     const deleteCardHandler = () => {
-        const confirmation = window.confirm('Сигурни ли сте, че искате да изтриете играта?');
+        const confirmation = window.confirm('Are you sure you want to delete the card?');
 
         if (confirmation) {
             cardService.remove(cardId)
@@ -53,32 +54,32 @@ const CardDelete = () => {
                                 <div className="u-layout-row">
                                     <div className="u-align-left u-container-style u-layout-cell u-left-cell u-size-40 u-layout-cell-1">
                                         <div className="u-container-layout u-valign-top u-container-layout-1">
-                                            <h2 className="u-text u-text-default u-text-font u-text-1">Изтриване на картичка</h2>
+                                            <h2 className="u-text u-text-default u-text-font u-text-1">Delete card</h2>
                                             <h2 className="u-text u-text-default u-text-2">{card.name}</h2>
                                             <p className="u-text u-text-3">{card.description}</p>
-                                            <a href="https://nicepage.site"
+                                            <NavLink to={`/user/profile/${card.ownerId._id}`}
                                                 className="u-active-none u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-palette-1-base u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-btn-rectangle u-button-style u-hover-none u-none u-radius-0 u-top-left-radius-0 u-top-right-radius-0 u-btn-1">
-                                                {card.ownerId.email || card.ownerId.firstName + ' ' + card.ownerId.lastName}</a>
-                                            <p className="u-text u-text-default u-text-4">Създал:</p>
+                                                {card.ownerId.email || card.ownerId.firstName + ' ' + card.ownerId.lastName}</NavLink>
+                                            <p className="u-text u-text-default u-text-4">Creator:</p>
                                             {card.ownerId.profileImageUrl
                                                 ?
-                                                <img src={card.ownerId.profileImageUrl} style={{ maxWidth: '100px', marginLeft: '15px', marginTop: '10px' }} alt="userPhoto" />
+                                                <img src={imageFormatter(card.ownerId.profileImageUrl)} style={{ maxWidth: '100px', marginLeft: '15px', marginTop: '10px' }} alt="userPhoto" />
                                                 :
                                                 <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" style={{ maxWidth: '100px', marginLeft: '60px', marginTop: '10px' }} alt="userPhoto" />
                                             }
-                                            <a href="https://nicepage.com/k/parking-html-templates"
-                                                className="u-active-none u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-palette-1-base u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-btn-rectangle u-button-style u-hover-none u-none u-radius-0 u-top-left-radius-0 u-top-right-radius-0 u-btn-2">
-                                                {objOfCategories[card.category]}</a>
-                                            <p className="u-text u-text-default u-text-5">Категория:</p>
-                                            <p className="u-text u-text-default u-text-6">{card.price} лв.</p>
-                                            <p className="u-text u-text-default u-text-7">Цена за брой:</p>
-                                            <p className="u-text u-text-default u-text-8">{card.count} броя</p>
-                                            <p className="u-text u-text-default u-text-9">Остават:</p>
+                                            
+                                               
+                                            <br /> <br />
+                                            <p className="u-text u-text-default u-text-5">Category:  {objOfCategories[card.category]}</p>
+                                            <p className="u-text u-text-default u-text-6">&nbsp;{card.price} lv.</p>
+                                            <p className="u-text u-text-default u-text-7">Price of one (lv):</p>
+                                            <p className="u-text u-text-default u-text-8">{card.count} count</p>
+                                            <p className="u-text u-text-default u-text-9">Left are:</p>
                                             <div className="u-form u-form-1">
 
                                                 <div className="u-form-group u-form-submit u-label-top">
                                                     <NavLink style={{ 'marginTop': '20px', 'marginLeft': '15px' }} to={`/cards/delete/${cardId}`} onClick={deleteCardHandler} className="u-border-none u-btn u-btn-submit u-button-style u-palette-2-base u-btn-3">
-                                                        Изтрий
+                                                        Delete
                                                     </NavLink>
                                                 </div>
 
@@ -86,7 +87,7 @@ const CardDelete = () => {
                                         </div>
                                     </div>
                                     <div className="u-container-style u-image u-layout-cell u-right-cell u-size-20 u-image-1">
-                                        <img src={card.image} style={{ width: "400px", height: "600px", objectFit: "cover" }}></img>
+                                        <img src={imageFormatter(card.image)} style={{ width: "400px", height: "600px", objectFit: "cover" }}></img>
                                     </div>
                                 </div>
                             </div>

@@ -21,7 +21,7 @@ const Comments = ({ card }) => {
     };
 
     const deleteCommentHandler = (index) => {
-        const confirmation = window.confirm('Сигурни ли сте, че искате да изтриете коментара?');
+        const confirmation = window.confirm('Are you sure that you want to delete the comment?');
 
         if (confirmation) {
             setComments(state => state.filter((x, i) => i !== index ? x : ''));

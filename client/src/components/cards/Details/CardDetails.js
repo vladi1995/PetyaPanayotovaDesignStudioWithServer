@@ -122,13 +122,12 @@ const CardDetails = () => {
                                     <div className="u-layout-row">
                                         <div className="u-align-left u-container-style u-layout-cell u-left-cell u-size-40 u-layout-cell-1">
                                             <div className="u-container-layout u-container-layout-1">
-
                                                 <h2 className="u-text u-text-default u-text-1">{card.name}</h2>
                                                 <p className="u-text u-text-2">{card.description}</p>
                                                 <NavLink to={`/user/profile/${card.ownerId._id}`}
                                                     className="u-active-none u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-palette-1-base u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-btn-rectangle u-button-style u-hover-none u-none u-radius-0 u-top-left-radius-0 u-top-right-radius-0 u-btn-1">
                                                     {card.ownerId.email || card.ownerId.firstName + ' ' + card.ownerId.lastName}</NavLink>
-                                                <p className="u-text u-text-default u-text-3">Създал:</p>
+                                                <p className="u-text u-text-default u-text-3">Creator:</p>
 
                                                 {card.ownerId.profileImageUrl
                                                     ?
@@ -138,12 +137,12 @@ const CardDetails = () => {
                                                 }
 
                                                 <p className="u-text u-text-default u-text-7">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{objOfCategories[card.category]}</p>
-                                                <p className="u-text u-text-default u-text-4">Категория:</p>
-                                                <p className="u-text u-text-default u-text-5">Цена за брой:</p>
-                                                <p className="u-text u-text-default u-text-6">{card.price} лв.</p>
-                                                <p className="u-text u-text-default u-text-7">{card.count} броя</p>
+                                                <p className="u-text u-text-default u-text-4">Category:</p>
+                                                <p className="u-text u-text-default u-text-5">Price of one (lv):</p>
+                                                <p className="u-text u-text-default u-text-6">&nbsp;{card.price} lv.</p>
+                                                <p className="u-text u-text-default u-text-7">{card.count} count</p>
 
-                                                <p className="u-text u-text-default u-text-8">Остават:</p>
+                                                <p className="u-text u-text-default u-text-8">Left are:</p>
                                                 {user.email &&
                                                     <>
                                                         {user._id === card.ownerId._id ?
@@ -172,9 +171,9 @@ const CardDetails = () => {
                                                                         >
 
                                                                             <div className="u-form-group u-label-top">
-                                                                                <label htmlFor="name-558c" className="u-label">Купи</label>
+                                                                                <label htmlFor="name-558c" className="u-label">Buy</label>
                                                                                 <input type="text"
-                                                                                    placeholder="Брой"
+                                                                                    placeholder="Count"
                                                                                     id="name-558c"
                                                                                     name="numOfCards"
                                                                                     className="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10"
@@ -185,30 +184,30 @@ const CardDetails = () => {
                                                                             </div>
 
                                                                             <div className="u-form-group u-form-submit u-label-top">
-                                                                                <input type="submit" value="Купи" className="u-btn u-btn-submit u-button-style" />
+                                                                                <input type="submit" value="Buy" className="u-btn u-btn-submit u-button-style" />
                                                                             </div>
 
 
                                                                         </form>
                                                                     </div>
                                                                     :
-                                                                    <div style={{ marginLeft: '60px' }}>/Вече сте закупили от картичката!/</div>
+                                                                    <div style={{ marginLeft: '60px' }}>/You have already bought this card!/</div>
                                                                 }
-                                                                {errorPositiveNumber && <div style={{ marginLeft: '65px' }}>/Закупените продукти трябва да са положително число!/</div>}
-                                                                {errorBudget && <div style={{ marginLeft: '65px' }}>/Бюджетът ви не е достатъчен!/</div>}
-                                                                {errorCount && <div style={{ marginLeft: '65px' }}>/Недостатъчна наличност!/</div>}
+                                                                {errorPositiveNumber && <div style={{ marginLeft: '65px' }}>/Bought cards must be a positive number!/</div>}
+                                                                {errorBudget && <div style={{ marginLeft: '65px' }}>/Your budget is insufficient!/</div>}
+                                                                {errorCount && <div style={{ marginLeft: '65px' }}>/Not enough cards!/</div>}
 
                                                                 {!card.likes.some(x => x.user == user._id) &&
                                                                     <button
                                                                         className="u-border-2 u-border-grey-75 u-btn u-btn-round u-button-style u-gradient u-none u-radius-4 u-text-body-alt-color u-btn-4"
                                                                         onClick={likeHandler}
                                                                     >
-                                                                        &nbsp;Харесва ми
+                                                                        &nbsp;Like
                                                                     </button>
                                                                 }
                                                                 <br /><br />
                                                                 <p className="u-text u-text-default u-text-9">{card.likes.length} </p>
-                                                                <p className="u-text u-text-10">харесват картичката</p>
+                                                                <p className="u-text u-text-10">like the card</p>
                                                             </>
                                                         }
                                                     </>

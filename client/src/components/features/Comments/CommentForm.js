@@ -25,7 +25,7 @@ const CommentForm = ({ card, addNewComment }) => {
     return (
         <section className="u-align-center u-clearfix u-grey-5 u-section-9" id="sec-5ffd">
             <div className="u-clearfix u-sheet u-valign-middle u-sheet-1">
-                <h3 className="u-text u-text-default u-text-1">Коментирай</h3>
+                <h3 className="u-text u-text-default u-text-1">Comment</h3>
                 <div className="u-form u-form-1">
                     <form
                         className="u-clearfix u-form-horizontal u-form-spacing-15 u-inner-form"
@@ -34,9 +34,9 @@ const CommentForm = ({ card, addNewComment }) => {
                         onSubmit={addCommentHandler}
                     >
                         <div className="u-form-group u-form-message u-label-none">
-                            <label htmlFor="email-ef64" className="u-label">Email</label>
+                            <label htmlFor="email-ef64" className="u-label">Comment</label>
                             <textarea
-                                placeholder="Въведете коментар"
+                                placeholder="Enter comment"
                                 id="email-ef64"
                                 name="comment"
                                 className="u-border-1 u-border-grey-30 u-input u-input-rectangle"
@@ -46,7 +46,7 @@ const CommentForm = ({ card, addNewComment }) => {
                             ></textarea>
                         </div>
                         <div className="u-form-group u-form-submit">
-                            <input type="submit" value="Изпрати" className="u-btn u-btn-submit u-button-style" />
+                            <input type="submit" value="Send" className="u-btn u-btn-submit u-button-style" />
                         </div>
                     </form>
                 </div>

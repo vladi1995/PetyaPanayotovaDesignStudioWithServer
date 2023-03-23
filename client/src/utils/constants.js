@@ -1,7 +1,7 @@
 export const objOfCategories = {
-    birthdayCard: 'Картички за рожден ден',
-    baptismCard: 'Картички за кръщене',
-    pogachaCard: 'Картички за погачи',
-    weddingCard: 'Картички за сватба',
-    wineLabels: 'Етикети за вино',
+    birthdayCard: 'Birthday cards',
+    baptismCard: 'Baptism cards',
+    pogachaCard: 'Round loaf cards',
+    weddingCard: 'Wedding cards',
+    wineLabels: 'Wine labels',
 };

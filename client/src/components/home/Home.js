@@ -28,15 +28,14 @@ const Home = () => {
                         <div className="u-layout-row">
                             <div className="u-container-style u-layout-cell u-left-cell u-size-30 u-size-xs-60 u-layout-cell-1" src="">
                                 <div className="u-container-layout u-container-layout-1">
-                                    <h2 className="u-align-center u-custom-font u-text u-text-default u-text-font u-text-2">Направете всеки
-                                        повод запомнящ се ...</h2>
-                                    <p className="u-align-center u-text u-text-3">Поздравителни картички за рожден ден, сватба, кръщене, погачи, етикети за вино и много други ... Регистрирайте се сега!</p>
-                                    <NavLink to="/cards/catalog" className="u-btn u-btn-round u-button-style u-radius-50 u-btn-1">КАТАЛОГ</NavLink>
+                                    <h2 className="u-align-center u-custom-font u-text u-text-default u-text-font u-text-2">Make every moment precious ...</h2>
+                                    <p className="u-align-center u-text u-text-3">Birthday cards, baptism cards, leaf bread cards, wedding cards, wine labels ...</p>
+                                    <NavLink to="/cards/catalog" className="u-btn u-btn-round u-button-style u-radius-50 u-btn-1">CATALOG</NavLink>
                                     {user.email
                                         ?
-                                        <NavLink to="/search" className="u-btn u-btn-round u-button-style u-radius-50 u-btn-2">ТЪРСЕНЕ</NavLink>
+                                        <NavLink to="/search" className="u-btn u-btn-round u-button-style u-radius-50 u-btn-2">SEARCH</NavLink>
                                         :
-                                        <NavLink to="/auth/register" className="u-btn u-btn-round u-button-style u-radius-50 u-btn-2">РЕГИСТРАЦИЯ</NavLink>
+                                        <NavLink to="/auth/register" className="u-btn u-btn-round u-button-style u-radius-50 u-btn-2">REGISTER</NavLink>
                                     }
 
                                 </div>
@@ -47,7 +46,7 @@ const Home = () => {
                                 <div className="u-container-layout u-container-layout-2" src=""></div>
                             </div>
                         </div>
-                        <h4 className="u-align-center u-text u-text-3">Последно добавени картички</h4><hr />
+                        <h4 className="u-align-center u-text u-text-3">Last added cards</h4><hr />
                         {cards.length ?
                             <>
                                 <section className="u-clearfix u-section-14" id="sec-c19f">

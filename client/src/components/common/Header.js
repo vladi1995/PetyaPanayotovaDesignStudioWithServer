@@ -21,29 +21,29 @@ const Header = () => {
                     <ul className="u-nav u-spacing-20 u-unstyled u-nav-1">
                         <li className="u-nav-item"><NavLink
                             className="u-border-active-grey-30 u-border-grey-30 u-border-hover-grey-30 u-border-no-bottom u-border-no-left u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-palette-1-base"
-                            to="/" style={{ padding: '10px 0px' }}>НАЧАЛО</NavLink>
+                            to="/" style={{ padding: '10px 0px' }}>HOME</NavLink>
                         </li>
                         <li className="u-nav-item"><NavLink
                             className="u-border-active-grey-30 u-border-grey-30 u-border-hover-grey-30 u-border-no-bottom u-border-no-left u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-palette-1-base"
-                            to="/cards/catalog" style={{ padding: '10px 0px' }}>КАТАЛОГ</NavLink>
+                            to="/cards/catalog" style={{ padding: '10px 0px' }}>CATALOG</NavLink>
                         </li>
                         <li className="u-nav-item"><NavLink
                             className="u-border-active-grey-30 u-border-grey-30 u-border-hover-grey-30 u-border-no-bottom u-border-no-left u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-palette-1-base"
-                            to="/search" style={{ padding: '10px 0px' }}>ТЪРСЕНЕ</NavLink>
+                            to="/search" style={{ padding: '10px 0px' }}>SEARCH</NavLink>
                         </li>
                         <li className="u-nav-item"><NavLink to="/about"
                             className="u-border-active-grey-30 u-border-grey-30 u-border-hover-grey-30 u-border-no-bottom u-border-no-left u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-palette-1-base"
-                            style={{ padding: '10px 0px' }}>ЗА СТРАНИЦАТА</NavLink>
+                            style={{ padding: '10px 0px' }}>ABOUT</NavLink>
                         </li>
                         {user.email &&
                             <>
                                 <li className="u-nav-item"><NavLink
                                     className="u-border-active-grey-30 u-border-grey-30 u-border-hover-grey-30 u-border-no-bottom u-border-no-left u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-palette-1-base"
-                                    to={`/user/profile/${user._id}`} style={{ padding: '10px 0px' }}>МОЯТ ПРОФИЛ</NavLink>
+                                    to={`/user/profile/${user._id}`} style={{ padding: '10px 0px' }}>MY PROFILE</NavLink>
                                 </li>
                                 <li className="u-nav-item"><NavLink to="/cards/create"
                                     className="u-border-active-grey-30 u-border-grey-30 u-border-hover-grey-30 u-border-no-bottom u-border-no-left u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-palette-1-base"
-                                    style={{ padding: '10px 0px' }}>СЪЗДАВАНЕ</NavLink>
+                                    style={{ padding: '10px 0px' }}>CREATE</NavLink>
                                 </li>
                             </>
                         }
@@ -68,7 +68,7 @@ const Header = () => {
                                 <li className="u-nav-item">
                                     <NavLink
                                         className="u-border-active-grey-30 u-border-grey-30 u-border-hover-grey-30 u-border-no-bottom u-border-no-left u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-palette-1-base"
-                                        to="/auth/logout" style={{ padding: '0px 20px' }}> Изход <CiLogout /></NavLink>
+                                        to="/auth/logout" style={{ padding: '0px 20px' }}> Logout <CiLogout /></NavLink>
                                 </li>
                             </>
                             :
@@ -76,12 +76,12 @@ const Header = () => {
                                 <li className="u-nav-item">
                                     <NavLink
                                         className="u-border-2 u-border-active-grey-30 u-border-grey-30 u-border-hover-grey-30 u-border-no-bottom u-border-no-left u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-palette-1-base"
-                                        to="/auth/login" style={{ padding: '0px 20px' }}>Вход</NavLink>
+                                        to="/auth/login" style={{ padding: '0px 20px' }}>Login</NavLink>
                                 </li>
                                 <li className="u-nav-item">
                                     <NavLink
                                         className="u-border-active-grey-30 u-border-grey-30 u-border-hover-grey-30 u-border-no-bottom u-border-no-left u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-palette-1-base"
-                                        to="/auth/register" style={{ padding: '0px 20px' }}>Регистрация</NavLink>
+                                        to="/auth/register" style={{ padding: '0px 20px' }}>Register</NavLink>
                                 </li>
                             </>
                         }

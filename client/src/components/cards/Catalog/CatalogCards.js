@@ -29,7 +29,7 @@ const CatalogCards = () => {
     return (
         <>
             <section className="u-clearfix u-section-14 u-grey-5" id="sec-c19f">
-                <h4 className="u-align-center u-text u-text-3">Каталог</h4>
+                <h4 className="u-align-center u-text u-text-3">Catalog</h4>
                 <div className="u-clearfix u-sheet u-valign-middle u-sheet-1">
 
                     <ul className="u-nav u-spacing-0 u-unstyled u-nav-3" style={{ margin: "20px auto" }}>
@@ -40,7 +40,7 @@ const CatalogCards = () => {
                                     style={{ padding: '0px 20px' }}
                                     onClick={() => sortHandler('all')}
                                 >
-                                    Всички
+                                    All
                                 </NavLink>
                             </li>
                             <li className="u-nav-item">
@@ -49,7 +49,7 @@ const CatalogCards = () => {
                                     style={{ padding: '0px 20px' }}
                                     onClick={() => sortHandler('birthdayCard')}
                                 >
-                                    Рожден ден
+                                    Birthday
                                 </NavLink>
                             </li>
                             <li className="u-nav-item">
@@ -58,7 +58,7 @@ const CatalogCards = () => {
                                     style={{ padding: '0px 20px' }}
                                     onClick={() => sortHandler('baptismCard')}
                                 >
-                                    Кръщене
+                                    Baptism
                                 </NavLink>
                             </li>
                             <li className="u-nav-item">
@@ -67,7 +67,7 @@ const CatalogCards = () => {
                                     style={{ padding: '0px 20px' }}
                                     onClick={() => sortHandler('pogachaCard')}
                                 >
-                                    Погачи
+                                    Loaf bread
                                 </NavLink>
                             </li>
                             <li className="u-nav-item">
@@ -76,7 +76,7 @@ const CatalogCards = () => {
                                     style={{ padding: '0px 20px' }}
                                     onClick={() => sortHandler('weddingCard')}
                                 >
-                                    Сватба
+                                    Wedding
                                 </NavLink>
                             </li>
                             <li className="u-nav-item">
@@ -85,7 +85,7 @@ const CatalogCards = () => {
                                     style={{ padding: '0px 20px' }}
                                     onClick={() => sortHandler('wineLabels')}
                                 >
-                                    Етикети за вино
+                                    Wine labels
                                 </NavLink>
                             </li>
                         </>
@@ -104,13 +104,13 @@ const CatalogCards = () => {
                             <div className="u-clearfix u-sheet u-valign-middle u-sheet-1">
                                 <div className="u-blog u-expanded-width u-blog-1">
                                     <div className="u-repeater u-repeater-1">
-                                        <h2>Няма данни</h2>
-                                        <p>Няма добавени картички! Моля опитайте по-късно или добавете картичка сами.
+                                        <h2>No data</h2>
+                                        <p>There are no added cards! Please try again later or add a new card yourself...
                                             {user.email
                                                 ?
-                                                <NavLink to="/cards/create" className="u-btn u-btn-round u-button-style u-radius-50 u-btn-2" style={{padding: "10px"}}>Добави картичка</NavLink>
+                                                <NavLink to="/cards/create" className="u-btn u-btn-round u-button-style u-radius-50 u-btn-2" style={{padding: "10px"}}>Create card</NavLink>
                                                 :
-                                                <NavLink to="/auth/register" className="u-btn u-btn-round u-button-style u-radius-50 u-btn-2" style={{padding: "10px"}}>Регистрирай се</NavLink>
+                                                <NavLink to="/auth/register" className="u-btn u-btn-round u-button-style u-radius-50 u-btn-2" style={{padding: "10px"}}>Register</NavLink>
                                             }
                                         </p>
                                         <img src="https://shopcaymanislands.com/public/front/images/empty-cart.png" alt="notFoundPicture" />

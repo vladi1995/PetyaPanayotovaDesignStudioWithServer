@@ -12,7 +12,7 @@ const CatalogItem = ({ item }) => {
                     </NavLink>
                 </h3>
                 <NavLink to={`/cards/details/${item._id}`}
-                    className="u-blog-control u-border-none u-btn u-btn-rectangle u-button-style u-palette-1-base u-btn-2">Разгледай</NavLink>
+                    className="u-blog-control u-border-none u-btn u-btn-rectangle u-button-style u-palette-1-base u-btn-2">View</NavLink>
             </div>
         </div>
     );

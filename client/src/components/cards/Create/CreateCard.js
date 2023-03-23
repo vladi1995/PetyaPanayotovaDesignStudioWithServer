@@ -45,7 +45,7 @@ const CreateCard = () => {
     return (
         <section className="u-align-center u-clearfix u-grey-5 u-section-10" id="sec-7464">
             <div className="u-clearfix u-sheet u-sheet-1">
-                <h2 className="u-text u-text-default u-text-1">Добавяне на нова картичка</h2>
+                <h2 className="u-text u-text-default u-text-1">Create new card</h2>
                 <div className="u-form u-form-1">
                     <form
                         className="u-clearfix u-form-spacing-15 u-form-vertical u-inner-form"
@@ -55,13 +55,13 @@ const CreateCard = () => {
                         onSubmit={createCardHandler}
                     >
                         <div className="u-form-group u-form-name u-label-top">
-                            <label htmlFor="name-3b9a" className="u-label">Име на картичката:</label>
+                            <label htmlFor="name-3b9a" className="u-label">Name of card:</label>
                             <input
                                 type="text"
                                 onChange={onChange}
                                 onBlur={(e) => validateField(e, 5)}
                                 value={values.name}
-                                placeholder="Въведете име на картичката"
+                                placeholder="Enter name of your card"
                                 id="name-3b9a"
                                 name="name"
                                 className={
@@ -72,16 +72,16 @@ const CreateCard = () => {
                                 }
                                 required="required"
                             />
-                            {errors.name && <span>/Името на картичката трябва да е поне 5 символа/</span>}
+                            {errors.name && <span>/Name of card must be at least 5 characters long!/</span>}
                         </div>
                         <div className="u-form-group u-label-top">
-                            <label htmlFor="email-3b9a" className="u-label">Брой:</label>
+                            <label htmlFor="email-3b9a" className="u-label">Number of cards:</label>
                             <input
                                 type="number"
                                 onChange={onChange}
                                 onBlur={validateCount}
                                 value={values.count}
-                                placeholder="Въведете брой картички"
+                                placeholder="Enter number of cards"
                                 id="email-3b9a"
                                 name="count"
                                 className={
@@ -92,16 +92,16 @@ const CreateCard = () => {
                                 }
                                 required="required"
                             />
-                            {errors.count && <span>/Броят на картичките трябва да е поне 1 и да е цяло число/</span>}
+                            {errors.count && <span>/Number of cards must be at least 1 and must be an integer/</span>}
                         </div>
                         <div className="u-form-group u-label-top u-form-group-3">
-                            <label htmlFor="text-f937" className="u-label">Цена за брой (в лв):</label>
+                            <label htmlFor="text-f937" className="u-label">Price (leva):</label>
                             <input
                                 type="number"
                                 onChange={onChange}
                                 onBlur={validateNumbers}
                                 value={values.price}
-                                placeholder="Въведете единична цена"
+                                placeholder="Enter price of one card"
                                 id="text-f937"
                                 name="price"
                                 className={
@@ -112,23 +112,22 @@ const CreateCard = () => {
                                 }
                                 required="required"
                             />
-                            {errors.price && <span>/Цената на картичкате трябва да е положително число/</span>}
+                            {errors.price && <span>/Price of card must be a positive number/</span>}
                         </div>
                         <div className="u-form-group u-label-top u-form-group-4">
-                            <label htmlFor="text-d5ae" className="u-label">Изображение на картичката</label>
+                            <label htmlFor="text-d5ae" className="u-label">Card image</label>
                             <DropboxChooser appKey={APP_KEY}
                                 success={handleSuccess}
                                 cancel={() => console.log('Closed')}
                                 multiselect={false}
                             >
-                                <p>[Натиснете, за да изберете снимка]</p>
+                                <p>[Click to choose an image]</p>
                             </DropboxChooser>
                             <input
                                 type="text"
                                 onChange={onChange}
                                 onBlur={validateImageUrl}
                                 value={values.image}
-                                placeholder="Въведете адрес на изображението"
                                 id="text-d5ae"
                                 name="image"
                                 className={
@@ -140,16 +139,16 @@ const CreateCard = () => {
                                 required="required"
                                 disabled
                             />
-                            {errors.image && <span>/Линкът към снимката трябва да започва с http/https!/</span>}
+                            {errors.image && <span>/The link must start with http/https!/</span>}
                         </div>
                         <div className="u-form-group u-label-top u-form-group-5">
-                            <label htmlFor="text-a271" className="u-label">Описание на картичката</label>
+                            <label htmlFor="text-a271" className="u-label">Card description</label>
                             <input
                                 type="text"
                                 onChange={onChange}
                                 onBlur={(e) => validateField(e, 5)}
                                 value={values.description}
-                                placeholder="Въведете описание"
+                                placeholder="Enter card description"
                                 id="text-a271"
                                 name="description"
                                 className={
@@ -160,10 +159,10 @@ const CreateCard = () => {
                                 }
                                 required="required"
                             />
-                            {errors.description && <span>/Описанието на картичката трябва да е поне 5 символа/</span>}
+                            {errors.description && <span>/Card description must be at least 5 characters long!/</span>}
                         </div>
                         <div className="u-form-group u-form-select u-label-top u-form-group-6">
-                            <label htmlFor="select-67b6" className="u-label">Категория:</label>
+                            <label htmlFor="select-67b6" className="u-label">Category:</label>
                             <div className="u-form-select-wrapper">
                                 <select id="select-67b6"
                                     name="category"
@@ -171,17 +170,17 @@ const CreateCard = () => {
                                     onChange={onChange}
                                     value={values.category}
                                 >
-                                    <option value="birthdayCard">Картички за рожден ден</option>
-                                    <option value="baptismCard">Картички за кръщене</option>
-                                    <option value="pogachaCard">Картички за погачи</option>
-                                    <option value="weddingCard">Покани за сватба</option>
-                                    <option value="wineLabels">Етикети за вино</option>
+                                    <option value="birthdayCard">Birthday cards</option>
+                                    <option value="baptismCard">Baptism cards</option>
+                                    <option value="pogachaCard">Round loaf cards</option>
+                                    <option value="weddingCard">Wedding cards</option>
+                                    <option value="wineLabels">Wine labels</option>
                                 </select>
                             </div>
                         </div>
                         {serverError && <span style={{ "margin": " 20px", "color": "red" }}>{serverError}</span>}
                         <div className="u-align-left u-form-group u-form-submit u-label-top">
-                            <input disabled={Object.values(errors).some(x => x == true) || Object.values(values).some(x => x === '' || x === 0)} type="submit" value="Добавяне" className="u-btn u-btn-submit u-button-style" />
+                            <input disabled={Object.values(errors).some(x => x == true) || Object.values(values).some(x => x === '' || x === 0)} type="submit" value="Create" className="u-btn u-btn-submit u-button-style" />
                         </div>
                     </form>
                 </div>

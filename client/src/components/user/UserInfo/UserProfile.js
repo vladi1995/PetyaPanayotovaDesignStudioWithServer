@@ -41,21 +41,21 @@ const UserProfile = () => {
                 <h2 className="u-text u-text-default u-text-1">{currentUser?.firstName + ' ' + currentUser?.lastName}</h2>
                 <h3
                     className="u-border-2 u-border-no-bottom u-border-no-left u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-palette-1-base"
-                    to={`/user/profile/${user._id}`} style={{ padding: '20px 20px' }}>Бюджет: <b>{currentUser?.budget}</b> лв. <FaCoins /></h3>
+                    to={`/user/profile/${user._id}`} style={{ padding: '20px 20px' }}>Budget: <b>{currentUser?.budget}</b> lv. <FaCoins /></h3>
                 <img src={imageFormatter(currentUser?.profileImageUrl)} style={{ 'maxWidth': '150px', 'borderRadius': '10px' }} />
 
 
-                <p className="u-text u-text-2">Брой качени картички:</p>
-                <p className="u-text u-text-3"><b>{filteredCards?.length}</b> броя</p>
-                <p className="u-text u-text-4">Брой харесани картички:</p>
-                <p className="u-text u-text-5"><b>{currentUser?.likes?.length}</b> броя</p>
-                <p className="u-text u-text-4">Брой закупени картички:</p>
-                <p className="u-text u-text-5"><b>{currentUser?.boughtProducts?.length}</b> броя</p>
+                <p className="u-text u-text-2">Uploaded cards:</p>
+                <p className="u-text u-text-3"><b>{filteredCards?.length}</b> count</p>
+                <p className="u-text u-text-4">Liked cards:</p>
+                <p className="u-text u-text-5"><b>{currentUser?.likes?.length}</b> count</p>
+                <p className="u-text u-text-4">Bought cards:</p>
+                <p className="u-text u-text-5"><b>{currentUser?.boughtProducts?.length}</b> count</p>
                 <div className="u-rotation-parent u-rotation-parent-1">
                     <div className="u-image u-image-circle u-rotate-90 u-image-1" alt="" data-image-width="3296"
                         data-image-height="2472"></div>
                 </div>
-                <h3 className="u-text u-text-default u-text-6">Качени картички:</h3>
+                <h3 className="u-text u-text-default u-text-6">Uploaded cards:</h3>
                 <div className="u-expanded-width u-gallery u-layout-grid u-lightbox u-show-text-on-hover u-gallery-1">
                     <div className="u-gallery-inner u-gallery-inner-1">
                         {filteredCards.map(x => <UserCard key={x._id} userCard={x} />)}

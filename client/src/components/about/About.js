@@ -9,11 +9,11 @@ const About = () => {
                         <div className="u-layout-row">
                             <div className="u-container-style u-layout-cell u-left-cell u-size-30 u-size-xs-60 u-layout-cell-1" src="">
                                 <div className="u-container-layout u-container-layout-1">
-                                    <h2 className="u-align-center u-text u-text-default u-text-1">За страницата</h2>
+                                    <h2 className="u-align-center u-text u-text-default u-text-1">About</h2>
                                     <p className="u-align-left u-text u-text-2">
-                                        <span style={{ "fontWeight": 700 }}>Petya Panayotova Design Studio</span> е платформа, в която можете да
-                                        добавяте изработените от вас картички за всякакви поводи. Дизайнерът Петя ще ги популяризира в
-                                        мрежата, за да може творчеството ви да достигне до повече хора.&nbsp;
+                                        <span style={{ "fontWeight": 700 }}>Petya Panayotova Design Studio</span> 
+                                        is a platform, where you can add your cards for all occasions. The designer Petya will populate them
+                                        in the network so your art can be seen by as many people as possible.&nbsp;
                                     </p>
                                 </div>
                             </div>
