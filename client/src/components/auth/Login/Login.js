@@ -13,7 +13,7 @@ const Login = () => {
     const { userLogin } = useContext(AuthContext);
     const { values, errors, onChange, validateEmail, validateField } = useValidatorLogin();
     const [serverError, setServerError] = useState('');
-    const navigate = useNavigate();
+  //  const navigate = useNavigate();
 
     const submitLoginHandler = (e) => {
         e.preventDefault();
@@ -21,7 +21,7 @@ const Login = () => {
         authService.login(values.email, values.password)
             .then(authData => {
                 userLogin(authData);
-                navigate('/');
+           //     navigate('/');
             })
             .catch((err) => {
                 setServerError(err.message);
