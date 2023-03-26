@@ -13,7 +13,7 @@ const Login = () => {
     const { userLogin } = useContext(AuthContext);
     const { values, errors, onChange, validateEmail, validateField } = useValidatorLogin();
     const [serverError, setServerError] = useState('');
-  //  const navigate = useNavigate();
+    const navigate = useNavigate();
 
     const submitLoginHandler = (e) => {
         e.preventDefault();
@@ -21,7 +21,7 @@ const Login = () => {
         authService.login(values.email, values.password)
             .then(authData => {
                 userLogin(authData);
-           //     navigate('/');
+                navigate('/');
             })
             .catch((err) => {
                 setServerError(err.message);
@@ -83,7 +83,11 @@ const Login = () => {
                         </div>
 
                         <div className="u-align-left u-form-group u-form-submit u-label-top">
-                            <input type="submit" value="Login" className="u-btn u-btn-submit u-button-style" />
+                            <input
+                                disabled={Object.values(errors).some(x => x == true) || Object.values(values).some(x => x === '')}
+                                type="submit"
+                                value="Login"
+                                className="u-btn u-btn-submit u-button-style" />
                         </div>
                     </form>
                 </div>

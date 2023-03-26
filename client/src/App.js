@@ -21,6 +21,7 @@ import Footer from "./components/common/Footer";
 
 import PrivateGuard from './components/guads/PrivateGuard';
 import PrivateGuardLogged from './components/guads/PrivateGuardLogged';
+import NotFound from './components/notFound/NotFound';
 
 function App() {
   return (
@@ -48,6 +49,8 @@ function App() {
               <Route path="/auth/register" element={<Register />} />
               <Route path="/auth/login" element={<Login />} />
             </Route>
+
+            <Route path="*" element={<NotFound />} />
 
           </Routes>
         </CardProvider>

@@ -36,7 +36,6 @@ const Home = () => {
                                         :
                                         <NavLink to="/auth/register" className="u-btn u-btn-round u-button-style u-radius-50 u-btn-2">REGISTER</NavLink>
                                     }
-
                                 </div>
                             </div>
                             <div className="u-align-center u-container-style u-image u-layout-cell u-right-cell u-size-30 u-size-xs-60 u-image-1">

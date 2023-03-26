@@ -56,7 +56,7 @@ const CreateCard = () => {
                         onSubmit={createCardHandler}
                     >
                         <div className="u-form-group u-form-name u-label-top">
-                            <label htmlFor="name-3b9a" className="u-label">Name of card:</label>
+                            <label htmlFor="name-3b9a" className="u-label">Name</label>
                             <input
                                 type="text"
                                 onChange={onChange}
