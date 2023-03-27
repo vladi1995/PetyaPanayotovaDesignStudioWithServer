@@ -1,28 +1,18 @@
 import { screen, render, fireEvent } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
+import userEvent from '@testing-library/user-event';
 import Login from './Login';
 
-test('Email input should be rendered', () => {
+test('Input fields should be rendered', () => {
     render(
         <BrowserRouter><Login /></BrowserRouter>
     );
     const emailInputElement = screen.getByLabelText('Email:');
-    expect(emailInputElement).toBeInTheDocument();
-});
-
-test('Password input should be rendered', () => {
-    render(
-        <BrowserRouter><Login /></BrowserRouter>
-    );
     const passwordInputElement = screen.getByLabelText('Password:');
-    expect(passwordInputElement).toBeInTheDocument();
-});
-
-test('Button should be rendered', () => {
-    render(
-        <BrowserRouter><Login /></BrowserRouter>
-    );
     const buttonInputElement = screen.getByDisplayValue('Login');
+
+    expect(emailInputElement).toBeInTheDocument();
+    expect(passwordInputElement).toBeInTheDocument();
     expect(buttonInputElement).toBeInTheDocument();
 });
 
@@ -70,4 +60,39 @@ test('Password input should change', () => {
     
     fireEvent.change(passwordInputElement, {target: {value: testValue}});
     expect(passwordInputElement.value).toBe(testValue);
+});
+
+test('Button should not be disabled when inputs exist', () => {
+    render(
+        <BrowserRouter><Login /></BrowserRouter>
+    );
+    const buttonInputElement = screen.getByDisplayValue('Login');
+    const emailInputElement = screen.getByLabelText('Email:');
+    const passwordInputElement = screen.getByLabelText('Password:');
+
+    const testValueEmail = "test@abv.bg";
+    const testValuePass = "12345";
+
+    fireEvent.change(emailInputElement, {target: {value: testValueEmail}});
+    fireEvent.change(passwordInputElement, {target: {value: testValuePass}});
+
+    expect(buttonInputElement).not.toBeDisabled();
+});
+
+test("Should allow the user to submit their credentials", () => {
+    const submit = jest.fn();
+    render(<BrowserRouter><Login submit={submit}/></BrowserRouter>);
+
+    const emailInputElement = screen.getByLabelText('Email:');
+    const passwordInputElement = screen.getByLabelText('Password:');
+    const buttonInputElement = screen.getByDisplayValue('Login');
+
+    userEvent.type(emailInputElement, "test@abv.bg");
+    userEvent.type(passwordInputElement, "12345");
+    userEvent.click(buttonInputElement);
+
+    expect(submit).toHaveBeenCalledWith({
+        email: "test@abv.bg",
+        password: "12345",
+    });
 });

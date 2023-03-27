@@ -9,7 +9,7 @@ import * as authService from '../../../services/authService';
 import './Login.css';
 import styles from '../Auth.module.css';
 
-const Login = () => {
+const Login = ({submit}) => {
     const { userLogin } = useContext(AuthContext);
     const { values, errors, onChange, validateEmail, validateField } = useValidatorLogin();
     const [serverError, setServerError] = useState('');
@@ -26,6 +26,7 @@ const Login = () => {
             .catch((err) => {
                 setServerError(err.message);
             });
+            submit(values);
     };
 
     return (
