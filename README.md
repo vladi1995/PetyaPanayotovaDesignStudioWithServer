@@ -49,7 +49,7 @@ The project is uploaded in render: [Live](https://petyadesignstudio.onrender.com
 
 ## Used technologies:
 1. ReactJS
-2. HTML/CSS
+2. HTML/CSS using templates from nicepage
 3. NodeJS with Express
 4. MongoDB for database
 
