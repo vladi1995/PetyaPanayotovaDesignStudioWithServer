@@ -38,7 +38,7 @@ The project is uploaded in render: [Live](https://petyadesignstudio.onrender.com
 
 + Pictures uploaded in Dropbox
 
-![image](https://user-images.githubusercontent.com/105628305/228854213-d51574e2-e77d-466f-b414-cb71d0814384.png)
+![image](https://user-images.githubusercontent.com/105628305/228854390-555f6598-4485-412a-9153-55ea1a845c52.png)
 
 + Application uploaded in render (both client and server)
 + Custom Node.JS / Express server with MongoDB Database
