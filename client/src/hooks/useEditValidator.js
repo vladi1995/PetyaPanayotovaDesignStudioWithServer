@@ -33,6 +33,7 @@ const useValidatorEdit = (cardId) => {
             ...state,
             [e.target.name]: e.target.value,
         }));
+        console.log(values);
     };
 
     const validateImageUrl = (e) => {

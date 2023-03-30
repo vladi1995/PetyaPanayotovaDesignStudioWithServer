@@ -21,6 +21,7 @@ const CardEdit = () => {
 
     const editCardHandler = (e) => {
         e.preventDefault();
+        values.category = values.select;
         cardService.edit(cardId, values)
             .then(result => {
                 editCard(cardId, result);
@@ -167,7 +168,7 @@ const CardEdit = () => {
                                     id="select-67b6"
                                     name="select"
                                     className="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white u-input-6"
-                                    value={values.category}
+                                    value={values.select ? values.select : values.category}
                                     onChange={onChange}
                                 >
                                     <option value="birthdayCard">Birthday cards</option>
