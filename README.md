@@ -47,3 +47,9 @@ The project is uploaded in render: [Live](https://petyadesignstudio.onrender.com
 
 ![image](https://agileengine.com/wp-content/uploads/2018/02/mern.jpg)
 
+## Used technologies:
+1. ReactJS
+2. HTML/CSS
+3. NodeJS with Express
+4. MongoDB for database
+
