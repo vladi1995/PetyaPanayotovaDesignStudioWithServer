@@ -4,7 +4,7 @@
 
 The project is designed as a platform for a Design Studio regarding cards for different occasions. User can login/register and then he/she can upload, modify or edit cards in 5 categories. They can also write comments, buy and like other cards.
 
-This project was created by [Vladislav Dimitrov](https://github.com/vladi1995) for the purposes of React. js Softuni Course, February-March 2023.
+This project was created by [Vladislav Dimitrov](https://github.com/vladi1995) for the purposes of React. js Softuni Course, February-March 2023. It is a full-stack application as both client and server part are written by me.
 
 The project is uploaded in render: [Live](https://petyadesignstudio.onrender.com/)
 
@@ -36,13 +36,13 @@ The project is uploaded in render: [Live](https://petyadesignstudio.onrender.com
 + Like a card
 + Search for a specific card
 
-+ Pictures uploaded in Dropbox
++ Pictures uploaded in Dropbox (File Storage Cloud Storage API)
 
 ![image](https://user-images.githubusercontent.com/105628305/228854390-555f6598-4485-412a-9153-55ea1a845c52.png)
 
-+ Application uploaded in render (both client and server)
++ Application uploaded in cloud - [Render](https://render.com/)
 + Custom Node.JS / Express server with MongoDB Database
 + Simple unit testing of login page
 
-![image](https://user-images.githubusercontent.com/105628305/228854021-ab768d68-3daf-4c04-9e5e-3b55f01c81c3.png)
+![image](https://user-images.githubusercontent.com/105628305/228854021-ab768d68-3daf-4c04-9e5e-3b55f01c81c3.png)](https://agileengine.com/wp-content/uploads/2018/02/mern.jpg)
 
