@@ -37,9 +37,12 @@ The project is uploaded in render: [Live](https://petyadesignstudio.onrender.com
 + Search for a specific card
 
 + Pictures uploaded in Dropbox
+
+![image](https://user-images.githubusercontent.com/105628305/228854213-d51574e2-e77d-466f-b414-cb71d0814384.png)
+
 + Application uploaded in render (both client and server)
 + Custom Node.JS / Express server with MongoDB Database
 + Simple unit testing of login page
 
-![image](https://www.rlogical.com/wp-content/uploads/2020/12/MERN-Stack-considered-the-Best-for-Developing-Web-Apps.png)
+![image](https://user-images.githubusercontent.com/105628305/228854021-ab768d68-3daf-4c04-9e5e-3b55f01c81c3.png)
 
