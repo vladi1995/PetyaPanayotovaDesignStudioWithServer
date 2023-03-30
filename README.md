@@ -42,6 +42,7 @@ The project is uploaded in render: [Live](https://petyadesignstudio.onrender.com
 
 + Application uploaded in cloud - [Render](https://render.com/)
 + Custom Node.JS / Express server with MongoDB Database
++ HTML/CSS template - my own generated ideas with the help of [Nicepage](https://nicepage.com/)
 + Simple unit testing of login page
 
 ![image](https://agileengine.com/wp-content/uploads/2018/02/mern.jpg)
