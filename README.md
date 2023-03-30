@@ -44,5 +44,5 @@ The project is uploaded in render: [Live](https://petyadesignstudio.onrender.com
 + Custom Node.JS / Express server with MongoDB Database
 + Simple unit testing of login page
 
-![image](https://user-images.githubusercontent.com/105628305/228854021-ab768d68-3daf-4c04-9e5e-3b55f01c81c3.png)](https://agileengine.com/wp-content/uploads/2018/02/mern.jpg)
+![image](https://agileengine.com/wp-content/uploads/2018/02/mern.jpg)
 
