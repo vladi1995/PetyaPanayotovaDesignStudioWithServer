@@ -59,7 +59,7 @@ const useValidatorCreate = () => {
         validateField,
         validateNumbers,
         validateCount,
-    }
+    };
 };
 
 export default useValidatorCreate;

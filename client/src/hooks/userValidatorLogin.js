@@ -40,7 +40,7 @@ const useValidatorLogin = () => {
         onChange,
         validateEmail,
         validateField,
-    }
+    };
 };
 
 export default useValidatorLogin;

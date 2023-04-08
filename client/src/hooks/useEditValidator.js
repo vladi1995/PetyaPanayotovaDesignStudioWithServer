@@ -1,5 +1,4 @@
-import { useContext, useState, useEffect } from "react";
-import { AuthContext } from "../contexts/AuthContext";
+import { useState, useEffect } from "react";
 import * as cardService from '../services/cardService';
 
 const useValidatorEdit = (cardId) => {
@@ -73,7 +72,7 @@ const useValidatorEdit = (cardId) => {
         validateField,
         validateNumbers,
         validateCount,
-    }
+    };
 };
 
 export default useValidatorEdit;

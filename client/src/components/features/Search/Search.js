@@ -37,6 +37,7 @@ const Search = () => {
 
     return (
         <section className="u-clearfix u-grey-5 u-section-6" id="sec-f49c">
+            <br />
             <section className="u-align-center u-clearfix u-grey-5 u-section-10" id="sec-7464">
                 <div className="u-clearfix u-sheet u-sheet-1">
                     <h2 className="u-text u-text-default u-text-1">Search of a card</h2>

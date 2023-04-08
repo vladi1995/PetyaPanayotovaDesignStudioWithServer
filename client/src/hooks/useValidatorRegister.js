@@ -67,7 +67,7 @@ const useValidatorRegister = () => {
         validateImageUrl,
         validateField,
         validateBudget
-    }
+    };
 };
 
 export default useValidatorRegister;
