@@ -21,7 +21,7 @@ const About = () => {
                                 <div className="u-container-layout u-container-layout-2" src="">
                                     <img
                                         className="u-image u-image-default u-image-1"
-                                        src="/images/-A6.png"
+                                        src="/images/-A6.jpg"
                                         alt="aboutPicture"
                                     />
                                 </div>
