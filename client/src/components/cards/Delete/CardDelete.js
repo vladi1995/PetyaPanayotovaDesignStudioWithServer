@@ -1,7 +1,6 @@
 import { useState, useEffect, useContext } from 'react';
 import { NavLink, useParams, useNavigate } from 'react-router-dom';
 
-import { AuthContext } from '../../../contexts/AuthContext';
 import { CardContext } from '../../../contexts/CardContext';
 import * as cardService from '../../../services/cardService';
 

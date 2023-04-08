@@ -123,8 +123,6 @@ const CatalogCards = () => {
             </section>
         </>
     );
-
-
 };
 
 export default CatalogCards;

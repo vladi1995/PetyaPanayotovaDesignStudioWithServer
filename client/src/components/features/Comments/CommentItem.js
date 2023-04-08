@@ -18,7 +18,7 @@ const CommentItem = ({ comment, index, deleteCommentHandler, editCommentHandler,
     const onChangeComment = (e) => {
         setNewComment(e.target.value);
     };
-console.log(comment);
+    console.log(comment);
     return (
         <div className="u-clearfix u-sheet u-sheet-1">
             <div className="u-clearfix u-gutter-0 u-layout-wrap u-layout-wrap-1">
