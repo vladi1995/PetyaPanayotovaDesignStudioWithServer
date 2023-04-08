@@ -34,7 +34,7 @@ const UserProfile = () => {
         }
     }, []);
 
-    const filteredCards = cards.filter(x => x.ownerId._id ? x.ownerId._id === currentUser._id : x.ownerId === currentUser._id);
+    const filteredCards = cards.filter(x => x.ownerId._id === currentUser._id);
 
     return (
         <section className="u-align-center u-clearfix u-grey-5 u-section-13" id="sec-8e51">
